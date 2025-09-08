@@ -1,0 +1,21 @@
+[2025-09-04 16:35:16 : INFO] - Cache for term page with URL: https://kunshop.local/?thuong-hieu=hoa-linh  have been purged, triggered by action: edit_terms 
+[2025-09-04 16:35:18 : INFO] - Cache for term page with URL: https://kunshop.local/?thuong-hieu=cong-ty-hoa-linh  have been purged, triggered by action: edit_terms 
+[2025-09-04 16:35:29 : INFO] - Cache for term page with URL: https://kunshop.local/?thuong-hieu=cong-ty-hoa-linh  have been purged, triggered by action: edit_terms 
+[2025-09-04 16:55:09 : INFO] - Cache for URL: https://kunshop.local/?p=1 has been purged, triggered by action: wp_trash_post 
+[2025-09-04 16:55:21 : INFO] - Cache for URL: https://kunshop.local/?page_id=2 has been purged, triggered by action: wp_trash_post 
+[2025-09-04 16:56:12 : INFO] - Cache for URL: https://kunshop.local/?page_id=9 has been purged, triggered by action: save_post 
+[2025-09-04 16:56:12 : INFO] - Cache for author page URL: https://kunshop.local/?author=1 associated with post_type: page and Title: "Trang chủ" has been purged, triggered by action: save_post 
+[2025-09-04 16:56:44 : INFO] - Cache for URL: https://kunshop.local/?page_id=11 has been purged, triggered by action: save_post 
+[2025-09-04 16:56:44 : INFO] - Cache for author page URL: https://kunshop.local/?author=1 associated with post_type: page and Title: "Sản phẩm" has been purged, triggered by action: save_post 
+[2025-09-04 16:56:58 : INFO] - Cache for URL: https://kunshop.local/?page_id=13 has been purged, triggered by action: save_post 
+[2025-09-04 16:56:58 : INFO] - Cache for author page URL: https://kunshop.local/?author=1 associated with post_type: page and Title: "Tin tức" has been purged, triggered by action: save_post 
+[2025-09-04 16:57:06 : INFO] - Cache for URL: https://kunshop.local/?page_id=15 has been purged, triggered by action: save_post 
+[2025-09-04 16:57:06 : INFO] - Cache for author page URL: https://kunshop.local/?author=1 associated with post_type: page and Title: "Liên hệ" has been purged, triggered by action: save_post 
+[2025-09-04 16:57:20 : INFO] - Cache for URL: https://kunshop.local/?page_id=17 has been purged, triggered by action: save_post 
+[2025-09-04 16:57:20 : INFO] - Cache for author page URL: https://kunshop.local/?author=1 associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-09-04 17:09:00 : INFO] - Cache for URL: https://kunshop.local/chinh-sach-bao-mat/ has been purged, triggered by action: save_post 
+[2025-09-04 17:09:00 : INFO] - Cache for author page URL: https://kunshop.local/author/kunshopadmin/ associated with post_type: page and Title: "Chính sách bảo mật" has been purged, triggered by action: save_post 
+[2025-09-05 06:46:07 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-tri-gau-thai-duong/ has been purged, triggered by action: save_post 
+[2025-09-05 06:46:07 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội trị gầu Thái Dương" has been purged, triggered by action: save_post 
+[2025-09-05 07:28:36 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-tri-gau-thai-duong/ has been purged, triggered by action: save_post 
+[2025-09-05 07:28:36 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội trị gầu Thái Dương" has been purged, triggered by action: save_post 

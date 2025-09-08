@@ -1,0 +1,506 @@
+:root {
+    font-size: 0.521vw; /* 10px */
+
+    --primary-color: #1D51A2;
+    --secondary-color: #F9FBFB;
+    --tertiary-color: #F8BB15;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
+    --gray-color: #DADADA;
+    --red-color: #FF1414;
+    --yellow-color: #F8BB15; 
+    --sblue-color: #E7F1FF;
+    --sblue-color2: #E9F2FF;
+    --padding: 16rem;
+    --padding-top: 7.5rem;
+}
+
+@font-face {
+    font-family: 'Toan Car';
+    font-weight: 400;
+    src: url("../fonts/Toan\ Cars\ Sans\ Book.otf");
+}
+
+@font-face {
+    font-family: 'Toan Car';
+    font-weight: 500;
+    src: url("../fonts/Toan\ Cars\ Sans\ Medium.otf");
+}
+
+@font-face {
+    font-family: 'Toan Car';
+    font-weight: 600;
+    src: url("../fonts/Toan\ Cars\ Sans\ Semibold.otf");
+}
+
+@font-face {
+    font-family: 'Toan Car';
+    font-weight: 700;
+    src: url("../fonts/Toan\ Cars\ Sans\ Bold.otf");
+}
+
+@font-face {
+    font-family: 'Toan Car';
+    font-weight: 800;
+    src: url("../fonts/Toan\ Cars\ Display.otf");
+}
+
+* {
+    box-sizing: border-box;
+    border-collapse: inherit;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;   
+}
+
+body {
+    overscroll-behavior: none;
+    margin: 0; padding: 0;
+    font-family: 'Toan Car'; line-height: 1.4; font-weight: 500; font-style: normal; font-size: 1.6rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%; width: 100%;
+    background: var(--secondary-color);
+    
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+section {
+    position: relative;
+}
+
+.bgrsize100 {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.hidden {
+    visibility: hidden;
+}
+.display-none {
+    display: none;
+}
+.padding-text {
+    padding-top: 0.4rem
+}
+.shinehover {
+    cursor: pointer;
+}
+
+.shinehover:hover, .menu a:hover, #breadcrumbs a:hover, .tag-list a:hover, .content a:hover {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 2s infinite;
+}
+
+.image-hover-effect {
+    display: inline-block;
+    transition: transform 0.3s ease; /* Tạo hiệu ứng mượt khi thay đổi */
+}
+
+.image-hover-effect:hover {
+    transform: scale(1.1); /* Phóng to hình ảnh lên 10% */
+}
+  
+@-webkit-keyframes shine {
+    from {
+        -webkit-mask-position: 200%;
+    }
+    to {
+        -webkit-mask-position: -200%;
+    }
+}
+
+@-keyframes shine {
+    from {
+        -webkit-mask-position: 200%;
+    }
+    to {
+        -webkit-mask-position: -200%;
+    }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+.loading-spinner.show {
+    z-index: 999;
+    opacity: 1;
+}
+
+.loading-spinner::after {
+    content: "";
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    border: 1rem solid rgba(230, 230, 230, .3);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Toan Car';
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.text-book {
+    font-weight: 400;
+}
+
+.text-regular {
+    font-weight: 500;
+}
+
+.text-semibold {
+    font-weight: 600;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.text-ultra {
+    font-weight: 800;
+}
+
+.color-tertiary {
+    color: var(--tertiary-color);
+}
+
+.color-primary {
+    color: var(--primary-color);
+}
+
+.color-red {
+    color: var(--red-color);
+}
+
+.color-white {
+    color: var(--white-color);
+}
+
+.color-yellow {
+    color: var(--yellow-color);
+}
+
+.bgcolor-primary {
+    background: var(--primary-color);
+}
+
+.page-layout {
+    border-radius: 3rem;
+    z-index: 10; background: var(--secondary-color);
+    margin-top: -3rem;
+    margin-bottom: -3rem;   
+}
+
+.title-not-found {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 10rem;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url('../images/dropdown-icon.svg');
+    background-size: 1.4rem; 
+    background-repeat: no-repeat;
+    background-position: right 2.2rem center; 
+}
+
+/* Transition swup fade */
+.transition-overlay {
+    background: var(--secondary-color, black);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    opacity: 0;
+    transform: scale(1);
+    pointer-events: none;
+    transition: opacity 600ms ease-in-out, transform 600ms ease-in-out;
+}
+
+.transition-overlay .logo {
+    background-image: url(../images/logo-home.svg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 72.4rem;
+    height: 28.3rem;
+}
+
+html.is-changing .transition-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+html.is-animating.is-leaving .transition-main {
+    opacity: 0;
+    transition: opacity 600ms ease-in-out;
+}
+
+html.is-animating.is-rendering .transition-main {
+    opacity: 1;
+    transition: opacity 600ms ease-in-out;
+}
+
+html.is-rendering .transition-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* Contact Popup */
+.contact-popup {
+    position: fixed;
+    top: calc(60vh);
+    right: 2rem;
+    z-index: 999;
+}
+
+.contact-popup > a {
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    display: flex; justify-content: center; align-items: center;
+    transition: all 0.5s;
+}
+
+.contact-popup > a:last-child {
+    margin-bottom: 0;
+    margin-top: 5rem;
+}
+.contact-popup > a > div {
+    width: 5.5rem; height: 5.5rem;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.contact-popup .youtbWhite svg{
+    width: 3.3rem; height: 2.2rem;
+}
+
+.contact-popup .phoneWhite svg{
+    width: 2.5rem; height: 2.5rem;
+}
+
+.contact-popup .zaloWhite svg{
+    width: 4rem; height: 1.5rem;
+}
+
+.contact-popup .scrolltop svg{
+    width: 2.5rem; height: 2.5rem;
+}
+
+#scrolltop {
+    visibility: hidden;
+}
+
+.page-id-11 .contact-popup > a {
+    background: var(--yellow-color);
+}
+
+.page-id-11 .contact-popup svg {
+    fill: var(--primary-color);
+}
+
+/* Dat Air Picker */
+.air-datepicker {
+    z-index: 1060;
+    font-size: 1.6rem;
+    font-family: 'Toan Car';
+}
+
+.air-datepicker.-is-mobile- {
+    width: 100%;
+    width: 40rem;
+}
+
+.air-datepicker .datepicker--nav-link,
+.air-datepicker-nav--title,
+.air-datepicker-body--day-names  {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.air-datepicker-nav--action svg {
+    display: none;
+}
+
+.air-datepicker-body--cells.-days-,
+.air-datepicker-body--cells.-months-,
+.air-datepicker-body--cells.-years- {
+    grid-auto-rows: 5rem;
+}
+
+.air-datepicker-nav > .air-datepicker-nav--action::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.air-datepicker-nav {
+    padding: 2rem;
+    align-items: center;
+}
+
+.air-datepicker-nav--title {
+    padding-top: 0.3rem;
+}
+
+.air-datepicker-nav--action {
+    width: 5rem;
+    height: 5rem
+}
+
+.air-datepicker-nav--action:hover {
+    background: transparent;
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 2s infinite;
+}
+
+.air-datepicker-nav > .air-datepicker-nav--action:first-child::after {
+    background-image: url('../images/prev-icon-swiper.svg');
+}
+
+.air-datepicker-nav > .air-datepicker-nav--action:last-child::after {
+    background-image: url('../images/next-icon-swiper.svg');
+}
+
+/* Ui Slider */
+.noUi-connect {
+    background-color: var(--primary-color);
+}
+
+.custom-tooltip-left {
+    font-size: 1.8rem;
+    position: absolute;
+    top: 200%; left: -6%;
+}
+
+.custom-tooltip-right {
+    font-size: 1.8rem; 
+    position: absolute;
+    top: 200%; right: -6%;
+}
+
+/* Error Message */
+.error-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--red-color);
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.success-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: green;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+input.custom-input.error-input {
+    border: 1px solid var(--red-color) !important;
+}
+
+.error-message {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--red-color);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 5%;
+}
+
+@media screen and (max-width: 800px) {
+    :root {
+        font-size: 2.427vw;
+        --padding: 2rem;
+        --padding-top: 3.7rem;
+    }
+    .page-layout {
+        border-radius: 1.2rem;
+    }
+    .contact-popup {
+        display: block;
+        transform: translateX(0%);
+        transition: transform 0.5s ease-in-out;
+    }
+    .contact-popup {
+        top: auto; bottom: 5rem;
+    }
+    .contact-popup.hide-popup {
+        transform: translateX(200%);
+    }
+    .contact-popup > a {
+        width: 3.6rem; height: 3.6rem;
+    }
+    .contact-popup .phoneWhite svg {
+        width: 2rem; height: 2rem;
+    }
+    .contact-popup .zaloWhite svg {
+        width: 3rem; height: 1rem;
+    }
+    .contact-popup .youtbWhite svg {
+        width: 2.5rem; height: 1.5rem;
+    }
+    .contact-popup .scrolltop svg {
+        width: 2rem; height: 2rem;
+    }
+    .transition-overlay .logo {
+        width: 36rem;
+        height: 14rem;
+    }
+	.shinehover:hover, .menu a:hover, #breadcrumbs a:hover, .tag-list a:hover, .content a:hover {
+		-webkit-mask-image: none;
+		-webkit-mask-size: none;
+		animation: none;
+	}
+	.image-hover-effect:hover {
+		transform: scale(1);
+	}
+    .error-message {
+        font-size: 1.4rem;
+        top: calc(100% + 0.3rem);
+    }
+}
