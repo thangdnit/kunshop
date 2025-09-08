@@ -5,38 +5,38 @@
         $phone = get_field('phone', 'option');
         $zalo = get_field('zalo', 'option');
         
-        $data_car = [
+        $data_product = [
             'id' => get_the_ID(),
             'title' => get_the_title(),
             'excerpt' => get_the_excerpt(),
         ];
         
-        $car = new ToanCar\Car($data_car);
-        $title = $car->get_title();
-        $excerpt = $car->get_excerpt();
-        $price = $car->get_price();
-        $advanced = $car->get_advanced();
-        $advanced_label = $car->get_advanced_label();
-        $youtube = $car->get_youtube();
-        $gallery = $car->get_gallery();
+        $product = new Toanproduct\product($data_product);
+        $title = $product->get_title();
+        $excerpt = $product->get_excerpt();
+        $price = $product->get_price();
+        $advanced = $product->get_advanced();
+        $advanced_label = $product->get_advanced_label();
+        $youtube = $product->get_youtube();
+        $gallery = $product->get_gallery();
 
-        $hang_xe = $car->get_term_car('hang-xe');
-        $loai_xe = $car->get_term_car('loai-xe');
-        $loai_hop_so = $car->get_term_car('loai-hop-so');
-        $mau_xe = $car->get_term_car('mau-xe');
-        $tinh_trang = $car->get_term_car('tinh-trang');
-        $tag_xe = $car->get_term_car('tag-xe');
-        $extend = $car->get_extend();
+        $hang_xe = $product->get_term_product('hang-xe');
+        $loai_xe = $product->get_term_product('loai-xe');
+        $loai_hop_so = $product->get_term_product('loai-hop-so');
+        $mau_xe = $product->get_term_product('mau-xe');
+        $tinh_trang = $product->get_term_product('tinh-trang');
+        $tag_xe = $product->get_term_product('tag-xe');
+        $extend = $product->get_extend();
 
-        set_query_var('car_title_single', $title);
-        set_query_var('car_link', get_the_permalink());
+        set_query_var('product_title_single', $title);
+        set_query_var('product_link', get_the_permalink());
 ?>
-<section id="car-single" class="page-layout">
+<section id="product-single" class="page-layout">
     <div class="wrapper">
         <?php include locate_template('template-parts/components/breadcrumb.php'); ?>
-        <h1 class="title-page car-single-title"><?php echo $title; ?></h1>
-        <h2 class="car-excerpt"><?php echo $excerpt; ?></h2>
-        <div class="car-advanced text-semibold color-primary">
+        <h1 class="title-page product-single-title"><?php echo $title; ?></h1>
+        <h2 class="product-excerpt"><?php echo $excerpt; ?></h2>
+        <div class="product-advanced text-semibold color-primary">
             <div>
                 <div class="dateBlue-icon bgrsize100"></div>
                 <?php echo $advanced['nam_san_xuat'] ?>
@@ -55,10 +55,10 @@
             </div>
         </div>
 
-        <div class="car-single-header">
-            <div class="car-single-gallery">
+        <div class="product-single-header">
+            <div class="product-single-gallery">
                 <?php for($i = 2; $i > 0; $i--): ?>
-                    <div class="swiper-thumbnail-<?php echo $i; ?> slider-car-single-<?php echo $i; ?>">
+                    <div class="swiper-thumbnail-<?php echo $i; ?> slider-product-single-<?php echo $i; ?>">
                         <div class="swiper-wrapper">
                             <?php if ($youtube): ?>
                                 <div class="swiper-slide">
@@ -92,30 +92,30 @@
                     </div>
                 <?php endfor; ?>
             </div>
-            <div class="car-single-quote">
-                <div class="car-single-price color-primary text-ultra">
+            <div class="product-single-quote">
+                <div class="product-single-price color-primary text-ultra">
                     <div><?php echo $price; ?></div>
                 </div>
-                <div class="car-single-form">
-                    <div class="car-single-form__button">
+                <div class="product-single-form">
+                    <div class="product-single-form__button">
                         <a class="shinehover" data-bs-toggle="modal" data-bs-target="#quoteModal">Báo giá lăn bánh<div class="money-icon bgrsize100"></div></a>
                         <a class="shinehover" data-bs-toggle="modal" data-bs-target="#registerDriveModal">Đăng ký lái thử<div class="drive-icon bgrsize100"></div></a>
                     </div>
-                    <div class="car_single-form__quote">
+                    <div class="product_single-form__quote">
                         <?php include locate_template("template-parts/components/forms/form-advise.php") ?>
                     </div>
                 </div>
-                <div class="car-single-hotline">
+                <div class="product-single-hotline">
                     <a target="_blank" class="shinehover image-hover-effect text-bold color-primary" href="tel:<?php echo $phone?>">Hotline <?php echo $phone; ?></a>
                     <a target="_blank" class="shinehover image-hover-effect text-bold color-primary" href="https://zalo.me/<?php echo $zalo; ?>"><div class="zalo-icon bgrsize100"></div></a>
                 </div>
             </div>
         </div>
 
-        <div class="car-single-content">
-            <div class="car-single-info">
-                <div class="car-single-info__title title-page">Tổng quan về xe</div>
-                <div class="car-single-info__content">
+        <div class="product-single-content">
+            <div class="product-single-info">
+                <div class="product-single-info__title title-page">Tổng quan về xe</div>
+                <div class="product-single-info__content">
                     <?php foreach ($advanced_label['sub_fields'] as $index => $field): ?>
                         <?php
                             $field_name  = $field['name'];
@@ -171,13 +171,13 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="car-single-highlight">
+            <div class="product-single-highlight">
                 <?php foreach ($highlight as $item): ?>
                     <div>
-                        <div class="car-single-highlight__icon">
+                        <div class="product-single-highlight__icon">
                             <?php echo get_image($item['icon']); ?>
                         </div>
-                        <div class="car-single-highlight__title text-bold color-white"><?php echo $item['title']; ?></div>
+                        <div class="product-single-highlight__title text-bold color-white"><?php echo $item['title']; ?></div>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -186,10 +186,10 @@
         <?php
             $widthValue = intval(get_option('widthValue'));
 
-            $number_cars = get_field('car_related', 'option');
+            $number_products = get_field('product_related', 'option');
             $posts_per_page = $widthValue < 801 ? 1 : 4;
-            $post__not_in = $car->get_id();
-            $total_pages = ceil($number_cars / $posts_per_page);
+            $post__not_in = $product->get_id();
+            $total_pages = ceil($number_products / $posts_per_page);
             $idtab = '';
 
             $tag_id = [];
@@ -248,23 +248,23 @@
                 ]
             ];
             
-            $cars = ToanCar\Car::get_cars($data);
+            $products = Toanproduct\product::get_products($data);
         ?>
 
-        <div class="related-post car-single-related">
+        <div class="related-post product-single-related">
             <div class="related-post-title text-ultra">Có thể bạn quan tâm</div>
-            <div class="swiper-multi slider-car-related slider-ajax">
+            <div class="swiper-multi slider-product-related slider-ajax">
                 <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <?php 
-                                while($cars->have_posts()): $cars->the_post();
-                                    $car = new ToanCar\Car([
+                                while($products->have_posts()): $products->the_post();
+                                    $product = new Toanproduct\product([
                                         'id' => get_the_ID(),
                                         'title' => get_the_title(),
                                     ]);
                                     ?>
-                                <div class="car-box-item">
-                                    <?php include locate_template('template-parts/components/boxs/car-box.php'); ?>
+                                <div class="product-box-item">
+                                    <?php include locate_template('template-parts/components/boxs/product-box.php'); ?>
                                 </div>
                             <?php endwhile; ?>
                             <?php wp_reset_postdata(); ?>

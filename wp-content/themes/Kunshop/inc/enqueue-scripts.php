@@ -30,7 +30,7 @@ function theme_enqueue_scripts() {
             'api_url' => home_url('/wp-json/kunshop83xcc3/v1/products')
         ],
         'categories' => [
-            'api_url' => home_url('/wp-json/kunshop83xcc3/v1/categories')
+            'api_url' => home_url('/wp-json/kunshop83xcc3/v1/load-category')
         ],
         'brands' => [
             'api_url' => home_url('/wp-json/kunshop83xcc3/v1/brand-products')

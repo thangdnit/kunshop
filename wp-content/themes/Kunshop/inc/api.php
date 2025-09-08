@@ -5,8 +5,8 @@ add_action('init', function() {
     header('Access-Control-Allow-Headers: X-WP-Nonce, Content-Type');
 });
 
-// Load Cars
-function load_cars(WP_REST_Request $request) {
+// Load products
+function load_products(WP_REST_Request $request) {
     $params = $request->get_params();
 
     $idtab = sanitize_text_field( $params['idtab'] ?? '' );
@@ -72,13 +72,13 @@ function load_cars(WP_REST_Request $request) {
             ],
         ];
     }
-    $cars = ToanCar\Car::get_cars($data);
+    $products = Toanproduct\product::get_products($data);
 
-    $data_cars = [];
-    if ($cars->have_posts()) {
-        while ($cars->have_posts()) {
-            $cars->the_post();
-            $car = new ToanCar\Car(
+    $data_products = [];
+    if ($products->have_posts()) {
+        while ($products->have_posts()) {
+            $products->the_post();
+            $product = new Toanproduct\product(
                 [
                     'id' => get_the_ID(),
                     'title' => get_the_title(),
@@ -86,27 +86,27 @@ function load_cars(WP_REST_Request $request) {
                 ]
             );
             ob_start();
-            include locate_template("template-parts/components/boxs/car-box.php");
-            $data_car['html'] = ob_get_clean();
+            include locate_template("template-parts/components/boxs/product-box.php");
+            $data_product['html'] = ob_get_clean();
 
-            $data_cars[] = $data_car;
+            $data_products[] = $data_product;
         }
         wp_reset_postdata();
     }
 
-    return rest_ensure_response($data_cars);
+    return rest_ensure_response($data_products);
 }
 
 add_action('rest_api_init', function () {
-    register_rest_route('toancar83xcc3/v1', '/cars', [
+    register_rest_route('toanproduct83xcc3/v1', '/products', [
         'methods' => 'GET',
-        'callback' => 'load_cars',
+        'callback' => 'load_products',
         'permission_callback' => '__return_true',
     ]);
 });
 
-// Load Model Cars
-function load_model_cars(WP_REST_Request $request) {
+// Load Model products
+function load_model_products(WP_REST_Request $request) {
     $brand = intval($request->get_param('model')) ?? 0;
 
     $args = [
@@ -138,15 +138,15 @@ function load_model_cars(WP_REST_Request $request) {
 }
 
 add_action('rest_api_init', function () {
-    register_rest_route('toancar83xcc3/v1', '/model-cars', [
+    register_rest_route('toanproduct83xcc3/v1', '/model-products', [
         'methods' => 'GET',
-        'callback' => 'load_model_cars',
+        'callback' => 'load_model_products',
         'permission_callback' => '__return_true',
     ]);
 });
 
-// Load Brand Cars
-function load_brand_cars(WP_REST_Request $request) {
+// Load Brand products
+function load_brand_products(WP_REST_Request $request) {
     $model = intval($request->get_param('model')) ?? 0;
     $term = get_term($model, 'hang-xe');
 
@@ -154,19 +154,19 @@ function load_brand_cars(WP_REST_Request $request) {
 }
 
 add_action('rest_api_init', function () {
-    register_rest_route('toancar83xcc3/v1', '/brand-cars', [
+    register_rest_route('toanproduct83xcc3/v1', '/brand-products', [
         'methods' => 'GET',
-        'callback' => 'load_brand_cars',
+        'callback' => 'load_brand_products',
         'permission_callback' => '__return_true',
     ]);
 });
 
-// Load Cars Filter Main
-function load_cars_filter(WP_REST_Request $request) { 
+// Load products Filter Main
+function load_products_filter(WP_REST_Request $request) { 
     $params = $request->get_params();
 
     $widthValue = intval(get_option('widthValue'));
-    $posts_per_page = $widthValue < 801 ? 4 : get_field('cars_per_page', 'option');
+    $posts_per_page = $widthValue < 801 ? 4 : get_field('products_per_page', 'option');
     
     $data = [
         'posts_per_page' => $posts_per_page,
@@ -185,21 +185,21 @@ function load_cars_filter(WP_REST_Request $request) {
             ];
             continue;
         }
-        if (strpos($key, 'car-filter__') !== false && $value != 0) {
-            if ($key === 'car-filter__keyword') {
+        if (strpos($key, 'product-filter__') !== false && $value != 0) {
+            if ($key === 'product-filter__keyword') {
                 $keyword = sanitize_text_field($value);
 
                 $data['keyword_search'] = $keyword;
                 
                 continue;
             }
-            if ($key === 'car-filter__dong-xe') {
+            if ($key === 'product-filter__dong-xe') {
                 continue;
             }
-            if ($key == 'car-filter__hang-xe') {
+            if ($key == 'product-filter__hang-xe') {
                 $id_term = intval($value);
-                if (intval($params['car-filter__dong-xe']) != 0) {
-                    $id_term = intval($params['car-filter__dong-xe']);
+                if (intval($params['product-filter__dong-xe']) != 0) {
+                    $id_term = intval($params['product-filter__dong-xe']);
                 }
 
                 $data['tax_query'][] = [
@@ -210,7 +210,7 @@ function load_cars_filter(WP_REST_Request $request) {
                 continue;
             }
 
-            $taxonomy = str_replace('car-filter__', '', $key);
+            $taxonomy = str_replace('product-filter__', '', $key);
             $data['tax_query'][] = [
                 'taxonomy' => $taxonomy,
                 'field' => 'term_id',
@@ -220,13 +220,13 @@ function load_cars_filter(WP_REST_Request $request) {
         }
     }
 
-    $cars = ToanCar\Car::get_cars($data);
+    $products = Toanproduct\product::get_products($data);
 
-    $data_cars = [];
-    if ($cars->have_posts()) {
-        while ($cars->have_posts()) {
-            $cars->the_post();
-            $car = new ToanCar\Car(
+    $data_products = [];
+    if ($products->have_posts()) {
+        while ($products->have_posts()) {
+            $products->the_post();
+            $product = new Toanproduct\product(
                 [
                     'id' => get_the_ID(),
                     'title' => get_the_title(),
@@ -234,29 +234,29 @@ function load_cars_filter(WP_REST_Request $request) {
                 ]
             );
             ob_start();
-            include locate_template("template-parts/components/boxs/car-box.php");
-            $data_car['html'] = ob_get_clean();
+            include locate_template("template-parts/components/boxs/product-box.php");
+            $data_product['html'] = ob_get_clean();
 
-            $data_cars[] = $data_car;
+            $data_products[] = $data_product;
         }
 
         ob_start();
-        $total_pages = $cars->max_num_pages;
+        $total_pages = $products->max_num_pages;
         $current_page = intval($params['paged'] ?? 1);
         include locate_template("template-parts/components/paginations/pagination-ajax-filter.php");
         $pagination['pagination'] = ob_get_clean();
 
-        $data_cars[] = $pagination;
+        $data_products[] = $pagination;
         wp_reset_postdata();
     }
 
-    return rest_ensure_response($data_cars);
+    return rest_ensure_response($data_products);
 }
 
 add_action('rest_api_init', function () {
-    register_rest_route('toancar83xcc3/v1', '/search-cars', [
+    register_rest_route('toanproduct83xcc3/v1', '/search-products', [
         'methods' => 'GET',
-        'callback' => 'load_cars_filter',
+        'callback' => 'load_products_filter',
         'permission_callback' => '__return_true',
     ]);
 });
@@ -298,24 +298,48 @@ function custom_keyword_search($where, $query) {
 }
 add_filter('posts_where', 'custom_keyword_search', 10, 2);
 
-// Load Width User
-function load_width_user(WP_REST_Request $request) {
-    $width = intval($request->get_param('width'));
-    update_option('widthValue', $width);
-    
-    return rest_ensure_response(array(
-        'status' => 'success',
-        'widthValue' => $width,
-    ));
+
+
+/* Load Category */
+function load_category(WP_REST_Request $request) {
+    $params = $request->get_params();
+
+    $parent = intval($params['parent']) ?? 0;
+
+    $args = [
+        'taxonomy' => 'category',
+        'hide_empty' => false,
+    ];
+
+    if ($parent != 0) {
+        $args['parent'] = $parent;
+    }
+
+    $terms = get_terms($args);
+
+    if ($parent == 0) {
+        $terms = array_filter($terms, function ($term) {
+            return $term->parent != 0;
+        });
+    }
+
+    $data = [];
+    foreach ($terms as $term) {
+        $data[] = [
+            'id' => $term->term_id,
+            'name' => $term->name,
+        ];
+    }
+
+    return rest_ensure_response($data);
 }
 
 add_action('rest_api_init', function () {
-    register_rest_route('toancar83xcc3/v1', '/width-user', [
+    register_rest_route('kunshop83xcc3/v1', '/load-category', [
         'methods' => 'GET',
-        'callback' => 'load_width_user',
+        'callback' => 'load_category',
         'permission_callback' => '__return_true',
     ]);
 });
-
 
 

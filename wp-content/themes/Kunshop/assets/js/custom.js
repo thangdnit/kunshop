@@ -1,11 +1,11 @@
-var mainLocalStorage = 'filter_cars';
-var homeLocalStorage = 'home_cars';
+var mainLocalStorage = 'filter_products';
+var homeLocalStorage = 'home_products';
 var swup_main;
 var allowajaxA = [];
 var allowajaxB = true;
 var allowajaxC = true;
 var allowajaxD = true;
-var swiper_single_car;
+var swiper_single_product;
 var swiper_home = [];
 var modalSuccess;
 var modalError;
@@ -27,9 +27,9 @@ function init(){
             loadPriceSlider();
             loadPressEnterInput();
             clearLocalStorage();
-            beforeLoadCar();
+            beforeLoadproduct();
             fetchDataFilter();
-            loadCarFilterMain();
+            loadproductFilterMain();
             loadModal();
             load_form();
             resetFormSignup();
@@ -56,9 +56,10 @@ function load_init() {
     loadPriceSlider();
     loadPressEnterInput();
     fetchDataFilter();
-    loadCarFilterMain();
+    loadproductFilterMain();
     loadModal();
     load_form();
+    toggleCategoryExpand();
 }
 /* Header Mobile Fixed */
 function showHeaderFixed() {
@@ -180,17 +181,17 @@ function formatCurrency (value) {
         const billions = Math.floor(value / 1000);
         const millions = value % 1000;
         if (millions > 0) {
-            return `${billions} tỷ ${millions} triệu`;
+            return `${billions} triệu ${millions} ngàn`;
         } else {
-            return `${billions} tỷ`;
+            return `${billions} triệu`;
         }
     } else {
-        return `${Math.round(value)} triệu`;
+        return `${Math.round(value)} ngàn`;
     }
 };
 /* Load Ui Price Slider */
 function loadPriceSlider() {
-    const priceSlider = document.getElementById('car-filter__price-range');
+    const priceSlider = document.getElementById('product-filter__price-range');
     
     if (priceSlider) {
         const customTooltipLeft = document.createElement('div');
@@ -208,7 +209,7 @@ function loadPriceSlider() {
         noUiSlider.create(priceSlider, {
             start: [minPrice, maxPrice],
             connect: true,
-            step: 5,
+            step: 1,
             range: {
                 'min': minPrice,
                 'max': maxPrice
@@ -230,7 +231,7 @@ function loadPriceSlider() {
             const min = parseFloat(values[0]);
             const max = parseFloat(values[1]);
             
-            const filterKey = 'car-filter__price-range';
+            const filterKey = 'product-filter__price-range';
             let filter = JSON.parse(window.localStorage.getItem(mainLocalStorage)) || {};
 
             filter[filterKey] = [min, max];
@@ -240,7 +241,7 @@ function loadPriceSlider() {
 }
 /* Load Press Enter Input */
 function loadPressEnterInput() {
-    pressEnterInput('car-filter__keyword', 'btn-searchKeyword');
+    pressEnterInput('product-filter__keyword', 'btn-searchKeyword');
 }
 /* Function Load Modal */
 function loadModal() {
@@ -263,8 +264,8 @@ function initSwiper() {
     if (bodyClass.contains('home') || bodyClass.contains('page-id-11') || bodyClass.contains('page-id-14')) {
         if (window.innerWidth < 801) {
             const space_between = changeRemtoPx(1);
-            if (document.querySelector('.car-type-section')) {
-                const swiper_slide = new Swiper('.car-type-section', {
+            if (document.querySelector('.product-type-section')) {
+                const swiper_slide = new Swiper('.product-type-section', {
                     loop: false,
                     grabCursor: true,
                     spaceBetween: space_between,
@@ -272,8 +273,8 @@ function initSwiper() {
                     freeMode: true,
                     speed: 800,
                     navigation: {
-                        nextEl: '.car-type-section .swiper-button-next-custom',
-                        prevEl: '.car-type-section .swiper-button-prev-custom',
+                        nextEl: '.product-type-section .swiper-button-next-custom',
+                        prevEl: '.product-type-section .swiper-button-prev-custom',
                     },
                     autoplay: false,
                 });
@@ -336,13 +337,13 @@ function initSwiper() {
                         },
                         on: {
                             init: function () {
-                                load_more_cars(tab_id);
+                                load_more_products(tab_id);
                             },
                             slidePrevTransitionStart: function () {
-                                load_prev_cars(tab_id);
+                                load_prev_products(tab_id);
                             },
                             slideNextTransitionStart: function () {
-                                load_more_cars(tab_id);
+                                load_more_products(tab_id);
                             }
                         }
                     });
@@ -351,7 +352,7 @@ function initSwiper() {
         }
     }
 
-    if (bodyClass.contains('single-cars')) {
+    if (bodyClass.contains('single-products')) {
         const remInPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
         const spaceBetween = 3 * remInPx;
         const spaceBetweenMB = 1 * remInPx;
@@ -394,7 +395,7 @@ function initSwiper() {
         }
         if (document.querySelector('.swiper-multi')) {
             allowajaxA[''] = true;
-            swiper_single_car = new Swiper('.swiper-multi', {
+            swiper_single_product = new Swiper('.swiper-multi', {
                 loop: false,
                 grabCursor: false,
                 allowTouchMove: false,
@@ -407,13 +408,13 @@ function initSwiper() {
                 },
                 on: {
                     init: function () {
-                        load_more_cars('');
+                        load_more_products('');
                     },
                     slidePrevTransitionStart: function () {
-                        load_prev_cars('');
+                        load_prev_products('');
                     },
                     slideNextTransitionStart: function () {
-                        load_more_cars('');
+                        load_more_products('');
                     }
                 }
             });
@@ -525,7 +526,7 @@ function resetContactPopup() {
 }
 /* Show Advanced Filter */
 function showAdvancedFilter() {
-    const filter = document.getElementById('car-filter-advanced');
+    const filter = document.getElementById('product-filter-advanced');
     filter.classList.toggle('show-filter');
 }
 /* Press Enter function */
@@ -542,7 +543,7 @@ function pressEnterInput(idInput, idButton) {
     }
 }
 /* Search Keyword */
-function searchCarbyKeyword(url, idkeyword) {
+function searchproductbyKeyword(url, idkeyword) {
     const keyword = document.getElementById(idkeyword);
     
     if (document.body.classList.contains('home')) {
@@ -575,21 +576,21 @@ function searchCarbyKeyword(url, idkeyword) {
 
         filter[idkeyword] = keyword.value;
         window.localStorage.setItem(mainLocalStorage, JSON.stringify(filter));
-        loadCarFilterMain();
+        loadproductFilterMain();
     }
 }
 /* Search by Taxonomy */
-function searchCarbyTaxonomy(url, key, value) {
+function searchproductbyTaxonomy(url, key, value) {
     let filter = JSON.parse(window.localStorage.getItem(mainLocalStorage)) || {};
 
     const isHomePage = document.body.classList.contains('home');
-    const filterKey = 'car-filter__' + key;
+    const filterKey = 'product-filter__' + key;
     const filterElement = document.getElementById(filterKey);
 
     filter[filterKey] = value;
 
     if (key === 'hang-xe') {
-        filter['car-filter__dong-xe'] = 0;
+        filter['product-filter__dong-xe'] = 0;
     }
     window.localStorage.setItem(mainLocalStorage, JSON.stringify(filter));
     
@@ -605,14 +606,14 @@ function searchCarbyTaxonomy(url, key, value) {
             filterElement.value = value;
         }
         if (key === 'hang-xe') {
-            loadCarModel(filterKey);
+            loadproductModel(filterKey);
         }
-        loadCarFilterMain();
+        loadproductFilterMain();
     }
 }
 /* Search by Price */
-function searchCarbyPrice(url, min, max) {
-    const filterKey = 'car-filter__price-range';
+function searchproductbyPrice(url, min, max) {
+    const filterKey = 'product-filter__price-range';
     let filter = JSON.parse(window.localStorage.getItem(mainLocalStorage)) || {};
 
     filter[filterKey] = [min, max];
@@ -630,7 +631,7 @@ function searchCarbyPrice(url, min, max) {
             priceRange.noUiSlider.set([min, max]);
         }
 
-        loadCarFilterMain();
+        loadproductFilterMain();
     }
 }
 /* Fetch Data */
@@ -645,11 +646,11 @@ function fetchDataFilter() {
                     const element = document.getElementById(key);
                     if (element) {
                         element.value = parsedObject[key];
-                        if (key == 'car-filter__hang-xe') {
-                            loadCarModel(key);
+                        if (key == 'product-filter__hang-xe') {
+                            loadproductModel(key);
                         }
-                        if (key == 'car-filter__price-range') {
-                            const priceRange = document.getElementById('car-filter__price-range');
+                        if (key == 'product-filter__price-range') {
+                            const priceRange = document.getElementById('product-filter__price-range');
                             priceRange.noUiSlider.set([parsedObject[key][0], parsedObject[key][1]]);
 
                             const priceButton = document.getElementById('price-filter__' + parsedObject[key][0] + '-' + parsedObject[key][1]);
@@ -693,8 +694,8 @@ function resetLocalStorage() {
             const filters = JSON.parse(storedData);
             if (filters) {
                 Object.keys(filters).forEach(key => {
-                    if (key !== 'car-filter__keyword'){
-                        if (key === 'car-filter__price-range') {
+                    if (key !== 'product-filter__keyword'){
+                        if (key === 'product-filter__price-range') {
                             const priceSlider = document.getElementById(key);
                             const minPrice = parseFloat(priceSlider.getAttribute('data-min'));
                             const maxPrice = parseFloat(priceSlider.getAttribute('data-max'));
@@ -721,8 +722,8 @@ function resetLocalStorage() {
         }
     }
 }
-/* Before Load Car */
-function beforeLoadCar() {
+/* Before Load product */
+function beforeLoadproduct() {
     const homeFilter = window.localStorage.getItem(homeLocalStorage);
 
     if (homeFilter) {
@@ -747,8 +748,8 @@ function clearAllfilter() {
             document.querySelector('.price-filter.show-on').classList.remove('show-on');
         }
         document.querySelector('.keyword-ajax').innerHTML = '';
-        document.getElementById('car-filter__keyword').value = '';
-        loadCarFilterMain();
+        document.getElementById('product-filter__keyword').value = '';
+        loadproductFilterMain();
     }    
 }
 /* Function show Error */
@@ -768,7 +769,7 @@ function resetFormSignup (){
 }
 /* Ajax */
 /* Load Next Page Ajax */
-function load_more_cars(idtab) {
+function load_more_products(idtab) {
     const total_pages = parseInt(document.getElementById('total_pages' + idtab).value);
     const next_page = parseInt(document.getElementById('next_page' + idtab).value);
     const page_loaded = parseInt(document.getElementById('page_loaded' + idtab).value);
@@ -797,7 +798,7 @@ function load_more_cars(idtab) {
         
         showLoadingSpinner(idtab, true);
 
-        fetch(`${protected_data.cars.api_url}?${params.toString()}`, {
+        fetch(`${protected_data.products.api_url}?${params.toString()}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -810,7 +811,7 @@ function load_more_cars(idtab) {
             return response.json();
         })
         .then(data => {
-            appendCarSlides(data, idtab);
+            appendproductSlides(data, idtab);
             updateSlideAjax(idtab, first_load);
         })
         .catch(error => {
@@ -825,31 +826,31 @@ function load_more_cars(idtab) {
         });
     }
 }
-function appendCarSlides(data, idtab) {
-    const divCarsWrapper = idtab
+function appendproductSlides(data, idtab) {
+    const divproductsWrapper = idtab
         ? document.querySelector(`#${idtab} .slider-ajax .swiper-wrapper`)
         : document.querySelector('.slider-ajax .swiper-wrapper');
 
-    const divCars = document.createElement('div');
-    divCars.classList.add('swiper-slide', 'justify-content-start');
+    const divproducts = document.createElement('div');
+    divproducts.classList.add('swiper-slide', 'justify-content-start');
 
     if (idtab !== '') {
-        divCars.classList.add('flex-wrap');
+        divproducts.classList.add('flex-wrap');
     }
 
-    data.forEach((car) => {
-        const divCar = document.createElement('div');
-        divCar.classList.add('car-box-item');
-        divCar.innerHTML = car.html;
-        divCars.appendChild(divCar);
+    data.forEach((product) => {
+        const divproduct = document.createElement('div');
+        divproduct.classList.add('product-box-item');
+        divproduct.innerHTML = product.html;
+        divproducts.appendChild(divproduct);
     });
 
-    divCarsWrapper.appendChild(divCars);
+    divproductsWrapper.appendChild(divproducts);
 
     if (idtab !== '') {
         swiper_home[idtab].update();
     } else {
-        swiper_single_car.update();
+        swiper_single_product.update();
     }
 }
 function updateStatusPage(idtab, oldNextPage, first_load) {
@@ -873,7 +874,7 @@ function updateSlideAjax(idtab, first_load) {
         swiper_home[idtab].update();
     }
     else {
-        swiper_single_car.update();
+        swiper_single_product.update();
     }
 }
 function showLoadingSpinner(idtab, show) {
@@ -897,7 +898,7 @@ function buildQueryStr(idtab) {
     return params;
 }
 /* Load Preview Page Ajax */
-function load_prev_cars(idtab) {
+function load_prev_products(idtab) {
     const next_page = parseInt(document.getElementById('next_page' + idtab).value);
     if (next_page == 2) {
         return;
@@ -910,13 +911,13 @@ function load_prev_cars(idtab) {
         document.getElementById('btn-prev' + idtab).classList.add('disabled-custom');
     }
 }
-/* Load Car and Model */
-function loadCarModel(idElement) {
+/* Load product and Model */
+function loadproductModel(idElement) {
     const element = document.getElementById(idElement);
 
-    if(element.id == 'car-filter__hang-xe') {
+    if(element.id == 'product-filter__hang-xe') {
         const brand = element.value;
-        const modeldiv = document.getElementById('car-filter__dong-xe');
+        const modeldiv = document.getElementById('product-filter__dong-xe');
         updateLocalStorageSelect(idElement);
         if (allowajaxB) {
             allowajaxB = false;
@@ -946,7 +947,7 @@ function loadCarModel(idElement) {
                         option.text = model.name;
                         modeldiv.appendChild(option); 
                     });
-                    updateLocalStorageSelect('car-filter__dong-xe');
+                    updateLocalStorageSelect('product-filter__dong-xe');
                 }
             })
             .catch(error => {
@@ -958,12 +959,12 @@ function loadCarModel(idElement) {
         }
     }
 }
-function loadCarBrand(idElement) {
+function loadproductBrand(idElement) {
     const element = document.getElementById(idElement);
-    if(element.id == 'car-filter__dong-xe') {
+    if(element.id == 'product-filter__dong-xe') {
         const model = element.value;
         updateLocalStorageSelect(idElement);
-        const branddiv = document.getElementById('car-filter__hang-xe');
+        const branddiv = document.getElementById('product-filter__hang-xe');
 
         if (allowajaxC) {
             allowajaxC = false;
@@ -982,7 +983,7 @@ function loadCarBrand(idElement) {
             .then(data => {
                 if (data.parent_id) {
                     branddiv.value = data.parent_id;
-                    updateLocalStorageSelect('car-filter__hang-xe');
+                    updateLocalStorageSelect('product-filter__hang-xe');
                 }
             })
             .catch(error => {
@@ -995,7 +996,7 @@ function loadCarBrand(idElement) {
     }
 }
 /* Main Filter */
-function loadCarFilterMain($paged = 1) {
+function loadproductFilterMain($paged = 1) {
     if (document.body.classList.contains('page-id-14')) {
         const filter_data = JSON.parse(window.localStorage.getItem(mainLocalStorage));
         
@@ -1003,7 +1004,7 @@ function loadCarFilterMain($paged = 1) {
 
         if (filter_data) {
             for (const [key, value] of Object.entries(filter_data)) {
-                if (key == 'car-filter__price-range') {
+                if (key == 'product-filter__price-range') {
                     params.append('price_min', value[0]);
                     params.append('price_max', value[1]);
                     continue;
@@ -1011,8 +1012,8 @@ function loadCarFilterMain($paged = 1) {
                 params.append(key, value);
             }
             
-            if (filter_data['car-filter__keyword']) {
-                document.querySelector('.keyword-ajax').innerHTML = `Tìm kiếm: ${filter_data['car-filter__keyword']}`;
+            if (filter_data['product-filter__keyword']) {
+                document.querySelector('.keyword-ajax').innerHTML = `Tìm kiếm: ${filter_data['product-filter__keyword']}`;
             }else {
                 document.querySelector('.keyword-ajax').innerHTML = '';
             }
@@ -1021,17 +1022,17 @@ function loadCarFilterMain($paged = 1) {
         if (allowajaxD) {
             allowajaxD = false;
             
-            const targetDiv = document.querySelector('.car-filter-all'); 
+            const targetDiv = document.querySelector('.product-filter-all'); 
             if (targetDiv) {
                 targetDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
 
-            const car_list_ajax = document.getElementById('car-list-ajax');
-            car_list_ajax.style.transition = 'opacity 0.5s ease-out';
-            car_list_ajax.style.opacity = 0;
+            const product_list_ajax = document.getElementById('product-list-ajax');
+            product_list_ajax.style.transition = 'opacity 0.5s ease-out';
+            product_list_ajax.style.opacity = 0;
 
             document.querySelector('.loading-spinner').classList.add('show'); 
-            fetch(`${protected_data.searchCars.api_url}?${params}&paged=${$paged}`, {
+            fetch(`${protected_data.searchproducts.api_url}?${params}&paged=${$paged}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -1049,24 +1050,24 @@ function loadCarFilterMain($paged = 1) {
 
                 const tempDiv = document.createElement('div');
                 if (data.length > 0) {
-                    car_list_ajax.innerHTML = '';
+                    product_list_ajax.innerHTML = '';
 
-                    data.forEach(car => {
-                        tempDiv.innerHTML = car.html;
-                        if (car.html) {
-                            car_list_ajax.appendChild(tempDiv.firstChild);
+                    data.forEach(product => {
+                        tempDiv.innerHTML = product.html;
+                        if (product.html) {
+                            product_list_ajax.appendChild(tempDiv.firstChild);
                         }
                     });
 
                     pagination_ajax.innerHTML = data[data.length - 1].pagination;
                 } else {
-                    car_list_ajax.innerHTML = '<div class="title-not-found">Không tìm thấy xe nào</div>';
+                    product_list_ajax.innerHTML = '<div class="title-not-found">Không tìm thấy xe nào</div>';
                     pagination_ajax.innerHTML = '';
                 }
 
                 setTimeout(() => {
-                    car_list_ajax.style.transition = 'opacity 0.5s ease-in';
-                    car_list_ajax.style.opacity = 1;
+                    product_list_ajax.style.transition = 'opacity 0.5s ease-in';
+                    product_list_ajax.style.opacity = 1;
                 }, 100);
             })
             .catch(error => {
@@ -1078,4 +1079,71 @@ function loadCarFilterMain($paged = 1) {
             });
         }
     }
+}
+
+/* Load Category */
+function load_category_lv1() {
+    const categoryLv1 = document.getElementById('product-filter__category_lv1').value;
+    
+    if (allowajaxB) {
+        allowajaxB = false;
+        
+        fetch(`${protected_data.categories.api_url}?parent=${categoryLv1}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data) {
+                const categoryLv2div = document.getElementById('product-filter__category_lv2');
+                
+                categoryLv2div.innerHTML = '';
+
+                const option2 = document.createElement('option');
+                option2.value = '0';
+                option2.text = 'Danh mục';
+                categoryLv2div.appendChild(option2);
+
+                data.forEach(category => {
+                    const option = document.createElement('option');
+                    option.value = category.id;
+                    option.text = category.name;
+                    categoryLv2div.appendChild(option); 
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error: ' + error);
+        })
+        .finally(() => {
+            allowajaxB = true;
+        });
+    }
+
+}
+
+/* Expand/Collapse Category */
+function toggleCategoryExpand() {
+    if (!document.querySelector(".toggle-btn")) return;
+    document.querySelectorAll(".toggle-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            let children = this.parentElement.querySelector(".children");
+            if (children) {
+                if (children.classList.contains("open")) {
+                    children.classList.remove("open");
+                    this.classList.remove("open");
+                } else {
+                    children.classList.add("open");
+                    this.classList.add("open");
+                }
+            }
+        });
+    });
 }

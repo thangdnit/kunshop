@@ -38,37 +38,37 @@ if (have_posts()):
             </div>
         </div>
 
-        <div class="car-tab-section">
+        <div class="product-tab-section">
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link shinehover active" id="nav-buy-tab" 
-                    data-bs-toggle="tab" data-bs-target="#nav-buy-car" type="button" 
-                    role="tab" aria-controls="nav-buy-car" aria-selected="true">Mua xe</button>
+                    data-bs-toggle="tab" data-bs-target="#nav-buy-product" type="button" 
+                    role="tab" aria-controls="nav-buy-product" aria-selected="true">Mua xe</button>
 
                     <button class="nav-link shinehover" id="nav-sell-tab"
-                    data-bs-toggle="tab" data-bs-target="#nav-sell-car" type="button" 
-                    role="tab" aria-controls="nav-sell-car" aria-selected="false">Bán xe</button>
+                    data-bs-toggle="tab" data-bs-target="#nav-sell-product" type="button" 
+                    role="tab" aria-controls="nav-sell-product" aria-selected="false">Bán xe</button>
                 </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-buy-car"
+                <div class="tab-pane fade show active" id="nav-buy-product"
                 role="tabpanel" aria-labelledby="nav-buy-tab">
                     <div>
                         <?php include locate_template("template-parts/components/search-bar.php"); ?>
                     </div>
                     <div>
-                        <div class="car-tab-title">
+                        <div class="product-tab-title">
                             <div class="text-bold color-primary buy-tab_title">Kiểu Dáng / Hãng Xe phổ biến</div>
                             <a class="d-inline-flex align-items-center shinehover text-semibold" href="<?php echo get_page_link(14); ?>">Xem thêm &nbsp;<div class="arrow-icon bgrsize100"></div></a>
                         </div>
-                        <?php include locate_template("template-parts/components/filters/filter-car.php"); ?>
+                        <?php include locate_template("template-parts/components/filters/filter-product.php"); ?>
                     </div>
                 </div>
 
-                <div class="tab-pane fade" id="nav-sell-car"
+                <div class="tab-pane fade" id="nav-sell-product"
                 role="tabpanel" aria-labelledby="nav-sell-tab">
                     <div>
-                        <?php include locate_template("template-parts/components/forms/form-sellcar.php"); ?>
+                        <?php include locate_template("template-parts/components/forms/form-sellproduct.php"); ?>
                     </div>
                 </div>
             </div>
@@ -76,20 +76,20 @@ if (have_posts()):
         </div>
 
         <?php
-            $tags = ToanCar\Car::get_term_taxonomy('tag-xe', 3);
+            $tags = Toanproduct\product::get_term_taxonomy('tag-xe', 3);
         ?>
         
         <?php if (count($tags) > 0): ?>
-            <div class="car-highligh-tab-section">
+            <div class="product-highligh-tab-section">
                 <h2 class="text-ultra color-primary highlight-title">Khám Phá Xe Nổi Bật</h2>
-                <div class="car-tab-highlight highligh-tabs">
+                <div class="product-tab-highlight highligh-tabs">
                     <nav>
                         <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
                             <?php foreach ($tags as $index => $tag): ?>
                                 <button 
-                                class="nav-link shinehover <?php echo $index == 0 ? 'active' : ''; ?>" id="car-highlights-tab-<?php echo $tag->term_id; ?>" 
-                                data-bs-toggle="tab" data-bs-target="#car-highlights-<?php echo $tag->term_id; ?>" 
-                                type="button" role="tab" aria-controls="car-highlights-<?php echo $tag->term_id; ?>" 
+                                class="nav-link shinehover <?php echo $index == 0 ? 'active' : ''; ?>" id="product-highlights-tab-<?php echo $tag->term_id; ?>" 
+                                data-bs-toggle="tab" data-bs-target="#product-highlights-<?php echo $tag->term_id; ?>" 
+                                type="button" role="tab" aria-controls="product-highlights-<?php echo $tag->term_id; ?>" 
                                 aria-selected="<?php echo $index == 0 ? 'true' : 'false'; ?>"><?php echo $tag->name; ?></button>
                             <?php endforeach; ?>
                         </div>
@@ -98,11 +98,11 @@ if (have_posts()):
                     <div class="tab-content" id="nav-tabContent">
                         <?php foreach ($tags as $index => $tag): ?>
                             <div class="tab-pane fade <?php echo $index == 0 ? 'show active' : ''; ?>" 
-                            id="car-highlights-<?php echo $tag->term_id; ?>" 
-                            role="tabpanel" aria-labelledby="car-highlights-tab-<?php echo $tag->term_id; ?>">
+                            id="product-highlights-<?php echo $tag->term_id; ?>" 
+                            role="tabpanel" aria-labelledby="product-highlights-tab-<?php echo $tag->term_id; ?>">
                             <?php
                                 $widthValue = intval(get_option('widthValue'));
-                                $posts_per_page = $widthValue < 801 ? 2 : get_field('cars_per_page_home', 'option');
+                                $posts_per_page = $widthValue < 801 ? 2 : get_field('products_per_page_home', 'option');
                                 
                                 $data = [
                                     'posts_per_page' => $posts_per_page,
@@ -116,24 +116,24 @@ if (have_posts()):
                                     ]
                                 ];
                                 
-                                $cars = ToanCar\Car::get_cars($data);
-                                $number_cars = $tag->count;
-                                $total_pages = ceil($number_cars / $posts_per_page);
-                                $idtab = 'car-highlights-' . $tag->term_id;
+                                $products = Toanproduct\product::get_products($data);
+                                $number_products = $tag->count;
+                                $total_pages = ceil($number_products / $posts_per_page);
+                                $idtab = 'product-highlights-' . $tag->term_id;
                                 $tag_id = $tag->term_id; 
                             ?>     
-                                <div class="slider-car-highlight swiper-tab slider-ajax">
+                                <div class="slider-product-highlight swiper-tab slider-ajax">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <?php while($cars->have_posts()): $cars->the_post(); ?>
+                                            <?php while($products->have_posts()): $products->the_post(); ?>
                                                 <?php
-                                                    $car = new ToanCar\Car([
+                                                    $product = new Toanproduct\product([
                                                         'id' => get_the_ID(),
                                                         'title' => get_the_title(),
                                                     ]);
                                                 ?>
-                                                <div class="car-box-item">
-                                                    <?php include locate_template('template-parts/components/boxs/car-box.php'); ?>
+                                                <div class="product-box-item">
+                                                    <?php include locate_template('template-parts/components/boxs/product-box.php'); ?>
                                                 </div>
                                             <?php endwhile; ?>
                                         </div> 

@@ -95,16 +95,16 @@ function load_form() {
             });
         });
     }
-    if (document.getElementById('form-sellCar')) {
-        document.getElementById('form-sellCar').addEventListener('submit', function(event) {
+    if (document.getElementById('form-sellproduct')) {
+        document.getElementById('form-sellproduct').addEventListener('submit', function(event) {
             event.preventDefault();
         
-            const contact_email = document.getElementById('form-sellCar__email');
-            const contact_phone = document.getElementById('form-sellCar__phone');
-            const car_model = document.getElementById('form-sellCar__car-model');
-            const car_version = document.getElementById('form-sellCar__car-version');
-            const km_driven = document.getElementById('form-sellCar__car-odo');
-            const year_of_manufacture = document.getElementById('form-sellCar__car-year');
+            const contact_email = document.getElementById('form-sellproduct__email');
+            const contact_phone = document.getElementById('form-sellproduct__phone');
+            const product_model = document.getElementById('form-sellproduct__product-model');
+            const product_version = document.getElementById('form-sellproduct__product-version');
+            const km_driven = document.getElementById('form-sellproduct__product-odo');
+            const year_of_manufacture = document.getElementById('form-sellproduct__product-year');
             
             let hasError = false;
 
@@ -122,18 +122,18 @@ function load_form() {
                 removeError(contact_phone);
             }
 
-            if (!validateText(car_model.value)) {
-                addError('Thông tin không hợp lệ', car_model);
+            if (!validateText(product_model.value)) {
+                addError('Thông tin không hợp lệ', product_model);
                 hasError = true;
             } else {
-                removeError(car_model); 
+                removeError(product_model); 
             }
 
-            if (!validateText(car_version.value)) {
-                addError('Thông tin không hợp lệ', car_version);
+            if (!validateText(product_version.value)) {
+                addError('Thông tin không hợp lệ', product_version);
                 hasError = true;
             } else {
-                removeError(car_version); 
+                removeError(product_version); 
             }
 
             if (!validateNumber(km_driven.value)) {
@@ -154,9 +154,9 @@ function load_form() {
                 return;
             }
         
-            document.getElementById('form-sellCar').querySelector('.loading-spinner').classList.add('show');
+            document.getElementById('form-sellproduct').querySelector('.loading-spinner').classList.add('show');
         
-            fetch(`${protected_data.sellCar.api_url}`, { 
+            fetch(`${protected_data.sellproduct.api_url}`, { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -164,11 +164,11 @@ function load_form() {
                 body: JSON.stringify({
                     contact_email: contact_email.value,
                     contact_phone: contact_phone.value,
-                    car_model: car_model.value,
-                    car_version: car_version.value,
+                    product_model: product_model.value,
+                    product_version: product_version.value,
                     km_driven: km_driven.value,
                     year_of_manufacture: year_of_manufacture.value,
-                    nonce: protected_data.sellCar.nonce
+                    nonce: protected_data.sellproduct.nonce
                 })
             })
             .then(response => {
@@ -177,7 +177,7 @@ function load_form() {
             .then(data => {
                 if (data.success) {
                     showSuccess(data.message);
-                    document.getElementById('form-sellCar').reset();
+                    document.getElementById('form-sellproduct').reset();
                 } else {
                     showError(data.message);
                 }
@@ -186,7 +186,7 @@ function load_form() {
                 console.error('Error:', error);
             })
             .finally(() => {
-                document.getElementById('form-sellCar').querySelector('.loading-spinner').classList.remove('show');
+                document.getElementById('form-sellproduct').querySelector('.loading-spinner').classList.remove('show');
             });
         });
     }
@@ -196,8 +196,8 @@ function load_form() {
         
             const contact_name = document.getElementById('form-advise__name');
             const contact_phone = document.getElementById('form-advise__phone');
-            const car_name = document.getElementById('form-advise__car-name');
-            const car_link = document.getElementById('form-advise__car-link');
+            const product_name = document.getElementById('form-advise__product-name');
+            const product_link = document.getElementById('form-advise__product-link');
 
             let hasError = false;
             if (!validatePhone(contact_phone.value)) {
@@ -228,8 +228,8 @@ function load_form() {
                 body: JSON.stringify({
                     contact_name: contact_name.value,
                     contact_phone: contact_phone.value,
-                    car_name: car_name.value,
-                    car_link: car_link.value,
+                    product_name: product_name.value,
+                    product_link: product_link.value,
                     nonce: protected_data.advise.nonce
                 })
             })
@@ -266,10 +266,10 @@ function load_form() {
             const contact_name = document.getElementById('form-quote__name');
             const contact_phone = document.getElementById('form-quote__phone');
             const contact_email = document.getElementById('form-quote__email');
-            const car_name = document.getElementById('form-quote__car-name');
-            const car_link = document.getElementById('form-quote__car-link');
+            const product_name = document.getElementById('form-quote__product-name');
+            const product_link = document.getElementById('form-quote__product-link');
 
-            if (!car_name || !car_link) {
+            if (!product_name || !product_link) {
                 showError('Không có thông tin xe !!!');
                 return;
             }
@@ -311,8 +311,8 @@ function load_form() {
                     contact_name: contact_name.value,
                     contact_phone: contact_phone.value,
                     contact_email: contact_email.value,
-                    car_name: car_name.value,
-                    car_link: car_link.value,
+                    product_name: product_name.value,
+                    product_link: product_link.value,
                     nonce: protected_data.quote.nonce
                 })
             })
@@ -344,8 +344,8 @@ function load_form() {
             const contact_phone = document.getElementById('form-drive__phone');
             const contact_email = document.getElementById('form-drive__email');
             const date_drive = document.getElementById('form-drive__date');
-            const car_name = document.getElementById('form-drive__car-name');
-            const car_link = document.getElementById('form-drive__car-link');
+            const product_name = document.getElementById('form-drive__product-name');
+            const product_link = document.getElementById('form-drive__product-link');
 
 
             let hasError = false;
@@ -393,8 +393,8 @@ function load_form() {
                     contact_phone: contact_phone.value,
                     contact_email: contact_email.value,
                     date_drive: date_drive.value,
-                    car_name: car_name.value,
-                    car_link: car_link.value,
+                    product_name: product_name.value,
+                    product_link: product_link.value,
                     nonce: protected_data.drive.nonce
                 })
             })

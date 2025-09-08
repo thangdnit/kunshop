@@ -18,16 +18,17 @@ if (!function_exists('my_custom_post_type')) {
             ],
             'public' => true,
             'menu_position' => 4,
-            'menu_icon' => 'dashicons-cart',
+            'menu_icon' => 'dashicons-productt',
             'supports' => ['title'],
-            'taxonomies' => ['category' , 'post_tag'],
             'show_in_rest' => true,
             'has_archive' => true,
             'rewrite' => ['slug' => 'san-pham-archive']
         ]);
 
         $taxonomies = [
-            'brand' => 'Brand',
+            'product_category' => 'Product Category',
+            'product_brand' => 'Product Brand',
+            'product_tag' => 'Product Tag',
         ];
 
         foreach ($taxonomies as $taxonomy_slug => $taxonomy_name) {
@@ -61,14 +62,14 @@ if (!function_exists('my_custom_post_type')) {
 
         $args = array(
             'labels'                     => $labels,
-            'hierarchical'               => false,
+            'hierarchical'               => ($taxonomy_slug === "product_category" ? true : false),
             'has_archive'                => true,
             'public'                     => true,
             'show_ui'                    => true,
             'show_admin_column'          => true,
             'show_in_nav_menus'          => true,
             'show_tagcloud'              => true,
-            'rewrite'                    => array('slug' => $taxonomy_slug, 'with_front' => true, 'hierarchical' => false )
+            'rewrite'                    => array('slug' => $taxonomy_slug, 'with_front' => true)
         );
 
         register_taxonomy($taxonomy_slug, array('product'), $args);
