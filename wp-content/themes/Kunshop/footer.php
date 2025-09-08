@@ -5,14 +5,13 @@
 <?php include locate_template("template-parts/components/menu-mobile.php") ?>
 </main>
 <?php 
-$gpkd = get_field("gpkd", "option");
-$showroom = get_field("showroom", "option");
+$address = get_field("address", "option");
 $google_map_link = get_field("google_map_link", "option");
 $phone = get_field("phone", "option");
-$youtube = get_field("youtube", "option");
 $facebook = get_field("facebook", "option");
 $tiktok = get_field("tiktok", "option");
-$zalo = get_field("zalo", "option");
+$zalo_id = get_field("zalo_id", "option");
+$messenger = get_field("messenger", "option");
 ?>
 <section id="footer">
     <div class="wrapper">
@@ -26,13 +25,10 @@ $zalo = get_field("zalo", "option");
         </div>
         <div class="footer-row">
             <div class="contact-footer">
-                <div class="contact-footer__item">                
-                    <div class="text-semibold"><?php echo $gpkd ?></div>
-                </div>
                 <div class="contact-footer__item">
                     <div>
-                        <div class="text-book">Showroom.</div>
-                        <div class="text-bold"><a class="shinehover" target="_blank" href="<?php echo $google_map_link; ?>"><?php echo $showroom; ?></div></a>
+                        <div class="text-book">Address.</div>
+                        <div class="text-bold"><a class="shinehover" target="_blank" href="<?php echo $google_map_link; ?>"><?php echo $address; ?></div></a>
                     </div>
                     <div>
                         <div class="text-book">Điện thoại.</div>
@@ -41,14 +37,15 @@ $zalo = get_field("zalo", "option");
                     <div class="selling-page-contact__phone mobile">
                         <a class="shinehover menu-contact__item" href="tel:<?php echo $phone; ?>" target="_blank">
                             <div class="phone-icon bgrsize100"> </div>
-                            <div class="padding-text"><?php echo $phone; ?></div>
+                            <div><?php echo $phone; ?></div>
                         </a>
                     </div>
                 </div>
                 
                 <div class="contact-footer__item">
-                    <a class="shinehover image-hover-effect" href="<?php echo $youtube; ?>" target="_blank"><div class="youtbWhite-icon bgrsize100"></div></a>
                     <a class="shinehover image-hover-effect" href="<?php echo $tiktok; ?>" target="_blank"><div class="tiktokWhite-icon bgrsize100"></div></a>
+                    <a class="shinehover image-hover-effect" href="<?php echo $facebook; ?>" target="_blank"><div class="fbWhite-icon bgrsize100"></div></a>
+                    <a class="shinehover image-hover-effect" href="<?php echo $facebook; ?>" target="_blank"><div class="fbWhite-icon bgrsize100"></div></a>
                     <a class="shinehover image-hover-effect" href="<?php echo $facebook; ?>" target="_blank"><div class="fbWhite-icon bgrsize100"></div></a>
                 </div>
             </div>
@@ -65,7 +62,7 @@ $zalo = get_field("zalo", "option");
         </div>
 
         <div class="footer-row">
-            <div>Copyright © 2024 Toàn Cars</div>
+            <div>Copyright © 2025 Kunkun Shop</div>
             <a class="shinehover" href="<?php echo get_page_link(436); ?>" target="_blank">Chính sách bảo mật</a>
         </div>
     </div>

@@ -22,7 +22,7 @@
         <div id="car-filter__price-range" data-min="<?php echo $price_filter_advanced['min'] ?>" data-max="<?php echo $price_filter_advanced['max'] ?>"></div>
         <div class="clear-filter-btn">
             <button onclick="clearAllfilter()" class="shinehover custom-button">
-                <div class="padding-text">Clear Filter</div>
+                <div>Clear Filter</div>
             </button>
         </div>
     </div>

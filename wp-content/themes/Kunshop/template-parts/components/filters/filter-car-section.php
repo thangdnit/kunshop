@@ -72,7 +72,7 @@
         <div class="car-filter__button">
             <button onclick="loadCarFilterMain()" class="shinehover custom-button">
                 <div class="search-icon bgrsize100"></div>
-                <div class="padding-text">Tìm kiếm</div>
+                <div>Tìm kiếm</div>
             </button>
         </div>
     </div>

@@ -1,13 +1,3 @@
-<?php
-    $title = $car->get_title();
-    $price = $car->get_price();
-    $thumbnail = $car->get_thumbnail();
-    $advanced = $car->get_advanced();
-    $loai_hop_so = $car->get_term_car('loai-hop-so');
-    $status = $car->get_term_car('tinh-trang');
-    $tags = $car->get_term_car('tag-xe');
-    $link = $car->get_link();
-?>
 <div class="car-box">
     <div class="car-box__image">
         <a class="shinehover" href="<?php echo $link; ?>"><?php echo $thumbnail; ?></a>

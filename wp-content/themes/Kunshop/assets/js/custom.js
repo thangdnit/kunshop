@@ -1,4 +1,3 @@
-getWidthUser();
 var mainLocalStorage = 'filter_cars';
 var homeLocalStorage = 'home_cars';
 var swup_main;
@@ -22,7 +21,6 @@ function init(){
             allowajaxB = true; allowajaxC = true; allowajaxD = true;
             isFixed = false;
             isPopupVisible = false;
-            getWidthUser();
             updateBodyClass();
             resetContactPopup();
             initSwiper();
@@ -769,17 +767,6 @@ function resetFormSignup (){
     document.getElementById('form-signup').reset();
 }
 /* Ajax */
-/* Get width User */
-function getWidthUser() {
-    const widthWindow = window.innerWidth;
-
-    fetch(`${protected_data.widthUser.api_url}?width=${widthWindow}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
-}
 /* Load Next Page Ajax */
 function load_more_cars(idtab) {
     const total_pages = parseInt(document.getElementById('total_pages' + idtab).value);

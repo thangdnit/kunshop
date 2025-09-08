@@ -3,18 +3,15 @@ get_header();
 $queriedobjectid = get_queried_object_id();
 switch ($queriedobjectid) {
     case 11:
-        get_template_part( 'template-parts/pages/content', 'banxe' );
+        get_template_part( 'template-parts/pages/content', 'sanpham' );
         break;
-    case 14:
-        get_template_part( 'template-parts/pages/content', 'muaxe' );
-        break;
-    case 18:
+    case 15:
         get_template_part( 'template-parts/pages/content', 'lienhe' );
         break;
-    case 20:
+    case 17:
         get_template_part( 'template-parts/pages/content', 'gioithieu' );
         break;
-    case 436:
+    case 20:
         get_template_part( 'template-parts/pages/content', 'riengtu' );
         break;
     default:

@@ -16,33 +16,33 @@
 }
 
 @font-face {
-    font-family: 'Toan Car';
+    font-family: 'Kunshop';
     font-weight: 400;
-    src: url("../fonts/Toan\ Cars\ Sans\ Book.otf");
+    src: url("../fonts/Lato\ Light.ttf");
 }
 
 @font-face {
-    font-family: 'Toan Car';
+    font-family: 'Kunshop';
     font-weight: 500;
-    src: url("../fonts/Toan\ Cars\ Sans\ Medium.otf");
+    src: url("../fonts/Lato\ Regular.ttf");
 }
 
 @font-face {
-    font-family: 'Toan Car';
+    font-family: 'Kunshop';
     font-weight: 600;
-    src: url("../fonts/Toan\ Cars\ Sans\ Semibold.otf");
+    src: url("../fonts/Lato\ Semibold.ttf");
 }
 
 @font-face {
-    font-family: 'Toan Car';
+    font-family: 'Kunshop';
     font-weight: 700;
-    src: url("../fonts/Toan\ Cars\ Sans\ Bold.otf");
+    src: url("../fonts/Lato\ Bold.ttf");
 }
 
 @font-face {
-    font-family: 'Toan Car';
+    font-family: 'Kunshop';
     font-weight: 800;
-    src: url("../fonts/Toan\ Cars\ Display.otf");
+    src: url("../fonts/Lato\ Heavy.ttf");
 }
 
 * {
@@ -57,7 +57,7 @@
 body {
     overscroll-behavior: none;
     margin: 0; padding: 0;
-    font-family: 'Toan Car'; line-height: 1.4; font-weight: 500; font-style: normal; font-size: 1.6rem;
+    font-family: 'Kunshop'; line-height: 1.4; font-weight: 500; font-style: normal; font-size: 1.8rem;
     overflow-y: auto;
     overflow-x: hidden;
     height: 100%; width: 100%;
@@ -89,9 +89,6 @@ section {
 }
 .display-none {
     display: none;
-}
-.padding-text {
-    padding-top: 0.4rem
 }
 .shinehover {
     cursor: pointer;
@@ -165,7 +162,7 @@ section {
 a {
     text-decoration: none;
     color: inherit;
-    font-family: 'Toan Car';
+    font-family: 'Kunshop';
     font-weight: inherit;
     font-size: inherit;
     line-height: inherit;
@@ -205,6 +202,10 @@ a {
 
 .color-white {
     color: var(--white-color);
+}
+
+.color-black {
+    color: var(--black-color);
 }
 
 .color-yellow {
@@ -255,7 +256,7 @@ select {
 }
 
 .transition-overlay .logo {
-    background-image: url(../images/logo-home.svg);
+    background-image: url(../images/logo.png);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -309,8 +310,8 @@ html.is-rendering .transition-overlay {
     display: flex; justify-content: center; align-items: center;
 }
 
-.contact-popup .youtbWhite svg{
-    width: 3.3rem; height: 2.2rem;
+.contact-popup .messWhite svg{
+    width: 2.5rem; height: 2.5rem;
 }
 
 .contact-popup .phoneWhite svg{
@@ -341,7 +342,7 @@ html.is-rendering .transition-overlay {
 .air-datepicker {
     z-index: 1060;
     font-size: 1.6rem;
-    font-family: 'Toan Car';
+    font-family: 'Kunshop';
 }
 
 .air-datepicker.-is-mobile- {
