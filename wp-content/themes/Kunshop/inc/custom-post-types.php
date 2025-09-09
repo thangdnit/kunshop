@@ -18,7 +18,7 @@ if (!function_exists('my_custom_post_type')) {
             ],
             'public' => true,
             'menu_position' => 4,
-            'menu_icon' => 'dashicons-productt',
+            'menu_icon' => 'dashicons-cart',
             'supports' => ['title'],
             'show_in_rest' => true,
             'has_archive' => true,

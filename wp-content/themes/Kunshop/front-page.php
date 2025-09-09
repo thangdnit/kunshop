@@ -2,8 +2,6 @@
 <?php
 if (have_posts()):
     the_post();
-    $heading_1 = get_field('heading_1');
-    $heading_2 = get_field('heading_2');
     $gallery = get_field('gallery');
     $highlights_heading = get_field('highlights_heading');
     $reviews = get_field('reviews');
@@ -31,10 +29,6 @@ if (have_posts()):
                 
                 <div class="swiper-button-prev-custom bgrsize100"></div>
                 <div class="swiper-button-next-custom bgrsize100"></div>
-                <div class="title-banner">
-                    <div class="text-bold"><?php echo $heading_1; ?></div>
-                    <h1 class="text-ultra"><?php echo $heading_2; ?></h1>
-                </div>
             </div>
         </div>
 

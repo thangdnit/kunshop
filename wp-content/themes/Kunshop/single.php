@@ -14,7 +14,7 @@ switch ( $post_type ) {
     case 'post':
         get_template_part( 'template-parts/singles/content', 'post' );
         break;
-    case 'products':
+    case 'product':
         get_template_part( 'template-parts/singles/content', 'product' );
         break;
     default:

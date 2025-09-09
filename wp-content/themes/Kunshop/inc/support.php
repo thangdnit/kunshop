@@ -75,4 +75,17 @@ function format_price($price) {
     return $formatted_price;
 }
 
+// Hide Category Product in Breadcrumb NavXT
+add_filter('bcn_after_fill', function($trail){
+    if (is_singular('product')) {
+        foreach ($trail->breadcrumbs as $key => $crumb) {
+            if (isset($crumb->type) && in_array('taxonomy', $crumb->type)) {
+                unset($trail->breadcrumbs[$key]);
+            }
+        }
+        $trail->breadcrumbs = array_values($trail->breadcrumbs);
+    }
+    return $trail;
+});
+
 

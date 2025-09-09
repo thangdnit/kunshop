@@ -27,7 +27,7 @@
                                     $products->the_post();
                                     $code = get_field('code');
                                     $price = get_field('price');
-                                    $promotional_price = get_field('promotional_price');
+                                    $promotion_price = get_field('promotion_price');
                                     $image = get_field('image');
                                     $description = get_field('description');
                                     $link = get_permalink();

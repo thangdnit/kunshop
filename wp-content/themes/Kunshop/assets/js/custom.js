@@ -33,6 +33,7 @@ function init(){
             loadModal();
             load_form();
             resetFormSignup();
+            toggleCategoryExpand();
           },
         }
     })
@@ -352,7 +353,7 @@ function initSwiper() {
         }
     }
 
-    if (bodyClass.contains('single-products')) {
+    if (bodyClass.contains('single-product')) {
         const remInPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
         const spaceBetween = 3 * remInPx;
         const spaceBetweenMB = 1 * remInPx;
