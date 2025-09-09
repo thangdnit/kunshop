@@ -71,6 +71,10 @@ body {
     user-select:none;
 }
 
+.content {
+    color: var(--black-color);
+}
+
 ::-webkit-scrollbar {
     display: none;
 }

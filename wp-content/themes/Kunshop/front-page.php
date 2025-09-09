@@ -43,11 +43,11 @@ if (have_posts()):
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link shinehover active" id="nav-buy-tab" 
                     data-bs-toggle="tab" data-bs-target="#nav-buy-product" type="button" 
-                    role="tab" aria-controls="nav-buy-product" aria-selected="true">Mua xe</button>
+                    role="tab" aria-controls="nav-buy-product" aria-selected="true">Tìm kiếm</button>
 
                     <button class="nav-link shinehover" id="nav-sell-tab"
                     data-bs-toggle="tab" data-bs-target="#nav-sell-product" type="button" 
-                    role="tab" aria-controls="nav-sell-product" aria-selected="false">Bán xe</button>
+                    role="tab" aria-controls="nav-sell-product" aria-selected="false">Tư vấn</button>
                 </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
@@ -58,10 +58,10 @@ if (have_posts()):
                     </div>
                     <div>
                         <div class="product-tab-title">
-                            <div class="text-bold color-primary buy-tab_title">Kiểu Dáng / Hãng Xe phổ biến</div>
-                            <a class="d-inline-flex align-items-center shinehover text-semibold" href="<?php echo get_page_link(14); ?>">Xem thêm &nbsp;<div class="arrow-icon bgrsize100"></div></a>
+                            <div class="text-bold color-primary buy-tab_title">Tìm kiếm sản phẩm</div>
+                            <a class="d-inline-flex align-items-center shinehover text-semibold" href="<?php echo get_page_link(11); ?>">Xem thêm &nbsp;<div class="arrow-icon bgrsize100"></div></a>
                         </div>
-                        <?php include locate_template("template-parts/components/filters/filter-product.php"); ?>
+
                     </div>
                 </div>
 
@@ -75,13 +75,15 @@ if (have_posts()):
             
         </div>
 
-        <?php
-            $tags = Toanproduct\product::get_term_taxonomy('tag-xe', 3);
+        <?php 
+            $tags = get_terms([
+                'taxonomy' => 'product_tag',
+                'hide_empty' => true,
+            ]);
         ?>
-        
         <?php if (count($tags) > 0): ?>
             <div class="product-highligh-tab-section">
-                <h2 class="text-ultra color-primary highlight-title">Khám Phá Xe Nổi Bật</h2>
+                <h2 class="text-ultra color-primary highlight-title">Khám Phá Sản Phẩm Nổi Bật</h2>
                 <div class="product-tab-highlight highligh-tabs">
                     <nav>
                         <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
@@ -93,7 +95,7 @@ if (have_posts()):
                                 aria-selected="<?php echo $index == 0 ? 'true' : 'false'; ?>"><?php echo $tag->name; ?></button>
                             <?php endforeach; ?>
                         </div>
-                        <a class="absoblute d-inline-flex align-items-center shinehover text-semibold" href="<?php echo get_page_link(14); ?>">Xem thêm &nbsp;<div class="arrow-icon bgrsize100"></div></a>
+                        <a class="absoblute d-inline-flex align-items-center shinehover text-semibold" href="<?php echo get_page_link(11); ?>">Xem thêm &nbsp;<div class="arrow-icon bgrsize100"></div></a>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
                         <?php foreach ($tags as $index => $tag): ?>
@@ -101,22 +103,22 @@ if (have_posts()):
                             id="product-highlights-<?php echo $tag->term_id; ?>" 
                             role="tabpanel" aria-labelledby="product-highlights-tab-<?php echo $tag->term_id; ?>">
                             <?php
-                                $widthValue = intval(get_option('widthValue'));
-                                $posts_per_page = $widthValue < 801 ? 2 : get_field('products_per_page_home', 'option');
-                                
+                                $posts_per_page = 8;
+
                                 $data = [
                                     'posts_per_page' => $posts_per_page,
                                     'paged' => 1,
+                                    'post_type' => 'product',
                                     'tax_query' => [
                                         [
-                                            'taxonomy' => 'tag-xe',
+                                            'taxonomy' => 'product_tag',
                                             'field'    => 'term_id',
                                             'terms'    => $tag->term_id,
                                         ],
                                     ]
                                 ];
                                 
-                                $products = Toanproduct\product::get_products($data);
+                                $products = new WP_Query($data);
                                 $number_products = $tag->count;
                                 $total_pages = ceil($number_products / $posts_per_page);
                                 $idtab = 'product-highlights-' . $tag->term_id;
@@ -125,17 +127,26 @@ if (have_posts()):
                                 <div class="slider-product-highlight swiper-tab slider-ajax">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <?php while($products->have_posts()): $products->the_post(); ?>
-                                                <?php
-                                                    $product = new Toanproduct\product([
-                                                        'id' => get_the_ID(),
-                                                        'title' => get_the_title(),
-                                                    ]);
-                                                ?>
-                                                <div class="product-box-item">
-                                                    <?php include locate_template('template-parts/components/boxs/product-box.php'); ?>
-                                                </div>
-                                            <?php endwhile; ?>
+                                            <?php if($products->have_posts()): ?> 
+                                                <?php while($products->have_posts()): ?> 
+                                                    <?php 
+                                                        $products->the_post();
+                                                        $code = get_field('code');
+                                                        $price = get_field('price');
+                                                        $promotional_price = get_field('promotional_price');
+                                                        $image = get_field('image');
+                                                        $description = get_field('description');
+                                                        $link = get_permalink();
+                                                        $title = get_the_title();
+                                                        $product_tag = get_the_terms(get_the_ID(), 'product_tag'); 
+                                                    ?>
+                                                    <div class="product-box-item">
+                                                        <?php include locate_template('template-parts/components/boxs/product-box.php'); ?>
+                                                    </div>
+                                                <?php endwhile; ?>
+                                            <?php else: ?>
+                                                <div class="title-not-found">Không tìm thấy kết quả nào</div>
+                                            <?php endif; ?>
                                         </div> 
                                     </div>
                                     <?php include locate_template("template-parts/components/paginations/pagination-ajax.php")?>
