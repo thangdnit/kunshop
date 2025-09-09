@@ -75,17 +75,33 @@ function format_price($price) {
     return $formatted_price;
 }
 
-// Hide Category Product in Breadcrumb NavXT
-add_filter('bcn_after_fill', function($trail){
-    if (is_singular('product')) {
-        foreach ($trail->breadcrumbs as $key => $crumb) {
-            if (isset($crumb->type) && in_array('taxonomy', $crumb->type)) {
-                unset($trail->breadcrumbs[$key]);
+function get_term_ids($field){
+    $ids = [];
+    if (empty($field)) {
+        return $ids;
+    }
+
+    // Nếu là object đơn
+    if (is_object($field) && isset($field->term_id)) {
+        return [$field->term_id];
+    }
+
+    // Nếu là số nguyên (ID)
+    if (is_int($field)) {
+        return [$field];
+    }
+
+    // Nếu là array
+    if (is_array($field)) {
+        foreach ($field as $item) {
+            if (is_object($item) && isset($item->term_id)) {
+                $ids[] = $item->term_id;
+            } elseif (is_int($item)) {
+                $ids[] = $item;
             }
         }
-        $trail->breadcrumbs = array_values($trail->breadcrumbs);
     }
-    return $trail;
-});
 
+    return $ids;
+}
 

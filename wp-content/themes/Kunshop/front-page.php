@@ -41,7 +41,7 @@ if (have_posts()):
 
                     <button class="nav-link shinehover" id="nav-sell-tab"
                     data-bs-toggle="tab" data-bs-target="#nav-sell-product" type="button" 
-                    role="tab" aria-controls="nav-sell-product" aria-selected="false">Tư vấn</button>
+                    role="tab" aria-controls="nav-sell-product" aria-selected="false">Liên hệ</button>
                 </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
@@ -49,6 +49,7 @@ if (have_posts()):
                 role="tabpanel" aria-labelledby="nav-buy-tab">
                     <div>
                         <?php include locate_template("template-parts/components/search-bar.php"); ?>
+                        <?php include locate_template("template-parts/components/filters/filter-product-column.php"); ?>
                     </div>
                     <div>
                         <div class="product-tab-title">
@@ -62,7 +63,7 @@ if (have_posts()):
                 <div class="tab-pane fade" id="nav-sell-product"
                 role="tabpanel" aria-labelledby="nav-sell-tab">
                     <div>
-                        <?php include locate_template("template-parts/components/forms/form-sellproduct.php"); ?>
+                        <?php include locate_template("template-parts/components/forms/form-contact.php"); ?>
                     </div>
                 </div>
             </div>

@@ -2,72 +2,42 @@
     background-image: url(../images/phone-icon.svg);
     width: 1.8rem; height: 1.8rem; margin-right: 1.8rem;
 }
-
 .phoneWhite-icon {
     background-image: url(../images/phoneWhite-icon.svg);
     width: 2.4rem; height: 2.4rem;
 }
-
-.youtbBlue-icon {
-    background-image: url(../images/youtbBlue-icon.svg);
-    width: 2.4rem; height: 1.6rem;
-}
-
-.youtbWhite-icon {
-    background-image: url(../images/youtbWhite-icon.svg);
-    width: 4.8rem; height: 3.3rem;
-}
-
-.youtbRed-icon {
-    background-image: url(../images/youtbRed-icon.svg);
-    width: 7.6rem; height: 5rem;
-}
-
 .tiktokWhite-icon {
     background-image: url(../images/tiktokWhite-icon.svg);
     width: 2.8rem; height: 3.3rem;
 }
-
 .tiktokColor-icon {
     background-image: url(../images/tiktokColor-icon.svg);
     width: 3.8rem; height: 5rem;
 }
-
 .fbWhite-icon {
     background-image: url(../images/fbWhite-icon.svg);
     width: 3.3rem; height: 3.3rem;
 }
-
 .fbColor-icon {
     background-image: url(../images/fbColor-icon.svg);
     width: 4.6rem; height: 5rem;
 }
-
 .fbshare-icon {
     background-image: url(../images/fbshare-icon.svg);
     width: 1rem; height: 1.8rem;
 }
-
 .zalo-icon {
     background-image: url(../images/zalo-icon.svg);
     width: 4rem; height: 1.4rem;
 }
-
 .zaloWhite-icon {
     background-image: url(../images/zaloWhite-icon.svg);
     width: 4rem; height: 1.4rem;
 }
-
-.linkedin-icon {
-    background-image: url(../images/linkedin-icon.svg);
-    width: 1.8rem; height: 1.8rem;;
+.mess-icon {
+    background-image: url(../images/mess-icon.svg);
+    width: 4rem; height: 1.4rem;
 }
-
-.twitter-icon {
-    background-image: url(../images/twitter-icon.svg);
-    width: 1.8rem; height: 1.8rem;
-}
-
 .prev-icon {
     display: block;
     background-image: url(../images/prev-icon.svg);
@@ -79,60 +49,20 @@
     background-image: url(../images/next-icon.svg);
     width: 6rem; height: 4rem;
 }
-
 .search-icon {
     display: block;
     background-image: url(../images/search-icon.svg);
     width: 2rem; height: 2rem;
 }
-
 .prev-icon.disabled-custom, .next-icon.disabled-custom {
     opacity: 0.4;
     cursor: not-allowed;
 }
-
 .arrow-icon {
     display: block;
     background-image: url(../images/arrow-icon.svg);
     width: 1.1rem; height: 1.1rem;
 }
-
-.filter-icon {
-    display: block;
-    background-image: url(../images/filter-icon.svg);
-    width: 1.9rem; height: 1.7rem;
-}
-
-.odo-icon {
-    display: block;
-    background-image: url(../images/odoBlue-icon.svg);
-    width: 1.8rem; height: 1.8rem;
-}
-
-.fuel-icon {
-    display: block;
-    background-image: url(../images/fuelBlue-icon.svg);
-    width: 1.8rem; height: 1.8rem;
-}
-
-.transmission-icon {
-    display: block;
-    background-image: url(../images/transmissionBlue-icon.svg);
-    width: 1.8rem; height: 1.8rem;
-} 
-
-.dateBlue-icon {
-    display: block;
-    background-image: url(../images/dateBlue-icon.svg);
-    width: 1.8rem; height: 1.8rem;
-}
-
-.drive-icon {
-    display: block;
-    background-image: url(../images/drive-icon.svg);
-    width: 2.1rem; height: 2.1rem;
-}
-
 .money-icon {
     display: block;
     background-image: url(../images/money-icon.svg);
@@ -140,13 +70,4 @@
 }
 
 @media screen and (max-width: 800px){
-    .youtbWhite-icon {
-        width: 6rem; height: 4rem;
-    }
-    .tiktokWhite-icon {
-        width: 3.6rem; height: 4rem;
-    }
-    .fbWhite-icon {
-        width: 4rem; height: 4rem;
-    }
 }

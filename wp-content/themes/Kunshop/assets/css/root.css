@@ -45,6 +45,13 @@
     src: url("../fonts/Lato\ Heavy.ttf");
 }
 
+@font-face {
+    font-family: 'Kunshop';
+    font-weight: 500;
+    font-style: italic;
+    src: url("../fonts/Lato\ Italic.ttf");
+}
+
 * {
     box-sizing: border-box;
     border-collapse: inherit;
@@ -340,74 +347,6 @@ html.is-rendering .transition-overlay {
 
 .page-id-11 .contact-popup svg {
     fill: var(--primary-color);
-}
-
-/* Dat Air Picker */
-.air-datepicker {
-    z-index: 1060;
-    font-size: 1.6rem;
-    font-family: 'Kunshop';
-}
-
-.air-datepicker.-is-mobile- {
-    width: 100%;
-    width: 40rem;
-}
-
-.air-datepicker .datepicker--nav-link,
-.air-datepicker-nav--title,
-.air-datepicker-body--day-names  {
-    font-size: 1.8rem;
-    font-weight: 600;
-}
-
-.air-datepicker-nav--action svg {
-    display: none;
-}
-
-.air-datepicker-body--cells.-days-,
-.air-datepicker-body--cells.-months-,
-.air-datepicker-body--cells.-years- {
-    grid-auto-rows: 5rem;
-}
-
-.air-datepicker-nav > .air-datepicker-nav--action::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.air-datepicker-nav {
-    padding: 2rem;
-    align-items: center;
-}
-
-.air-datepicker-nav--title {
-    padding-top: 0.3rem;
-}
-
-.air-datepicker-nav--action {
-    width: 5rem;
-    height: 5rem
-}
-
-.air-datepicker-nav--action:hover {
-    background: transparent;
-    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
-    -webkit-mask-size: 200%;
-    animation: shine 2s infinite;
-}
-
-.air-datepicker-nav > .air-datepicker-nav--action:first-child::after {
-    background-image: url('../images/prev-icon-swiper.svg');
-}
-
-.air-datepicker-nav > .air-datepicker-nav--action:last-child::after {
-    background-image: url('../images/next-icon-swiper.svg');
 }
 
 /* Ui Slider */

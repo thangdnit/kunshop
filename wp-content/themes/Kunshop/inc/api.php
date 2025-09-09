@@ -17,74 +17,61 @@ function load_products(WP_REST_Request $request) {
     $data = [
         'posts_per_page' => $posts_per_page,
         'paged' => $page_loaded,
+        'post_type' => 'product'
     ];
 
     if ($idtab != '') {
         $data['tax_query'] = [
             'relation' => 'AND',
             [
-                'taxonomy' => 'tag-xe',
+                'taxonomy' => 'product_tag',
                 'field' => 'term_id',
                 'terms' => intval($params['tag_id' . $idtab]),
             ],
         ];
     }else{
-        $hang_xe_id = explode(',', $params['hang_xe_id']);
-        $tag_id = explode(',', $params['tag_id']);
+        $product_tag = explode(',', $params['product_tag'] ?? '');
+        $product_category = explode(',', $params['product_category'] ?? '');
 
-        $hang_xe_id = array_map('intval', $hang_xe_id);
-        $tag_id = array_map('intval', $tag_id);
-        
+        $product_tag = array_map('intval', $product_tag);
+        $product_category = array_map('intval', $product_category);
+
         $data['post__not_in'] = [$post__not_in];
         $data['tax_query'] = [
             'relation' => 'OR',
             [
-                'taxonomy' => 'hang-xe',
+                'taxonomy' => 'product_tag',
                 'field'    => 'term_id',
-                'terms'    => $hang_xe_id,
+                'terms'    => $product_tag,
                 'operator' => 'IN',
             ],
             [
-                'taxonomy' => 'loai-xe',
+                'taxonomy' => 'product_brand',
                 'field'    => 'term_id',
-                'terms'    => intval($params['loai_xe_id']),
+                'terms'    => intval($params['brand_id'] ?? 0),
             ],
             [
-                'taxonomy' => 'loai-hop-so',
+                'taxonomy' => 'product_category',
                 'field'    => 'term_id',
-                'terms'    => intval($params['loai_hop_so_id']),
-            ],
-            [
-                'taxonomy' => 'mau-xe',
-                'field'    => 'term_id',
-                'terms'    => intval($params['mau_xe_id']),
-            ],
-            [
-                'taxonomy' => 'tinh-trang',
-                'field'    => 'term_id',
-                'terms'    => intval($params['tinh_trang_id']),
-            ],
-            [
-                'taxonomy' => 'tag-xe',
-                'field'    => 'term_id',
-                'terms'    => $tag_id,
+                'terms'    => $product_category,
                 'operator' => 'IN',
             ],
         ];
     }
-    $products = Toanproduct\product::get_products($data);
+    $products = new WP_Query($data);
 
     $data_products = [];
     if ($products->have_posts()) {
         while ($products->have_posts()) {
             $products->the_post();
-            $product = new Toanproduct\product(
-                [
-                    'id' => get_the_ID(),
-                    'title' => get_the_title(),
-                    'excerpt' => get_the_excerpt(),
-                ]
-            );
+            $code = get_field('code');
+            $price = get_field('price');
+            $promotion_price = get_field('promotion_price');
+            $image = get_field('image');
+            $description = get_field('description');
+            $link = get_permalink();
+            $title = get_the_title();
+            $product_tag = get_the_terms(get_the_ID(), 'product_tag');
             ob_start();
             include locate_template("template-parts/components/boxs/product-box.php");
             $data_product['html'] = ob_get_clean();
@@ -98,65 +85,9 @@ function load_products(WP_REST_Request $request) {
 }
 
 add_action('rest_api_init', function () {
-    register_rest_route('toanproduct83xcc3/v1', '/products', [
+    register_rest_route('kunshop83xcc3/v1', '/products', [
         'methods' => 'GET',
         'callback' => 'load_products',
-        'permission_callback' => '__return_true',
-    ]);
-});
-
-// Load Model products
-function load_model_products(WP_REST_Request $request) {
-    $brand = intval($request->get_param('model')) ?? 0;
-
-    $args = [
-        'taxonomy' => 'hang-xe',
-        'hide_empty' => false,
-    ];
-
-    if ($brand != 0) {
-        $args['parent'] = $brand;
-    }
-
-    $terms = get_terms($args);
-
-    if ($brand == 0) {
-        $terms = array_filter($terms, function ($term) {
-            return $term->parent != 0;
-        });
-    }
-
-    $data = [];
-    foreach ($terms as $term) {
-        $data[] = [
-            'id' => $term->term_id,
-            'name' => $term->name,
-        ];
-    }
-
-    return rest_ensure_response($data);
-}
-
-add_action('rest_api_init', function () {
-    register_rest_route('toanproduct83xcc3/v1', '/model-products', [
-        'methods' => 'GET',
-        'callback' => 'load_model_products',
-        'permission_callback' => '__return_true',
-    ]);
-});
-
-// Load Brand products
-function load_brand_products(WP_REST_Request $request) {
-    $model = intval($request->get_param('model')) ?? 0;
-    $term = get_term($model, 'hang-xe');
-
-    return rest_ensure_response(['parent_id' => $term->parent]);
-}
-
-add_action('rest_api_init', function () {
-    register_rest_route('toanproduct83xcc3/v1', '/brand-products', [
-        'methods' => 'GET',
-        'callback' => 'load_brand_products',
         'permission_callback' => '__return_true',
     ]);
 });
@@ -165,12 +96,12 @@ add_action('rest_api_init', function () {
 function load_products_filter(WP_REST_Request $request) { 
     $params = $request->get_params();
 
-    $widthValue = intval(get_option('widthValue'));
-    $posts_per_page = $widthValue < 801 ? 4 : get_field('products_per_page', 'option');
+    $posts_per_page = 12;
     
     $data = [
         'posts_per_page' => $posts_per_page,
-        'paged' => intval($params['paged'] ?? 1), 
+        'paged' => intval($params['paged'] ?? 1),
+        'post_type' => 'product',
     ];
 
     foreach ($params as $key => $value) {
@@ -193,23 +124,6 @@ function load_products_filter(WP_REST_Request $request) {
                 
                 continue;
             }
-            if ($key === 'product-filter__dong-xe') {
-                continue;
-            }
-            if ($key == 'product-filter__hang-xe') {
-                $id_term = intval($value);
-                if (intval($params['product-filter__dong-xe']) != 0) {
-                    $id_term = intval($params['product-filter__dong-xe']);
-                }
-
-                $data['tax_query'][] = [
-                    'taxonomy' => 'hang-xe',
-                    'field' => 'term_id',
-                    'terms' => $id_term,
-                ];
-                continue;
-            }
-
             $taxonomy = str_replace('product-filter__', '', $key);
             $data['tax_query'][] = [
                 'taxonomy' => $taxonomy,
@@ -220,19 +134,21 @@ function load_products_filter(WP_REST_Request $request) {
         }
     }
 
-    $products = Toanproduct\product::get_products($data);
+    $products = new WP_Query($data);
 
     $data_products = [];
     if ($products->have_posts()) {
         while ($products->have_posts()) {
             $products->the_post();
-            $product = new Toanproduct\product(
-                [
-                    'id' => get_the_ID(),
-                    'title' => get_the_title(),
-                    'excerpt' => get_the_excerpt(),
-                ]
-            );
+            $code = get_field('code');
+            $price = get_field('price');
+            $promotion_price = get_field('promotion_price');
+            $image = get_field('image');
+            $description = get_field('description');
+            $link = get_permalink();
+            $title = get_the_title();
+            $product_tag = get_the_terms(get_the_ID(), 'product_tag');
+            
             ob_start();
             include locate_template("template-parts/components/boxs/product-box.php");
             $data_product['html'] = ob_get_clean();
@@ -254,7 +170,7 @@ function load_products_filter(WP_REST_Request $request) {
 }
 
 add_action('rest_api_init', function () {
-    register_rest_route('toanproduct83xcc3/v1', '/search-products', [
+    register_rest_route('kunshop83xcc3/v1', '/search-products', [
         'methods' => 'GET',
         'callback' => 'load_products_filter',
         'permission_callback' => '__return_true',
@@ -296,50 +212,4 @@ function custom_keyword_search($where, $query) {
 
     return $where;
 }
-add_filter('posts_where', 'custom_keyword_search', 10, 2);
-
-
-
-/* Load Category */
-function load_category(WP_REST_Request $request) {
-    $params = $request->get_params();
-
-    $parent = intval($params['parent']) ?? 0;
-
-    $args = [
-        'taxonomy' => 'category',
-        'hide_empty' => false,
-    ];
-
-    if ($parent != 0) {
-        $args['parent'] = $parent;
-    }
-
-    $terms = get_terms($args);
-
-    if ($parent == 0) {
-        $terms = array_filter($terms, function ($term) {
-            return $term->parent != 0;
-        });
-    }
-
-    $data = [];
-    foreach ($terms as $term) {
-        $data[] = [
-            'id' => $term->term_id,
-            'name' => $term->name,
-        ];
-    }
-
-    return rest_ensure_response($data);
-}
-
-add_action('rest_api_init', function () {
-    register_rest_route('kunshop83xcc3/v1', '/load-category', [
-        'methods' => 'GET',
-        'callback' => 'load_category',
-        'permission_callback' => '__return_true',
-    ]);
-});
-
-
+//add_filter('posts_where', 'custom_keyword_search', 10, 2);

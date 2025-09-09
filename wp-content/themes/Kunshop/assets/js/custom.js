@@ -139,43 +139,6 @@ function handleScrollPopup() {
         }, 2000);
     }
 }
-/* Load Air Date Picker and Event */
-function loadDatepicker() {
-    const localeVi = {
-        days: ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'],
-        daysShort: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
-        daysMin: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
-        months: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'],
-        monthsShort: ['Thg 1', 'Thg 2', 'Thg 3', 'Thg 4', 'Thg 5', 'Thg 6', 'Thg 7', 'Thg 8', 'Thg 9', 'Thg 10', 'Thg 11', 'Thg 12'],
-        firstDay: 1,
-    }
-
-    let isShow = false;
-    if (document.getElementById('form-drive__date')) {
-        let datepicker = new AirDatepicker('#form-drive__date', {          
-            dateFormat: 'dd/MM/yyyy',
-            minDate: new Date(),
-            position: 'top right',
-            isMobile: true,
-            autoClose: true,
-            locale: localeVi,
-            onShow: function () {
-                isShow = true;
-            }
-        });
-
-        const myModal = document.getElementById('registerDriveModal');
-        myModal.addEventListener('hidden.bs.modal', function (event) {
-            myModal.setAttribute('aria-hidden', 'true');
-            if (isShow) {
-                datepicker.hide();
-            }
-        });
-        myModal.addEventListener('show.bs.modal', function (event) {
-            myModal.removeAttribute('aria-hidden');
-        });
-    }
-}
 /* Format Number */
 function formatCurrency (value) {
     if (value >= 1000) {
@@ -262,26 +225,7 @@ function updateBodyClass() {
 function initSwiper() {
     const bodyClass = document.body.classList;
 
-    if (bodyClass.contains('home') || bodyClass.contains('page-id-11') || bodyClass.contains('page-id-14')) {
-        if (window.innerWidth < 801) {
-            const space_between = changeRemtoPx(1);
-            if (document.querySelector('.product-type-section')) {
-                const swiper_slide = new Swiper('.product-type-section', {
-                    loop: false,
-                    grabCursor: true,
-                    spaceBetween: space_between,
-                    slidesPerView: 2.1,
-                    freeMode: true,
-                    speed: 800,
-                    navigation: {
-                        nextEl: '.product-type-section .swiper-button-next-custom',
-                        prevEl: '.product-type-section .swiper-button-prev-custom',
-                    },
-                    autoplay: false,
-                });
-            }
-        }
-
+    if (bodyClass.contains('home')) {
         if (document.querySelector('.swiper-material')) {
             const swiper_slide = new Swiper('.swiper-material', {
                 slidePerView: 1,
@@ -352,7 +296,6 @@ function initSwiper() {
             });
         }
     }
-
     if (bodyClass.contains('single-product')) {
         const remInPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
         const spaceBetween = 3 * remInPx;
@@ -421,7 +364,6 @@ function initSwiper() {
             });
         }
     }
-
     function changeRemtoPx (rem) {
         const remInPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
         const value = rem * remInPx;
@@ -470,41 +412,22 @@ function showScrollTop() {
 function changeColorContactPopup() {
     const contactPopup = document.getElementById('contact-popup');
     if (!contactPopup) return;
-
-    const top = document.getElementById('selling-page-header');
     const bot = document.getElementById('footer');
 
     const fixedElement = contactPopup.querySelectorAll('.contact-popup-item');
 
-    if (top) {
-        const rectTop = top.getBoundingClientRect();
-        const rectBot = bot.getBoundingClientRect();
+    const rectBot = bot.getBoundingClientRect();
 
-        if (rectTop.top <= 0 && rectBot.top >= window.innerHeight) {
-            fixedElement.forEach((element) => {
-                element.style.background = '#1D51A2';
-                element.querySelector('svg').style.fill = 'white';
-            });
-        } else { 
-            fixedElement.forEach((element) => {
-                element.style.background = '#F8BB15';
-                element.querySelector('svg').style.fill = '#1D51A2';
-            });
-        }
+    if (rectBot.height <= rectBot.top) {
+        fixedElement.forEach((element) => {
+            element.style.background = '#1D51A2';
+            element.querySelector('svg').style.fill = 'white';
+        });
     }else {
-        const rectBot = bot.getBoundingClientRect();
-
-        if (rectBot.height <= rectBot.top) {
-            fixedElement.forEach((element) => {
-                element.style.background = '#1D51A2';
-                element.querySelector('svg').style.fill = 'white';
-            });
-        }else {
-            fixedElement.forEach((element) => {
-                element.style.background = '#F8BB15';
-                element.querySelector('svg').style.fill = '#1D51A2';
-            });
-        }
+        fixedElement.forEach((element) => {
+            element.style.background = '#F8BB15';
+            element.querySelector('svg').style.fill = '#1D51A2';
+        });
     }
 }
 /* Reset Color Contact Popup */
@@ -512,23 +435,10 @@ function resetContactPopup() {
     const contactPopup = document.getElementById('contact-popup');
     const fixedElement = contactPopup.querySelectorAll('.contact-popup-item');
 
-    const top = document.getElementById('selling-page-header');
-    if (top) {
-        fixedElement.forEach((element) => {
-            element.style.background = '#F8BB15';
-            element.querySelector('svg').style.fill = '#1D51A2';
-        });
-    }else {
-        fixedElement.forEach((element) => {
-            element.style.background = '#1D51A2';
-            element.querySelector('svg').style.fill = 'white';
-        });
-    }
-}
-/* Show Advanced Filter */
-function showAdvancedFilter() {
-    const filter = document.getElementById('product-filter-advanced');
-    filter.classList.toggle('show-filter');
+    fixedElement.forEach((element) => {
+        element.style.background = '#1D51A2';
+        element.querySelector('svg').style.fill = 'white';
+    });
 }
 /* Press Enter function */
 function pressEnterInput(idInput, idButton) {
@@ -566,7 +476,7 @@ function searchproductbyKeyword(url, idkeyword) {
         }
 
         swup_main.navigate(newUrl.toString());
-    }else if (document.body.classList.contains('page-id-14')) {
+    }else if (document.body.classList.contains('page-id-11')) {
         if (keyword.value.length < 2) {
             addError('Từ khóa phải có ít nhất 2 ký tự', keyword);
             return;
@@ -577,61 +487,6 @@ function searchproductbyKeyword(url, idkeyword) {
 
         filter[idkeyword] = keyword.value;
         window.localStorage.setItem(mainLocalStorage, JSON.stringify(filter));
-        loadproductFilterMain();
-    }
-}
-/* Search by Taxonomy */
-function searchproductbyTaxonomy(url, key, value) {
-    let filter = JSON.parse(window.localStorage.getItem(mainLocalStorage)) || {};
-
-    const isHomePage = document.body.classList.contains('home');
-    const filterKey = 'product-filter__' + key;
-    const filterElement = document.getElementById(filterKey);
-
-    filter[filterKey] = value;
-
-    if (key === 'hang-xe') {
-        filter['product-filter__dong-xe'] = 0;
-    }
-    window.localStorage.setItem(mainLocalStorage, JSON.stringify(filter));
-    
-    if (isHomePage) {
-        const newUrl = new URL(url);
-        window.localStorage.setItem(homeLocalStorage, JSON.stringify(filter));
-        swup_main.navigate(newUrl.toString());
-    } else { 
-        if (filterElement && filterElement.value === value) {
-            return;
-        }
-        if (filterElement) {
-            filterElement.value = value;
-        }
-        if (key === 'hang-xe') {
-            loadproductModel(filterKey);
-        }
-        loadproductFilterMain();
-    }
-}
-/* Search by Price */
-function searchproductbyPrice(url, min, max) {
-    const filterKey = 'product-filter__price-range';
-    let filter = JSON.parse(window.localStorage.getItem(mainLocalStorage)) || {};
-
-    filter[filterKey] = [min, max];
-    window.localStorage.setItem(mainLocalStorage, JSON.stringify(filter));
-
-    if (document.body.classList.contains('home')) {
-        window.localStorage.setItem(homeLocalStorage, JSON.stringify(filter));
-        swup_main.navigate(new URL(url).toString());
-    } else {
-        document.querySelector('.price-filter.show-on')?.classList.remove('show-on');
-        document.getElementById(`price-filter__${min}-${max}`)?.classList.add('show-on');
-
-        const priceRange = document.getElementById(filterKey);
-        if (priceRange?.noUiSlider) {
-            priceRange.noUiSlider.set([min, max]);
-        }
-
         loadproductFilterMain();
     }
 }
@@ -912,93 +767,9 @@ function load_prev_products(idtab) {
         document.getElementById('btn-prev' + idtab).classList.add('disabled-custom');
     }
 }
-/* Load product and Model */
-function loadproductModel(idElement) {
-    const element = document.getElementById(idElement);
-
-    if(element.id == 'product-filter__hang-xe') {
-        const brand = element.value;
-        const modeldiv = document.getElementById('product-filter__dong-xe');
-        updateLocalStorageSelect(idElement);
-        if (allowajaxB) {
-            allowajaxB = false;
-            fetch(`${protected_data.models.api_url}?model=${brand}`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data) {
-                    modeldiv.innerHTML = '';
-                    const option = document.createElement('option');
-                    option.value = '0';
-                    option.text = 'Dòng xe';
-                    modeldiv.appendChild(option);
-                    
-                    data.forEach(model => {
-                        const option = document.createElement('option');
-                        option.value = model.id;
-                        option.text = model.name;
-                        modeldiv.appendChild(option); 
-                    });
-                    updateLocalStorageSelect('product-filter__dong-xe');
-                }
-            })
-            .catch(error => {
-                console.error('Error: ' + error);
-            })
-            .finally(() => {
-                allowajaxB = true;
-            });
-        }
-    }
-}
-function loadproductBrand(idElement) {
-    const element = document.getElementById(idElement);
-    if(element.id == 'product-filter__dong-xe') {
-        const model = element.value;
-        updateLocalStorageSelect(idElement);
-        const branddiv = document.getElementById('product-filter__hang-xe');
-
-        if (allowajaxC) {
-            allowajaxC = false;
-            fetch(`${protected_data.brands.api_url}?model=${model}`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.parent_id) {
-                    branddiv.value = data.parent_id;
-                    updateLocalStorageSelect('product-filter__hang-xe');
-                }
-            })
-            .catch(error => {
-                console.error('Error: ' + error);
-            })
-            .finally(() => {
-                allowajaxC = true;
-            });
-        }
-    }
-}
 /* Main Filter */
 function loadproductFilterMain($paged = 1) {
-    if (document.body.classList.contains('page-id-14')) {
+    if (document.body.classList.contains('page-id-11')) {
         const filter_data = JSON.parse(window.localStorage.getItem(mainLocalStorage));
         
         let params = new URLSearchParams();
@@ -1023,7 +794,7 @@ function loadproductFilterMain($paged = 1) {
         if (allowajaxD) {
             allowajaxD = false;
             
-            const targetDiv = document.querySelector('.product-filter-all'); 
+            const targetDiv = document.querySelector('.product-list-column'); 
             if (targetDiv) {
                 targetDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
@@ -1032,8 +803,9 @@ function loadproductFilterMain($paged = 1) {
             product_list_ajax.style.transition = 'opacity 0.5s ease-out';
             product_list_ajax.style.opacity = 0;
 
-            document.querySelector('.loading-spinner').classList.add('show'); 
-            fetch(`${protected_data.searchproducts.api_url}?${params}&paged=${$paged}`, {
+            document.querySelector('.loading-spinner').classList.add('show');
+
+            fetch(`${protected_data.searchProducts.api_url}?${params}&paged=${$paged}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -1062,7 +834,7 @@ function loadproductFilterMain($paged = 1) {
 
                     pagination_ajax.innerHTML = data[data.length - 1].pagination;
                 } else {
-                    product_list_ajax.innerHTML = '<div class="title-not-found">Không tìm thấy xe nào</div>';
+                    product_list_ajax.innerHTML = '<div class="title-not-found">Không tìm thấy sản phẩm nào</div>';
                     pagination_ajax.innerHTML = '';
                 }
 
@@ -1081,55 +853,6 @@ function loadproductFilterMain($paged = 1) {
         }
     }
 }
-
-/* Load Category */
-function load_category_lv1() {
-    const categoryLv1 = document.getElementById('product-filter__category_lv1').value;
-    
-    if (allowajaxB) {
-        allowajaxB = false;
-        
-        fetch(`${protected_data.categories.api_url}?parent=${categoryLv1}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data) {
-                const categoryLv2div = document.getElementById('product-filter__category_lv2');
-                
-                categoryLv2div.innerHTML = '';
-
-                const option2 = document.createElement('option');
-                option2.value = '0';
-                option2.text = 'Danh mục';
-                categoryLv2div.appendChild(option2);
-
-                data.forEach(category => {
-                    const option = document.createElement('option');
-                    option.value = category.id;
-                    option.text = category.name;
-                    categoryLv2div.appendChild(option); 
-                });
-            }
-        })
-        .catch(error => {
-            console.error('Error: ' + error);
-        })
-        .finally(() => {
-            allowajaxB = true;
-        });
-    }
-
-}
-
 /* Expand/Collapse Category */
 function toggleCategoryExpand() {
     if (!document.querySelector(".toggle-btn")) return;

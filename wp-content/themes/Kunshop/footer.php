@@ -1,7 +1,5 @@
-<?php include locate_template("template-parts/components/forms/form-quote.php") ?>
-<?php include locate_template("template-parts/components/forms/form-drive.php") ?>
-<?php include locate_template("template-parts/components/error.php") ?>
-<?php include locate_template("template-parts/components/success.php") ?>
+<?php include locate_template("template-parts/components/forms/error.php") ?>
+<?php include locate_template("template-parts/components/forms/success.php") ?>
 <?php include locate_template("template-parts/components/menu-mobile.php") ?>
 </main>
 <?php 
@@ -27,7 +25,7 @@ $messenger = get_field("messenger", "option");
             <div class="contact-footer">
                 <div class="contact-footer__item">
                     <div>
-                        <div class="text-book">Address.</div>
+                        <div class="text-book">Địa chỉ.</div>
                         <div class="text-bold"><a class="shinehover" target="_blank" href="<?php echo $google_map_link; ?>"><?php echo $address; ?></div></a>
                     </div>
                     <div>
@@ -63,7 +61,7 @@ $messenger = get_field("messenger", "option");
 
         <div class="footer-row">
             <div>Copyright © 2025 Kunkun Shop</div>
-            <a class="shinehover" href="<?php echo get_page_link(436); ?>" target="_blank">Chính sách bảo mật</a>
+            <a class="shinehover" href="<?php echo get_page_link(20); ?>" target="_blank">Chính sách bảo mật</a>
         </div>
     </div>
 </section>

@@ -4,12 +4,26 @@
         $highlight = get_field('highlight', 'option');
         $hotline = get_field('hotline', 'option');
         $zalo_id = get_field('zalo_id', 'option');
+        $messenger = get_field('messenger', 'option');
+        $highlight = get_field('highlight', 'option');
+        $shopee = get_field('shopee', 'option');
+        $lazada = get_field('lazada', 'option');
+        $tiktok = get_field('tiktok', 'option');
+        $product_note_title = get_field('product_note_title', 'option');
+        $product_note = get_field('product_note', 'option');
+
 
         $title = get_the_title();
-        $content = get_the_content();
+        $infomation = get_field('infomation');
+        $code = get_field('code');
         $description = get_field('description');
         $gallery = get_field('gallery');
         $price = get_field('price');
+
+        $product_tag = get_field('product_tag');
+        $product_brand = get_field('product_brand');
+        $product_category = get_field('product_category');
+
 
         set_query_var('product_title_single', $title);
         set_query_var('product_link', get_the_permalink());
@@ -18,8 +32,7 @@
     <div class="wrapper">
         <?php include locate_template('template-parts/components/breadcrumb.php'); ?>
         <h1 class="title-page product-single-title"><?php echo $title; ?></h1>
-        <h2 class="product-excerpt"><?php echo $description; ?></h2>
-
+        <div class="product-single-code">Mã sản phẩm: <?php echo $code; ?></div>
         <div class="product-single-header">
             <div class="product-single-gallery">
                 <?php for($i = 2; $i > 0; $i--): ?>
@@ -44,20 +57,31 @@
             </div>
             <div class="product-single-quote">
                 <div class="product-single-price color-primary text-ultra">
-                    <div><?php echo $price; ?></div>
+                    <div class="money-icon bgrsize100"></div>
+                    <div><?php echo format_price($price) ?><span class="color-black text-book"> (Đã bao gồm VAT)</span></div>
                 </div>
+                <div class="product-excerpt"><?php echo $description; ?></div>
+                
                 <div class="product-single-form">
-                    <div class="product-single-form__button">
-                        <a class="shinehover" data-bs-toggle="modal" data-bs-target="#quoteModal">Báo giá lăn bánh<div class="money-icon bgrsize100"></div></a>
-                        <a class="shinehover" data-bs-toggle="modal" data-bs-target="#registerDriveModal">Đăng ký lái thử<div class="drive-icon bgrsize100"></div></a>
-                    </div>
-                    <div class="product_single-form__quote">
-                        <?php include locate_template("template-parts/components/forms/form-advise.php") ?>
-                    </div>
+                    <a class="shinehover" href="<?php echo $shopee; ?>" target="_blank">Shopee Shop<div class="money-icon bgrsize100"></div></a>
+                    <a class="shinehover" href="<?php echo $lazada; ?>" target="_blank">Lazada Shop<div class="drive-icon bgrsize100"></div></a>
+                    <a class="shinehover" href="<?php echo $tiktok; ?>" target="_blank">TikTok Shop<div class="drive-icon bgrsize100"></div></a>
                 </div>
+
                 <div class="product-single-hotline">
                     <a target="_blank" class="shinehover image-hover-effect text-bold color-primary" href="tel:<?php echo $hotline; ?>">Hotline <?php echo $hotline; ?></a>
                     <a target="_blank" class="shinehover image-hover-effect text-bold color-primary" href="https://zalo.me/<?php echo $zalo_id; ?>"><div class="zalo-icon bgrsize100"></div></a>
+                    <a target="_blank" class="shinehover image-hover-effect text-bold color-primary" href="<?php echo $messenger; ?>"><div class="mess-icon bgrsize100"></div></a>
+                </div>
+
+                <div class="product-single-note">
+                    <div class="product-single-note__title text-bold color-primary"><?php echo $product_note_title; ?></div>
+                    <?php foreach ($product_note as $note): ?>
+                        <div class="product-single-note__item">
+                            <?php echo get_image($note['icon']); ?>
+                            <div><?php echo $note['title']; ?></div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
@@ -66,7 +90,7 @@
             <div class="product-single-info">
                 <div class="product-single-info__title title-page">Thông tin sản phẩm</div>
                 <div class="product-single-info__content">
-                    <?php echo apply_filters('the_content', $content); ?>
+                    <?php echo apply_filters('the_content', $infomation); ?>
                 </div>
             </div>
             <div class="product-single-highlight">
@@ -87,19 +111,12 @@
             $post__not_in = get_the_ID();
             $total_pages = ceil($number_products / $posts_per_page);
 
-            $product_tag = get_field('product_tag');
-            $product_brand = get_field('product_brand');
-            $product_category = get_field('product_category');
-
             $product_tag_ids = [];
             foreach ($product_tag as $tag) {
                 $product_tag_ids[] = $tag->term_id;
             }
 
-            $product_brand_ids = [];
-            foreach ($product_brand as $brand) {
-                $product_brand_ids[] = $brand->term_id;
-            }
+            $product_brand_ids = $product_brand ? [$product_brand->term_id] : [];
 
             $product_category_ids = [];
             foreach ($product_category as $category) {
