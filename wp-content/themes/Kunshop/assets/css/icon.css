@@ -50,7 +50,7 @@
 }
 .search-icon {
     display: block;
-    background-image: url(../images/search-icon.svg);
+    background-image: url(../images/searchColor-icon.svg);
     width: 2rem; height: 2rem;
 }
 .prev-icon.disabled-custom, .next-icon.disabled-custom {

@@ -1,4 +1,3 @@
-
 <div class="custom-pagination">
     <!-- "Previous" -->
     <?php if ($current_page > 1): ?>

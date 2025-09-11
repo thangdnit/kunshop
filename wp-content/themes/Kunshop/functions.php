@@ -16,7 +16,7 @@ function register_global_texts() {
         'form_holder_content' => 'Tôi muốn tư vấn về sản phẩm ...',
         'form_holder_phone' => '090',
         'form_holder_email' => 'abc@abc.com',
-        'form_holder_search' => 'Tìm kiếm sản phẩm bằng từ khoá...',
+        'form_holder_search' => 'Nhập từ khoá...',
     ];
 }
 add_action('init', 'register_global_texts');

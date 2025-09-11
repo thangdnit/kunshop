@@ -1,5 +1,6 @@
 <?php
     $price_filter = get_field('price_filter', 'option');
+    global $placeholder_texts;
 ?>
 <div class="product-filter-column">
     <h2 class="title-page">Bộ lọc</h2>
@@ -9,14 +10,13 @@
                 <div>Xoá tìm kiếm</div>
             </button>
         </div>
+        <div class="input-search">
+            <input class="custom-input" id="product-filter__keyword" type="text" placeholder="<?php echo $placeholder_texts['form_holder_search'] ?>">
+        </div>
+        <div class="line-separate"></div>
         <div class="product-taxonomy-title">Danh mục</div>
         <?php
             render_category_checkboxes(0, 'product_category', []);
-        ?>
-        <div class="line-separate"></div>
-        <div class="product-taxonomy-title">Sản phẩm</div>
-        <?php
-            render_category_checkboxes(0, 'product_tag', []);
         ?>
         <div class="line-separate"></div>
         <div class="product-taxonomy-title">Nhãn hiệu</div>

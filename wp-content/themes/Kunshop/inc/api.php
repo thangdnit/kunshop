@@ -20,57 +20,25 @@ function load_products(WP_REST_Request $request) {
         'post_type' => 'product'
     ];
 
-    if ($idtab != '') {
-        $data['tax_query'] = [
-            'relation' => 'AND',
-            [
-                'taxonomy' => 'product_tag',
-                'field' => 'term_id',
-                'terms' => intval($params['tag_id' . $idtab]),
-            ],
-        ];
-    }else{
-        $product_tag = explode(',', $params['product_tag'] ?? '');
-        $product_category = explode(',', $params['product_category'] ?? '');
-
-        $product_tag = array_map('intval', $product_tag);
-        $product_category = array_map('intval', $product_category);
-
-        $data['post__not_in'] = [$post__not_in];
-        $data['tax_query'] = [
-            'relation' => 'OR',
-            [
-                'taxonomy' => 'product_tag',
-                'field'    => 'term_id',
-                'terms'    => $product_tag,
-                'operator' => 'IN',
-            ],
-            [
-                'taxonomy' => 'product_brand',
-                'field'    => 'term_id',
-                'terms'    => intval($params['brand_id'] ?? 0),
-            ],
-            [
-                'taxonomy' => 'product_category',
-                'field'    => 'term_id',
-                'terms'    => $product_category,
-                'operator' => 'IN',
-            ],
-        ];
-    }
+    $data['tax_query'] = [
+        [
+            'taxonomy' => 'product_category',
+            'field' => 'term_id',
+            'terms' => intval($params['category_id' . $idtab]),
+        ],
+    ];
     $products = new WP_Query($data);
 
     $data_products = [];
     if ($products->have_posts()) {
         while ($products->have_posts()) {
             $products->the_post();
-            $code = get_field('code');
             $price = get_field('price');
             $image = get_field('image');
             $description = get_field('description');
             $link = get_permalink();
             $title = get_the_title();
-            $product_tag = get_the_terms(get_the_ID(), 'product_tag');
+
             ob_start();
             include locate_template("template-parts/components/boxs/product-box.php");
             $data_product['html'] = ob_get_clean();
@@ -139,7 +107,6 @@ function load_products_filter(WP_REST_Request $request) {
     if ($products->have_posts()) {
         while ($products->have_posts()) {
             $products->the_post();
-            $code = get_field('code');
             $price = get_field('price');
             $image = get_field('image');
             $description = get_field('description');

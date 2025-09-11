@@ -238,10 +238,7 @@ a {
 }
 
 .page-layout {
-    border-radius: 3rem;
-    z-index: 10; background: var(--secondary-color);
-    margin-top: -3rem;
-    margin-bottom: -3rem;   
+    background: var(--secondary-color);
 }
 
 .title-not-found {
@@ -411,9 +408,6 @@ input.custom-input.error-input {
         font-size: 2.427vw;
         --padding: 2rem;
         --padding-top: 3.7rem;
-    }
-    .page-layout {
-        border-radius: 1.2rem;
     }
     .contact-popup {
         display: block;

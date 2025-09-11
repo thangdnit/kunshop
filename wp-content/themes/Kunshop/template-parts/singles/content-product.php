@@ -155,7 +155,6 @@
                         <?php while($products->have_posts()): ?>
                             <?php 
                                 $products->the_post();
-                                $code = get_field('code');
                                 $price = get_field('price');
                                 $image = get_field('image');
                                 $description = get_field('description');

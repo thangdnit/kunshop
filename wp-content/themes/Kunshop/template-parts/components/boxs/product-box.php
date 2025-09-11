@@ -13,11 +13,4 @@
             <div class="text-semibold color-primary"><a class="d-inline-flex align-items-center shinehover text-semibold" href="<?php echo $link; ?>">Xem thêm &nbsp;<div class="arrow-icon bgrsize100"></div></a></div>
         </div>
     </div>
-    <div class="product-box__tag">
-        <?php if ($product_tag) : ?>
-            <?php foreach ($product_tag as $tag) : ?>
-                <div class="product-box__tag-item"><?php echo esc_html($tag->name); ?></div>
-            <?php endforeach; ?>
-        <?php endif; ?>
-    </div>
 </div>

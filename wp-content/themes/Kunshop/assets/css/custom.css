@@ -11,18 +11,6 @@
     padding: 2.5rem var(--padding) 2.5rem;
     display: flex; justify-content: space-between; align-items: center;
 }
-#header-fixed {
-    position: fixed; top: 0; left: 0; right: 0;
-    z-index: 999; background: var(--primary-color);
-    transform: translateY(-100%);
-}
-#header-fixed .header-top {
-    padding: 1rem var(--padding) 2rem;
-    display: flex; justify-content: space-between; align-items: center;
-}
-#header-fixed .top-logo {
-    width: 6.85rem; height: 5.25rem;
-}
 .header-mobile__menu {
     display: none;
 }
@@ -33,14 +21,14 @@
     list-style-type: none;
     padding-left: 0;
     margin-bottom: 0;
-    text-transform: capitalize;
+    text-transform: uppercase;
     color: var(--white-color);
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 .menu li {
     display: inline-block;
     margin-right: 3rem;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1.25;
 }
 .menu li:last-child {
@@ -73,12 +61,6 @@
 .page-id-11 .extend-section {
     padding: 2rem 43rem 7.6rem;
 }
-.buffer {
-    height: 3rem;
-    background: var(--primary-color);
-    margin-top: -0.1rem;
-}
-
 /* Footer */
 #footer {
     padding-top: 3rem;
@@ -402,9 +384,8 @@
 }
 
 /* Home Page */
-.home #header,
-.home #header-fixed {
-    background: var(--white-color);
+.home #header {
+    background: var(--secondary-color);
 }
 .home .top-logo.logo {
     background-image: url(../images/logo.svg);
@@ -626,24 +607,8 @@
 .product-filter-column-div {
     width: 20%;
 }
-.search-custom {
-    padding: 1.2rem 1.8rem;
-    background: var(--white-color);
-    border-radius: 10rem;
-}
-.search-custom .input-search input.custom-input {
-    width: 72%; border: none;
-}
-.search-icon.searchmb {
-    background-image: url(../images/searchColor-icon.svg);
-    display: none;
-}
 .search-custom button.custom-button {
     width: 25%;
-}
-.keyword-ajax {
-    font-size: 2.8rem; line-height: 1;
-    margin-top: 1.5rem; margin-left: 1.5rem;
 }
 .product-list-wrapper {
     margin-bottom: 7rem;
@@ -881,15 +846,6 @@
 
 @media screen and (max-width: 800px) {
     /* Header */
-    .search-icon.searchmb {
-        display: block;
-        position: absolute;
-        z-index: 20;
-        right: 1rem;
-        margin-right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-    }
     .home .menu-contact__item {
         color: var(--primary-color);
         background: var(--white-color);
@@ -906,9 +862,6 @@
     }
     #header.open-menu {
         z-index: 999;
-    }
-    #header-fixed .header-top {
-        padding: 2rem var(--padding) 1rem;   
     }
     .header-mobile__menu {
         width: 2.8rem; position: relative;
@@ -935,7 +888,6 @@
     .header-mobile__menu.active .line:nth-child(3) {
         transform: translateY(-0.7rem) rotate(-41deg);
     }
-    #header-fixed .top-logo,
     .top-logo {
         width: 10.9rem;
         height: 4.26rem;

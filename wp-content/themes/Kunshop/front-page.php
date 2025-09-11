@@ -47,7 +47,6 @@ if (have_posts()):
                 <div class="tab-pane fade show active" id="nav-buy-product"
                 role="tabpanel" aria-labelledby="nav-buy-tab">
                     <div>
-                        <?php include locate_template("template-parts/components/search-bar.php"); ?>
                         <?php include locate_template("template-parts/components/filters/filter-product-column.php"); ?>
                     </div>
                 </div>
@@ -63,32 +62,34 @@ if (have_posts()):
         </div>
 
         <?php 
-            $tags = get_terms([
-                'taxonomy' => 'product_tag',
+            $categories_hl = get_terms([
+                'taxonomy' => 'product_category',
                 'hide_empty' => true,
+                'parent' => 0,
+                'number' => 5
             ]);
         ?>
-        <?php if (count($tags) > 0): ?>
+        <?php if (count($categories_hl) > 0): ?>
             <div class="product-highligh-tab-section">
                 <h2 class="text-ultra color-primary highlight-title">Khám Phá Sản Phẩm Nổi Bật</h2>
                 <div class="product-tab-highlight highligh-tabs">
                     <nav>
                         <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
-                            <?php foreach ($tags as $index => $tag): ?>
+                            <?php foreach ($categories_hl as $index => $category): ?>
                                 <button 
-                                class="nav-link shinehover <?php echo $index == 0 ? 'active' : ''; ?>" id="product-highlights-tab-<?php echo $tag->term_id; ?>" 
-                                data-bs-toggle="tab" data-bs-target="#product-highlights-<?php echo $tag->term_id; ?>" 
-                                type="button" role="tab" aria-controls="product-highlights-<?php echo $tag->term_id; ?>" 
-                                aria-selected="<?php echo $index == 0 ? 'true' : 'false'; ?>"><?php echo $tag->name; ?></button>
+                                class="nav-link shinehover <?php echo $index == 0 ? 'active' : ''; ?>" id="product-highlights-tab-<?php echo $category->term_id; ?>" 
+                                data-bs-toggle="tab" data-bs-target="#product-highlights-<?php echo $category->term_id; ?>" 
+                                type="button" role="tab" aria-controls="product-highlights-<?php echo $category->term_id; ?>" 
+                                aria-selected="<?php echo $index == 0 ? 'true' : 'false'; ?>"><?php echo $category->name; ?></button>
                             <?php endforeach; ?>
                         </div>
                         <a class="absoblute d-inline-flex align-items-center shinehover text-semibold color-black" href="<?php echo get_page_link(11); ?>">Xem thêm &nbsp;<div class="arrow-icon bgrsize100"></div></a>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
-                        <?php foreach ($tags as $index => $tag): ?>
+                        <?php foreach ($categories_hl as $index => $category): ?>
                             <div class="tab-pane fade <?php echo $index == 0 ? 'show active' : ''; ?>" 
-                            id="product-highlights-<?php echo $tag->term_id; ?>" 
-                            role="tabpanel" aria-labelledby="product-highlights-tab-<?php echo $tag->term_id; ?>">
+                            id="product-highlights-<?php echo $category->term_id; ?>" 
+                            role="tabpanel" aria-labelledby="product-highlights-tab-<?php echo $category->term_id; ?>">
                             <?php
                                 $posts_per_page = 8;
 
@@ -98,18 +99,18 @@ if (have_posts()):
                                     'post_type' => 'product',
                                     'tax_query' => [
                                         [
-                                            'taxonomy' => 'product_tag',
+                                            'taxonomy' => 'product_category',
                                             'field'    => 'term_id',
-                                            'terms'    => $tag->term_id,
+                                            'terms'    => $category->term_id,
                                         ],
                                     ]
                                 ];
                                 
                                 $products = new WP_Query($data);
-                                $number_products = $tag->count;
+                                $number_products = $category->count;
                                 $total_pages = ceil($number_products / $posts_per_page);
-                                $idtab = 'product-highlights-' . $tag->term_id;
-                                $tag_id = $tag->term_id; 
+                                $idtab = 'product-highlights-' . $category->term_id;
+                                $category_id = $category->term_id; 
                             ?>     
                                 <div class="slider-product-highlight swiper-tab slider-ajax">
                                     <div class="swiper-wrapper">
@@ -118,14 +119,12 @@ if (have_posts()):
                                                 <?php while($products->have_posts()): ?> 
                                                     <?php 
                                                         $products->the_post();
-                                                        $code = get_field('code');
                                                         $price = get_field('price');
                                                         $promotional_price = get_field('promotional_price');
                                                         $image = get_field('image');
                                                         $description = get_field('description');
                                                         $link = get_permalink();
                                                         $title = get_the_title();
-                                                        $product_tag = get_the_terms(get_the_ID(), 'product_tag'); 
                                                     ?>
                                                     <div class="product-box-item">
                                                         <?php include locate_template('template-parts/components/boxs/product-box.php'); ?>

@@ -73,33 +73,3 @@ function format_price($price) {
     return $formatted_price;
 }
 
-function get_term_ids($field){
-    $ids = [];
-    if (empty($field)) {
-        return $ids;
-    }
-
-    // Nếu là object đơn
-    if (is_object($field) && isset($field->term_id)) {
-        return [$field->term_id];
-    }
-
-    // Nếu là số nguyên (ID)
-    if (is_int($field)) {
-        return [$field];
-    }
-
-    // Nếu là array
-    if (is_array($field)) {
-        foreach ($field as $item) {
-            if (is_object($item) && isset($item->term_id)) {
-                $ids[] = $item->term_id;
-            } elseif (is_int($item)) {
-                $ids[] = $item;
-            }
-        }
-    }
-
-    return $ids;
-}
-

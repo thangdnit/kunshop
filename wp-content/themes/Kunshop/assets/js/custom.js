@@ -1,5 +1,4 @@
 var mainLocalStorage = 'filter_products';
-var homeLocalStorage = 'home_products';
 var swup_main;
 var allowajaxA = [];
 var allowajaxB = true;
@@ -24,7 +23,6 @@ function init(){
             resetContactPopup();
             initSwiper();
             loadPriceSlider();
-            loadPressEnterInput();
             fetchDataFilter();
             loadproductFilterMain();
             loadModal();
@@ -34,13 +32,14 @@ function init(){
             CategoryCheckboxEvent('product-filter__product_category');
             CategoryCheckboxEvent('product-filter__product_tag');
             CategoryCheckboxEvent('product-filter__product_brand');
+            pressEnterInput('product-filter__keyword');
           },
         }
     })
 }
 document.addEventListener('scroll', () => {
     showScrollTop();
-    showHeaderFixed();
+    //scrollHeaderFixed();
     changeColorContactPopup();
     handleScrollPopup();
 });
@@ -53,9 +52,8 @@ function load_init() {
     initAnimation();
     resetContactPopup();
     changeColorContactPopup();
-    showHeaderFixed();
+    //scrollHeaderFixed();
     loadPriceSlider();
-    loadPressEnterInput();
     fetchDataFilter();
     loadproductFilterMain();
     loadModal();
@@ -64,11 +62,11 @@ function load_init() {
     CategoryCheckboxEvent('product-filter__product_category');
     CategoryCheckboxEvent('product-filter__product_tag');
     CategoryCheckboxEvent('product-filter__product_brand');
+    pressEnterInput('product-filter__keyword');
 }
 /* Header Mobile Fixed */
-function showHeaderFixed() {
+function scrollHeaderFixed() {
     const header = document.getElementById('header');
-    const headerfixed = document.getElementById('header-fixed');
 
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     if (scrollTop > (0.5 * window.innerHeight) && !isFixed) {
@@ -205,10 +203,6 @@ function loadPriceSlider() {
             window.localStorage.setItem(mainLocalStorage, JSON.stringify(filter));
         });
     }
-}
-/* Load Press Enter Input */
-function loadPressEnterInput() {
-    pressEnterInput('product-filter__keyword', 'btn-searchKeyword');
 }
 /* Function Load Modal */
 function loadModal() {
@@ -417,47 +411,16 @@ function resetContactPopup() {
     });
 }
 /* Press Enter function */
-function pressEnterInput(idInput, idButton) {
+function pressEnterInput(idInput) {
     const input = document.getElementById(idInput);
     
     if (input) {
         input.addEventListener('keydown', function(event) {
             if (event.key === 'Enter') {
                 event.preventDefault();
-                document.getElementById(idButton).click();
+                loadproductFilterMain();
             }
         });
-    }
-}
-/* Search Keyword */
-function searchproductbyKeyword(url, idkeyword) {
-    const keyword = document.getElementById(idkeyword);
-
-    if (document.body.classList.contains('home')) {
-        if (keyword.value.length < 2) {
-            addError('Vui lòng nhập từ khóa tìm kiếm ít nhất 2 ký tự', keyword);
-            return;
-        }
-
-        let newUrl = new URL(url);
-
-        let filter = JSON.parse(window.localStorage.getItem(mainLocalStorage));
-        if(filter) {
-            filter[idkeyword] = keyword.value;
-            window.localStorage.setItem(mainLocalStorage, JSON.stringify(filter));
-        }else {
-            let newFilter = {};
-            newFilter[idkeyword] = keyword.value;
-            window.localStorage.setItem(mainLocalStorage, JSON.stringify(newFilter));
-        }
-
-        swup_main.navigate(newUrl.toString());
-    }else if (document.body.classList.contains('page-id-11')) {
-        let filter = JSON.parse(window.localStorage.getItem(mainLocalStorage)) || {};
-
-        filter[idkeyword] = keyword.value;
-        window.localStorage.setItem(mainLocalStorage, JSON.stringify(filter));
-        loadproductFilterMain();
     }
 }
 /* Fetch Data */
@@ -468,7 +431,15 @@ function fetchDataFilter() {
         try {
             const parsedObject = JSON.parse(storedData); 
             for (const key in parsedObject) {
-                if (parsedObject.hasOwnProperty(key)) { 
+                if (parsedObject.hasOwnProperty(key)) {
+                    if (key == 'product-filter__keyword') {
+                        alert(parsedObject[key]);
+                        const keywordInput = document.getElementById('product-filter__keyword');
+                        if (keywordInput) {
+                            keywordInput.value = parsedObject[key];
+                        }
+                        continue;
+                    }
                     if (key == 'product-filter__price-range') {
                         const priceRange = document.getElementById('product-filter__price-range');
                         priceRange.noUiSlider.set([parsedObject[key][0], parsedObject[key][1]]);
@@ -554,7 +525,6 @@ function clearAllfilter() {
         if(document.querySelector('.price-filter.show-on')){
             document.querySelector('.price-filter.show-on').classList.remove('show-on');
         }
-        document.querySelector('.keyword-ajax').innerHTML = '';
         document.getElementById('product-filter__keyword').value = '';
         loadproductFilterMain();
     } 
@@ -619,7 +589,7 @@ function load_more_products(idtab) {
         })
         .then(data => {
             appendproductSlides(data, idtab);
-            updateSlideAjax(idtab, first_load);
+            updateSlideAjax(idtab);
         })
         .catch(error => {
             console.error('Error: error');
@@ -676,7 +646,7 @@ function updateButtonStatus(idtab, next_page, total_pages, first_load) {
         }
     }
 }
-function updateSlideAjax(idtab, first_load) {
+function updateSlideAjax(idtab) {
     if (idtab != '') {
         swiper_home[idtab].update();
     }
@@ -733,12 +703,6 @@ function loadproductFilterMain($paged = 1) {
                     continue;
                 }
                 params.append(key, value);
-            }
-            
-            if (filter_data['product-filter__keyword']) {
-                document.querySelector('.keyword-ajax').innerHTML = `Tìm kiếm: ${filter_data['product-filter__keyword']}`;
-            }else {
-                document.querySelector('.keyword-ajax').innerHTML = '';
             }
         }
 
