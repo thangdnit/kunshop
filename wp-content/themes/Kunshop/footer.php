@@ -7,6 +7,8 @@ $address = get_field("address", "option");
 $google_map_link = get_field("google_map_link", "option");
 $phone = get_field("phone", "option");
 $facebook = get_field("facebook", "option");
+$lazada = get_field("lazada", "option");
+$shopee = get_field("shopee", "option");
 $tiktok = get_field("tiktok", "option");
 $zalo_id = get_field("zalo_id", "option");
 $messenger = get_field("messenger", "option");
@@ -43,8 +45,8 @@ $messenger = get_field("messenger", "option");
                 <div class="contact-footer__item">
                     <a class="shinehover image-hover-effect" href="<?php echo $tiktok; ?>" target="_blank"><div class="tiktokWhite-icon bgrsize100"></div></a>
                     <a class="shinehover image-hover-effect" href="<?php echo $facebook; ?>" target="_blank"><div class="fbWhite-icon bgrsize100"></div></a>
-                    <a class="shinehover image-hover-effect" href="<?php echo $facebook; ?>" target="_blank"><div class="fbWhite-icon bgrsize100"></div></a>
-                    <a class="shinehover image-hover-effect" href="<?php echo $facebook; ?>" target="_blank"><div class="fbWhite-icon bgrsize100"></div></a>
+                    <a class="shinehover image-hover-effect" href="<?php echo $lazada; ?>" target="_blank"><div class="lazadaWhite-icon bgrsize100"></div></a>
+                    <a class="shinehover image-hover-effect" href="<?php echo $shopee; ?>" target="_blank"><div class="shopeeWhite-icon bgrsize100"></div></a>
                 </div>
             </div>
             <div class="bottom-menu">

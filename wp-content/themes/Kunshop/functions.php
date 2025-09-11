@@ -12,9 +12,10 @@ function register_global_texts() {
     global $placeholder_texts;
     $placeholder_texts = [
         'form_holder_name' => 'Nguyễn Văn A',
+        'form_holder_title' => 'Cần tư vấn sản phẩm ABC ...',
+        'form_holder_content' => 'Tôi muốn tư vấn về sản phẩm ...',
         'form_holder_phone' => '090',
         'form_holder_email' => 'abc@abc.com',
-        'form_holder_date' =>   date('d/m/Y'),
         'form_holder_search' => 'Tìm kiếm sản phẩm bằng từ khoá...',
     ];
 }

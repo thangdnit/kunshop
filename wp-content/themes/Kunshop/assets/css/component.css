@@ -102,7 +102,7 @@
 .box-contact {
     border: solid 1px var(--gray-color);
     border-radius: 2rem;
-    padding: 7.2rem 0 5.3rem;
+    padding: 7.2rem 0 3rem;
     position: relative;
     height: 100%;
     border: 1px solid #ddd;
@@ -132,16 +132,19 @@
 }
 .follow-box {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     padding: 0 3rem;
     height: 100%;
+    gap: 2rem;
 }
 .follow-box a {
+    width: 40%;
     text-align: -webkit-center;
 }
-.follow-box a > div {
-    margin-top: 1rem;
+.follow-box a > div:last-child {
+    margin-top: 0.5rem;
 }
 
 /* Post Box */
@@ -201,12 +204,12 @@
 .input-search input.custom-input {
     width: 78%;
 }
-input.custom-input {
-    height: 100%;
+input.custom-input{
+    height: 100%; width: 100%;
     border: solid 1px var(--gray-color);
     border-radius: 8rem;
     padding: 1rem 3rem;
-    font-size: 1.8rem; line-height: 1;
+    font-size: 1.8rem; line-height: 1; 
     transition: all 0.5s ease;
 }
 .search-icon {
@@ -223,6 +226,9 @@ button.custom-button {
     display: flex; justify-content: center; align-items: center;
 }
 /* Filter Product */
+.product-filter-column {
+    width: 100%;
+}
 .product-filter-column-content {
     padding: 4rem 3rem 6rem;
     border: solid 1px var(--gray-color);
@@ -232,6 +238,15 @@ button.custom-button {
 }
 .category-list {
     list-style: none; color: var(--black-color); padding-left: 0; margin-left: 0;
+}
+.product-taxonomy-title {
+    font-size: 2.4rem; font-weight: 700;
+    margin-bottom: 1rem; color: var(--primary-color);
+}
+.line-separate {
+    height: 1px; width: 100%;
+    background: var(--gray-color);
+    margin: 2rem 0;
 }
 .toggle-btn {
     cursor: pointer;
@@ -301,14 +316,14 @@ button.custom-button {
 .product-box {
     border-radius: 1.8rem; 
     border: 1px solid #ddd;
-    box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.15);
     position: relative;
     width: 100%;
 }
 .product-box__tag {
     position: absolute;
-    bottom: 1.5rem; left: 1.5rem;
+    top: -3.3rem; left: 1.5rem;
     display: flex; justify-content: flex-start; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
 }
 .product-box__tag-item {
     position: relative;
@@ -318,7 +333,6 @@ button.custom-button {
     border-radius: 4.4rem;
     height: 3.2rem;
     padding: 0 1.2rem;
-    margin-right: 1.5rem;
 }
 .product-box__image {
     position: relative;
@@ -387,7 +401,7 @@ button.custom-button {
     display: block;
 }
 .form-general_content input.custom-input{
-    width: 100%; height: 5rem; padding: 1.6rem 2.2rem 1.3rem;
+    width: 100%; height: 5rem; padding: 1.2rem 2.2rem;
 }
 .form-general_footer button.custom-button {  
     width: 100%; height: 5rem; padding: 1.6rem 2.2rem 1.3rem;
@@ -418,31 +432,28 @@ button.custom-button {
 .form-general_header {
     margin-bottom: 5.2rem;
 }
-.form-contact_header > div {
-    background: #F2F4FA;
-    width: 100%; padding: 1rem 0;
-    text-align: center;
-    font-size: 1.8rem; font-weight: 800;
-    border-radius: 4rem;
-    margin-bottom: 3.3rem;
-}
 .form-contact_content > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2.4rem;
 }
-.form-contact_content > div > div:first-child {
-    width: calc(55% - 3.5rem);
-    position: relative;
+.form-contact_content > div:last-child > div {
+    width: 100%;
 }
-.form-contact_content > div > div:last-child {
-    width: 45%;
-    position: relative;
-}
-.home .form-contact_content > div > div {
+.form-contact_content > div > div {
     width: calc(50% - 1.5rem);
     position: relative;
+}
+.form-contact_content textarea.custom-input {
+    resize: none;
+    padding: 1.2rem 2.2rem;
+    height: 100%; width: 100%;
+    border: solid 1px var(--gray-color);
+    border-radius: 4rem;
+    padding: 1rem 3rem;
+    font-size: 1.8rem; line-height: 1;
+    transition: all 0.5s ease;
 }
 /* Form Modal */
 .modal-content.custom-modal-content{
@@ -527,9 +538,6 @@ button.custom-button {
         height: 4.5rem;
     }
     /* Form Selling product */
-    .form-contact_header > div {
-        font-size: 2.8rem; margin-bottom: 2.2rem;
-    }
     .form-contact_content > div {
         flex-direction: column; gap: 2.4rem;
     }

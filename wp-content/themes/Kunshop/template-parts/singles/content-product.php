@@ -32,7 +32,6 @@
     <div class="wrapper">
         <?php include locate_template('template-parts/components/breadcrumb.php'); ?>
         <h1 class="title-page product-single-title"><?php echo $title; ?></h1>
-        <div class="product-single-code">Mã sản phẩm: <?php echo $code; ?></div>
         <div class="product-single-header">
             <div class="product-single-gallery">
                 <?php for($i = 2; $i > 0; $i--): ?>
@@ -58,14 +57,14 @@
             <div class="product-single-quote">
                 <div class="product-single-price color-primary text-ultra">
                     <div class="money-icon bgrsize100"></div>
-                    <div><?php echo format_price($price) ?><span class="color-black text-book"> (Đã bao gồm VAT)</span></div>
+                    <div><?php echo format_price($price) ?><span> - 100.000 đ</span></div>
                 </div>
                 <div class="product-excerpt"><?php echo $description; ?></div>
                 
                 <div class="product-single-form">
-                    <a class="shinehover" href="<?php echo $shopee; ?>" target="_blank">Shopee Shop<div class="money-icon bgrsize100"></div></a>
-                    <a class="shinehover" href="<?php echo $lazada; ?>" target="_blank">Lazada Shop<div class="drive-icon bgrsize100"></div></a>
-                    <a class="shinehover" href="<?php echo $tiktok; ?>" target="_blank">TikTok Shop<div class="drive-icon bgrsize100"></div></a>
+                    <a class="shinehover image-hover-effect" href="<?php echo $shopee; ?>" target="_blank">Shopee Shop<div class="shopeeColor-icon bgrsize100"></div></a>
+                    <a class="shinehover image-hover-effect" href="<?php echo $lazada; ?>" target="_blank">Lazada Shop<div class="lazadaColor-icon bgrsize100"></div></a>
+                    <a class="shinehover image-hover-effect" href="<?php echo $tiktok; ?>" target="_blank">TikTok Shop<div class="tiktokColor-icon bgrsize100"></div></a>
                 </div>
 
                 <div class="product-single-hotline">
@@ -106,10 +105,8 @@
         </div>
 
         <?php
-            $number_products = 8;
-            $posts_per_page = 4;
+            $posts_per_page = 8;
             $post__not_in = get_the_ID();
-            $total_pages = ceil($number_products / $posts_per_page);
 
             $product_tag_ids = [];
             foreach ($product_tag as $tag) {
@@ -125,7 +122,6 @@
 
             $data = [
                 'posts_per_page' => $posts_per_page,
-                'paged' => 1,
                 'post_type' => 'product',
                 'post__not_in' => [$post__not_in],
                 'tax_query' => [
@@ -155,29 +151,29 @@
             <div class="related-post-title text-ultra">Có thể bạn quan tâm</div>
             <div class="swiper-multi slider-product-related slider-ajax">
                 <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <?php if ($products->have_posts()): ?>
-                                <?php while($products->have_posts()): ?>
-                                    <?php 
-                                        $products->the_post();
-                                        $code = get_field('code');
-                                        $price = get_field('price');
-                                        $promotion_price = get_field('promotion_price');
-                                        $image = get_field('image');
-                                        $description = get_field('description');
-                                        $link = get_permalink();
-                                        $title = get_the_title();
-                                        $product_tag = get_the_terms(get_the_ID(), 'product_tag');
-                                    ?>
-                                    <div class="product-box-item">
-                                        <?php include locate_template('template-parts/components/boxs/product-box.php'); ?>
-                                    </div>
-                                <?php endwhile; ?>
-                            <?php endif; ?>
-                            <?php wp_reset_postdata(); ?>
-                        </div>
+                    <?php if ($products->have_posts()): ?>
+                        <?php while($products->have_posts()): ?>
+                            <?php 
+                                $products->the_post();
+                                $code = get_field('code');
+                                $price = get_field('price');
+                                $image = get_field('image');
+                                $description = get_field('description');
+                                $link = get_permalink();
+                                $title = get_the_title();
+                                $product_tag = get_the_terms(get_the_ID(), 'product_tag');
+                            ?>
+                            <div class="swiper-slide">
+                                <div class="product-box-item">
+                                    <?php include locate_template('template-parts/components/boxs/product-box.php'); ?>
+                                </div>
+                            </div>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+                    <?php wp_reset_postdata(); ?>
                 </div>
-                <?php include locate_template("template-parts/components/paginations/pagination-ajax.php")?>
+                <div class="swiper-button-next-custom bgrsize100"></div>
+                <div class="swiper-button-prev-custom bgrsize100"></div> 
             </div>
         </div>
     </div>

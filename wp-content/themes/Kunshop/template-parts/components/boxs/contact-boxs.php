@@ -2,6 +2,8 @@
     $google_map_link = get_field("google_map_link", "option");
     $tiktok = get_field("tiktok", "option");
     $facebook = get_field("facebook", "option");
+    $lazada = get_field("lazada", "option");
+    $shopee = get_field("shopee", "option");
     $zalo_id = get_field("zalo_id", "option");
     $zalo_qr = get_field("zalo_qr", "option");
     $hotline = get_field("hotline", "option");
@@ -60,6 +62,14 @@
                         <a class="shinehover image-hover-effect" href="<?php echo $facebook; ?>" target="_blank">
                             <div class="fbColor-icon bgrsize100"></div>
                             <div class="color-primary text-bold">KunkunShop</div>
+                        </a>
+                        <a class="shinehover image-hover-effect" href="<?php echo $lazada; ?>" target="_blank">
+                            <div class="lazadaColor-icon bgrsize100"></div>
+                            <div class="color-blue text-bold">KunkunShop</div>
+                        </a>
+                        <a class="shinehover image-hover-effect" href="<?php echo $shopee; ?>" target="_blank">
+                            <div class="shopeeColor-icon bgrsize100"></div>
+                            <div class="color-orange text-bold">KunkunShop</div>
                         </a>
                     </div>
                 </div>

@@ -11,6 +11,8 @@
     --yellow-color: #F8BB15; 
     --sblue-color: #E7F1FF;
     --sblue-color2: #E9F2FF;
+    --blue-color: #0C107E;
+    --orange-color: #F73719;
     --padding: 16rem;
     --padding-top: 7.5rem;
 }
@@ -227,6 +229,14 @@ a {
     background: var(--primary-color);
 }
 
+.color-blue {
+    color: var(--blue-color);
+}
+
+.color-orange {
+    color: var(--orange-color);
+}
+
 .page-layout {
     border-radius: 3rem;
     z-index: 10; background: var(--secondary-color);
@@ -357,13 +367,13 @@ html.is-rendering .transition-overlay {
 .custom-tooltip-left {
     font-size: 1.8rem;
     position: absolute;
-    top: 200%; left: -6%;
+    top: 200%; left: 0;
 }
 
 .custom-tooltip-right {
     font-size: 1.8rem; 
     position: absolute;
-    top: 200%; right: -6%;
+    top: 200%; right: 0;
 }
 
 /* Error Message */

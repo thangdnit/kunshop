@@ -4,7 +4,6 @@ if (have_posts()):
     the_post();
     $gallery = get_field('gallery');
     $highlights_heading = get_field('highlights_heading');
-    $reviews = get_field('reviews');
     $highlights = [];
     for ($i = 1; $i <= 4; $i++) {
         $highlights[] = get_field('highlights_' . $i);
@@ -51,13 +50,6 @@ if (have_posts()):
                         <?php include locate_template("template-parts/components/search-bar.php"); ?>
                         <?php include locate_template("template-parts/components/filters/filter-product-column.php"); ?>
                     </div>
-                    <div>
-                        <div class="product-tab-title">
-                            <div class="text-bold color-primary buy-tab_title">Tìm kiếm sản phẩm</div>
-                            <a class="d-inline-flex align-items-center shinehover text-semibold" href="<?php echo get_page_link(11); ?>">Xem thêm &nbsp;<div class="arrow-icon bgrsize100"></div></a>
-                        </div>
-
-                    </div>
                 </div>
 
                 <div class="tab-pane fade" id="nav-sell-product"
@@ -90,7 +82,7 @@ if (have_posts()):
                                 aria-selected="<?php echo $index == 0 ? 'true' : 'false'; ?>"><?php echo $tag->name; ?></button>
                             <?php endforeach; ?>
                         </div>
-                        <a class="absoblute d-inline-flex align-items-center shinehover text-semibold" href="<?php echo get_page_link(11); ?>">Xem thêm &nbsp;<div class="arrow-icon bgrsize100"></div></a>
+                        <a class="absoblute d-inline-flex align-items-center shinehover text-semibold color-black" href="<?php echo get_page_link(11); ?>">Xem thêm &nbsp;<div class="arrow-icon bgrsize100"></div></a>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
                         <?php foreach ($tags as $index => $tag): ?>
@@ -205,36 +197,6 @@ if (have_posts()):
                 </div>
             </div>
         </div>
-
-        <?php if ($reviews['show_on_page'] == true): ?>
-            <div class="review-section">
-                <div class="<?php echo count($reviews['review']) > 1 ? 'swiper-normal' : ''; ?> slider-review">
-                    <div class="<?php echo count($reviews['review']) > 1 ? 'swiper-wrapper' : ''; ?>">
-                        <?php foreach ($reviews['review'] as $review): ?>
-                            <div class="<?php echo count($reviews['review']) > 1 ? 'swiper-slide' : ''; ?> review-slide">
-                                <div class="review-item">
-                                    <div class="reviewer-image">
-                                        <?php echo get_image($review['image'], 'large'); ?>
-                                    </div>
-                                    <div class="reviewer-content">
-                                        <div class="rating-star">
-                                                <?php set_query_var('star', $review['star']); ?>
-                                                <?php get_template_part("template-parts/components/star"); ?>
-                                        </div>
-                                        <div class="reviewer-name"><?php echo $review['reviewer_name']; ?></div>
-                                        <div class="review"><?php echo $review['review']; ?></div>
-                                        <div><?php echo $review['address']; ?></div>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                    
-                    <div class="swiper-button-prev-custom bgrsize100"></div>
-                    <div class="swiper-button-next-custom bgrsize100"></div>
-                </div>
-            </div>
-        <?php endif; ?>
     </div>
 </section>
 

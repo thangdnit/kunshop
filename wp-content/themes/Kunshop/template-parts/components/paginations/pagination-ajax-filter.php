@@ -24,7 +24,7 @@
         <?php if ($i == $current_page): ?>
             <span class="current"><?php echo $i; ?></span>
         <?php else: ?>
-            <a class="page-number shinehover" onclick="loadproductFilterMain(<?php echo $i; ?>)"><?php echo $i; ?></a>
+            <a class="page-number shinehover color-black" onclick="loadproductFilterMain(<?php echo $i; ?>)"><?php echo $i; ?></a>
         <?php endif; ?>
     <?php endfor; ?>
 

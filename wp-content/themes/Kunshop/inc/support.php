@@ -29,10 +29,8 @@ function render_category_checkboxes($parent_id = 0, $taxonomy = 'product_categor
     $categories = get_terms($args);
 
     if (!empty($categories) && !is_wp_error($categories)) {
-        echo '<ul class="category-list">';
+        echo '<ul class="category-list '. $taxonomy . '-list">';
         foreach ($categories as $category) {
-            $checked = in_array($category->term_id, $selected) ? 'checked' : '';
-
             $children = get_terms([
                 'taxonomy'   => $taxonomy,
                 'parent'     => $category->term_id,
@@ -42,7 +40,7 @@ function render_category_checkboxes($parent_id = 0, $taxonomy = 'product_categor
             echo '<li>';
 
             echo '<label>';
-            echo '<input type="checkbox" name="categories[]" value="' . esc_attr($category->term_id) . '" ' . $checked . '> ';
+            echo '<input type="checkbox"' . 'name="'. esc_attr($category->slug) .'" value="' . esc_attr($category->term_id) . '" class="product-filter__' . esc_attr($taxonomy) . '" > ';
             echo esc_html($category->name);
             echo '</label>';
 

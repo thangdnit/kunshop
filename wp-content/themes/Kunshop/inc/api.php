@@ -66,7 +66,6 @@ function load_products(WP_REST_Request $request) {
             $products->the_post();
             $code = get_field('code');
             $price = get_field('price');
-            $promotion_price = get_field('promotion_price');
             $image = get_field('image');
             $description = get_field('description');
             $link = get_permalink();
@@ -96,7 +95,7 @@ add_action('rest_api_init', function () {
 function load_products_filter(WP_REST_Request $request) { 
     $params = $request->get_params();
 
-    $posts_per_page = 12;
+    $posts_per_page = 8;
     
     $data = [
         'posts_per_page' => $posts_per_page,
@@ -107,12 +106,10 @@ function load_products_filter(WP_REST_Request $request) {
     foreach ($params as $key => $value) {
         if ($key === 'price_min' || $key === 'price_max') {
             $data['meta_query'][] = [
-                [
-                    'key' => 'general_price',
-                    'value' => [intval($params['price_min']), intval($params['price_max'])],
-                    'compare' => 'BETWEEN',
-                    'type' => 'NUMERIC',
-                ],
+                'key' => 'price',
+                'value' => [intval($params['price_min']), intval($params['price_max'])],
+                'compare' => 'BETWEEN',
+                'type' => 'NUMERIC',
             ];
             continue;
         }
@@ -121,16 +118,18 @@ function load_products_filter(WP_REST_Request $request) {
                 $keyword = sanitize_text_field($value);
 
                 $data['keyword_search'] = $keyword;
-                
                 continue;
             }
             $taxonomy = str_replace('product-filter__', '', $key);
+            $array_value = array_filter(array_map('intval', explode(',', $value)));
+            if (empty($array_value)) {
+                continue;
+            }
             $data['tax_query'][] = [
                 'taxonomy' => $taxonomy,
                 'field' => 'term_id',
-                'terms' => intval($value),
+                'terms' => $array_value,
             ];
-
         }
     }
 
@@ -142,7 +141,6 @@ function load_products_filter(WP_REST_Request $request) {
             $products->the_post();
             $code = get_field('code');
             $price = get_field('price');
-            $promotion_price = get_field('promotion_price');
             $image = get_field('image');
             $description = get_field('description');
             $link = get_permalink();
@@ -186,7 +184,6 @@ function custom_keyword_search($where, $query) {
     if (!empty($search_keyword)) {
         $where .= $wpdb->prepare(
             " AND ({$wpdb->posts}.post_title LIKE %s 
-                OR {$wpdb->posts}.post_excerpt LIKE %s 
                 OR {$wpdb->posts}.ID IN (
                     SELECT object_id
                     FROM {$wpdb->term_relationships} AS tr
@@ -198,18 +195,15 @@ function custom_keyword_search($where, $query) {
                     SELECT post_id
                     FROM {$wpdb->postmeta}
                     WHERE meta_value LIKE %s
-                      AND meta_key IN ('advanced_he_dan_dong', 'advanced_so_cho_ngoi', 
-                      'advanced_nam_san_xuat', 'advanced_gam_xe', 'advanced_phien_ban',
-                      'advanced_dung_tich_dong_co', 'advanced_nhien_lieu', 'advanced_so_km_da_di', 'advanced_vong_tua')
+                      AND meta_key IN ('description', 'infomation')
                 )
             )",
             "%{$search_keyword}%",
             "%{$search_keyword}%",
             "%{$search_keyword}%",
-            "%{$search_keyword}%"
         );
     }
 
     return $where;
 }
-//add_filter('posts_where', 'custom_keyword_search', 10, 2);
+add_filter('posts_where', 'custom_keyword_search', 10, 2);

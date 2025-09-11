@@ -48,19 +48,39 @@ function validateNumber(number) {
     return true;
 }
 
+function sanitizeInput(str) {
+    if (!str) return "";
+
+    str = str.trim();
+
+    str = str.replace(/<script.*?>.*?<\/script>/gi, "")
+             .replace(/<.*?on\w+=.*?>/gi, "")
+             .replace(/<iframe.*?>.*?<\/iframe>/gi, "")
+             .replace(/<img.*?>/gi, "");
+
+    str = str.replace(/&/g, "&amp;")
+             .replace(/</g, "&lt;")
+             .replace(/>/g, "&gt;")
+             .replace(/"/g, "&quot;")
+             .replace(/'/g, "&#039;");
+
+    return str;
+}
+
 function load_form() {
     if (document.getElementById('form-signup')) {
         document.getElementById('form-signup').addEventListener('submit', function(event) {
             event.preventDefault();
         
-            const email_value = document.getElementById('email-signup');
+            const emaildiv = document.getElementById('email-signup');
+            const emailvalue = sanitizeInput(emaildiv.value);
             
             let hasError = false;
-            if (!validateEmail(email_value.value)) {
+            if (!validateEmail(emailvalue)) {
                 hasError = true;
-                addError('Email không hợp lệ', email_value);
+                addError('Email không hợp lệ', emaildiv);
             }else {
-                removeError(email_value);
+                removeError(emaildiv);
             }
             
             if (hasError) {
@@ -74,7 +94,7 @@ function load_form() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    email: email_value.value,
+                    email: emailvalue,
                     nonce: protected_data.signupEmail.nonce
                 })
             })
@@ -95,80 +115,54 @@ function load_form() {
             });
         });
     }
-    if (document.getElementById('form-sellproduct')) {
-        document.getElementById('form-sellproduct').addEventListener('submit', function(event) {
+    if (document.getElementById('form-contact')) {
+        document.getElementById('form-contact').addEventListener('submit', function(event) {
             event.preventDefault();
-        
-            const contact_email = document.getElementById('form-sellproduct__email');
-            const contact_phone = document.getElementById('form-sellproduct__phone');
-            const product_model = document.getElementById('form-sellproduct__product-model');
-            const product_version = document.getElementById('form-sellproduct__product-version');
-            const km_driven = document.getElementById('form-sellproduct__product-odo');
-            const year_of_manufacture = document.getElementById('form-sellproduct__product-year');
-            
+
+            const contact_name_div = document.getElementById('form-contact__name');
+            const contact_email_div = document.getElementById('form-contact__email');
+            const contact_phone_div = document.getElementById('form-contact__phone');
+            const contact_title_div = document.getElementById('form-contact__title');
+            const contact_content_div = document.getElementById('form-contact__content');
+
+            const namevalue = sanitizeInput(contact_name_div.value);
+            const emailvalue = sanitizeInput(contact_email_div.value);
+            const phonevalue = sanitizeInput(contact_phone_div.value);
+            const titlevalue = sanitizeInput(contact_title_div.value);
+            const contentvalue = sanitizeInput(contact_content_div.value);
+
             let hasError = false;
-
-            if (!validateEmail(contact_email.value)) {
-                addError('Email không hợp lệ', contact_email);
+            if (!validateEmail(emailvalue)) {
+                addError('Email không hợp lệ', contact_email_div);
                 hasError = true;
             } else {
-                removeError(contact_email); 
+                removeError(contact_email_div);
             }
-
-            if (!validatePhone(contact_phone.value)) {
-                addError('Số điện thoại không hợp lệ', contact_phone);
+            if (!validatePhone(phonevalue)) {
+                addError('Số điện thoại không hợp lệ', contact_phone_div);
                 hasError = true;
             } else {
-                removeError(contact_phone);
-            }
-
-            if (!validateText(product_model.value)) {
-                addError('Thông tin không hợp lệ', product_model);
-                hasError = true;
-            } else {
-                removeError(product_model); 
-            }
-
-            if (!validateText(product_version.value)) {
-                addError('Thông tin không hợp lệ', product_version);
-                hasError = true;
-            } else {
-                removeError(product_version); 
-            }
-
-            if (!validateNumber(km_driven.value)) {
-                addError('Thông tin không hợp lệ', km_driven);
-                hasError = true;
-            } else {
-                removeError(km_driven);
-            }
-
-            if (!validateYear(year_of_manufacture.value)) {
-                addError('Thông tin không hợp lệ', year_of_manufacture);
-                hasError = true;
-            } else {
-                removeError(year_of_manufacture);
+                removeError(contact_phone_div);
             }
 
             if (hasError) {
                 return;
             }
-        
-            document.getElementById('form-sellproduct').querySelector('.loading-spinner').classList.add('show');
-        
-            fetch(`${protected_data.sellproduct.api_url}`, { 
+
+            document.getElementById('form-contact').querySelector('.loading-spinner').classList.add('show');
+
+            fetch(`${protected_data.contact.api_url}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    contact_email: contact_email.value,
-                    contact_phone: contact_phone.value,
-                    product_model: product_model.value,
-                    product_version: product_version.value,
-                    km_driven: km_driven.value,
-                    year_of_manufacture: year_of_manufacture.value,
-                    nonce: protected_data.sellproduct.nonce
+                    contact_name: namevalue,
+                    contact_email: emailvalue,
+                    contact_phone: phonevalue,
+                    contact_title: titlevalue,
+                    contact_content: contentvalue,
+                    nonce: protected_data.contact.nonce
                 })
             })
             .then(response => {
@@ -177,7 +171,7 @@ function load_form() {
             .then(data => {
                 if (data.success) {
                     showSuccess(data.message);
-                    document.getElementById('form-sellproduct').reset();
+                    document.getElementById('form-contact').reset();
                 } else {
                     showError(data.message);
                 }
@@ -186,7 +180,7 @@ function load_form() {
                 console.error('Error:', error);
             })
             .finally(() => {
-                document.getElementById('form-sellproduct').querySelector('.loading-spinner').classList.remove('show');
+                document.getElementById('form-contact').querySelector('.loading-spinner').classList.remove('show');
             });
         });
     }
@@ -202,9 +196,9 @@ function addError(message, element) {
     divError.classList.add('error-message');
     element.parentNode.appendChild(divError);
 
-    element.addEventListener('input', function() {
+    setTimeout(() => {
         removeError(element);
-    });
+    }, 5000);
 }
 
 function removeError(element) {
