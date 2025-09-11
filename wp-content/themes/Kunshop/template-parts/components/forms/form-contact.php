@@ -32,6 +32,7 @@
             </div>
         </div>
     </div>
+    
     <div class="form-contact_footer form-general_footer">
         <button class="shinehover custom-button" type="submit">Gửi thông tin</button>
     </div>

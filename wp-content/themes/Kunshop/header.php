@@ -8,7 +8,6 @@
         content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <?php wp_head(); ?>
     <meta name="author" content="Kunkun Shop" />
-    <title><?php bloginfo('name'); ?> - <?php wp_title(''); ?></title>
 </head>
 
 <body class="<?php echo implode(" ", get_body_class()); ?>">
