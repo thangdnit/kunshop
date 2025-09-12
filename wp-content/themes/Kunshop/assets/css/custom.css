@@ -1,15 +1,42 @@
 .wrapper {
-    color: #F5F5F5;
+    background: var(--secondary-color);
+}
+.buffer {
+    background: var(--secondary-color);
+    position: relative; z-index: 1;
+    height: 10.2rem;
 }
 /* Header */
+#header {
+    position: fixed; top: 0; left: 0;
+    z-index: 12;
+}
 #header, #footer {
-    background: var(--primary-color);
     width: 100%; height: auto;
-    z-index: 5;
+}
+.scrolling {
+    transition: all 0.5s ease-in-out;
+}
+#header .header-top.scrolling {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: solid 1px rgba(0, 0, 0, 0.1);
+}
+.home #header .header-top.scrolling {
+    background: var(--primary-color);
+}
+.home .header-top.scrolling .top-menu .menu {
+    color: var(--white-color);
+}
+.home .header-top.scrolling .menu-contact__item {
+    color: var(--primary-color);
+    background: var(--white-color);
 }
 #header .header-top {
-    padding: 2.5rem var(--padding) 2.5rem;
+    padding: 1.5rem var(--padding);
     display: flex; justify-content: space-between; align-items: center;
+    background: var(--primary-color);
+    border-radius: 0 0 2rem 2rem;
+    transition: all 0.5s ease-in-out;
 }
 .header-mobile__menu {
     display: none;
@@ -62,13 +89,11 @@
     padding: 2rem 43rem 7.6rem;
 }
 /* Footer */
-#footer {
-    padding-top: 3rem;
-}
-
-#footer .wrapper {
+#footer .footer-bottom {
+    background: var(--primary-color);
     padding: 6rem var(--padding) 2.8rem;
     color: var(--white-color);
+    border-radius: 2rem 2rem 0 0;
 }
 .bottom-logo {
     width: 25.5rem; height: 19.5rem;
@@ -122,10 +147,10 @@
     margin: 0 0 4rem;
 }
 #contact-page .wrapper {
-    padding: var(--padding-top) var(--padding) 12.5rem;
+    padding: var(--padding-top) var(--padding) 8rem;
 }
 .google-map {
-    margin-bottom: 10.6rem;
+    margin-bottom: 7rem;
     position: relative;
     overflow: hidden;
     border-radius: 1.4rem;
@@ -178,7 +203,7 @@
 
 /* Intro Page */
 #intro-page .wrapper {
-    padding: var(--padding-top) var(--padding) 20rem;
+    padding: var(--padding-top) var(--padding) 8rem;
 }
 .intro-page__content.sec1 > h1 {
     font-size: 7.2rem; line-height: 1; margin: 0;
@@ -361,7 +386,7 @@
 }
 .tag-list a {
     margin-right: 1rem;
-    display: inline-block; border-radius: 4.4rem;
+    display: inline-block; border-radius: 4rem;
     font-weight: 600; line-height: 1;
     background: var(--sblue-color2);
     color: var(--primary-color);
@@ -384,7 +409,7 @@
 }
 
 /* Home Page */
-.home #header {
+.home #header .header-top {
     background: var(--secondary-color);
 }
 .home .top-logo.logo {
@@ -392,19 +417,15 @@
 }
 .home .top-menu .menu {
     color: var(--primary-color);
+    transition: all 0.5s ease-in-out;
 }
 .home .menu-contact__item {
     color: var(--secondary-color);
     background: var(--primary-color);
-}
-.home .phone-icon {
-    background-image: url(../images/phoneHome-icon.svg);
+    transition: all 0.5s ease-in-out;
 }
 .home .youtbBlue-icon {
     background-image: url(../images/youtbHome-icon.svg);
-}
-.home .page-layout {
-    border-radius: 0;
 }
 #home-page {
     background: var(--white-color);
@@ -413,14 +434,17 @@
     padding: 0 3rem;
 }
 .slider-home {
-    height: 66rem;
+    height: 80vh;
     overflow: hidden; position: relative;
     width: 100%;
+}
+.slider-home .swiper-material-wrapper {
+    border-radius: 4rem;
 }
 .slider-home img{
     width: 100%; height: 100%;
     object-fit: cover; object-position: center;
-    display: block; border-radius: 2rem;
+    display: block;
 }
 .swiper-button-prev-custom {
     display: block; 
@@ -457,7 +481,7 @@
     border-radius: 3rem;
 }
 .highligh-tab-section {
-    padding: 0 var(--padding) 17.7rem;
+    padding: 0 var(--padding) 8rem;
 }
 .highligh-tabs .tab-content {
     padding-top: 10.4rem;
@@ -598,13 +622,14 @@
 
 /* Buy product Page */
 #buying-page .wrapper {
-    padding: 8.6rem 12rem 10.6rem;
+    padding: var(--padding-top) 12rem 8rem;
     display: flex; justify-content: flex-start; align-items: flex-start; gap: 2rem;
 }
 .product-list-column-div {
     width: 80%;
 }
 .product-filter-column-div {
+    position: sticky; top: 1rem;
     width: 20%;
 }
 .search-custom button.custom-button {
@@ -677,7 +702,7 @@
 
 /* Product Single Page */
 #product-single .wrapper {
-    padding: var(--padding-top) var(--padding) 10.6rem;
+    padding: var(--padding-top) var(--padding) 8rem;
 }
 .product-excerpt {
     font-size: 1.8rem; margin-bottom: 3rem; color: var(--black-color);
@@ -730,7 +755,7 @@
     color: var(--primary-color);
     font-weight: 600; font-size: 1.8rem;
     height: 100%;
-    border-radius: 4.4rem;
+    border-radius: 4rem;
     border: solid 1px var(--gray-color);
     text-align: center;
     position: relative;
@@ -746,23 +771,42 @@
 }
 .product-single-price {
     display: flex; justify-content: flex-start; align-items: center; gap: 1.5rem;
+    position: relative;
     font-size: 3rem; line-height: 1;
+    padding: 0;
+    margin-right: 1rem;
+    border-radius: 4rem;
     margin-bottom: 3rem;
+    width: 100%;
 }
-.product-single-price > .old-price {
-    text-decoration: line-through;
-    color: var(--gray-color); margin-right: 2rem;
+.product-single-price.flash-sale .flashsale-icon {
+    display: block;
+}
+.product-single-price.flash-sale {
+    background: linear-gradient(to left, var(--orange-color), white);
+    padding: 1rem;
+}
+.product-single-price .old-price {
+    display: none; font-size: 1.6rem; 
+}
+.product-single-price.flash-sale .old-price{
+    display: inline-block;
 }
 .product-single-hotline {
     font-size: 2.4rem; line-height: 1; height: 6rem; margin-bottom: 3rem;
     display: flex; justify-content: space-start; align-items: center;
+}
+.time-flashsale {
+    font-size: 1.8rem; font-weight: 500; line-height: 1;
+    color: var(--white-color);
+    position: absolute; right: 2rem;
 }
 .product-single-hotline > a:last-child {
     margin-right: 0;
 }
 .product-single-hotline > a {
     background: var(--tertiary-color);
-    border-radius: 4.4rem; height: 100%;
+    border-radius: 4rem; height: 100%;
     padding: 0 5.4rem; margin-right: 2%;
     display: flex; justify-content: center; align-items: center;
 }
@@ -849,9 +893,6 @@
     .home .menu-contact__item {
         color: var(--primary-color);
         background: var(--white-color);
-    }
-    .home .phone-icon {
-        background-image: url(../images/phone-icon.svg);
     }
     .header-top .top-menu,
     .header-top .menu-contact {
@@ -1137,9 +1178,6 @@
     }
     
     /* Home Page */
-    .home-banner-section {
-        padding: 0 var(--padding);
-    }
     .slider-home {
         height: 31rem;
     }

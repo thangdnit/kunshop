@@ -13,7 +13,6 @@
         <div class="input-search">
             <input class="custom-input" id="product-filter__keyword" type="text" placeholder="<?php echo $placeholder_texts['form_holder_search'] ?>">
         </div>
-        <div class="line-separate"></div>
         <div class="product-taxonomy-title">Danh mục</div>
         <?php
             render_category_checkboxes(0, 'product_category', []);
@@ -27,10 +26,11 @@
             <div id="product-filter__price-range" data-min="<?php echo $price_filter['min'] ?>" data-max="<?php echo $price_filter['max'] ?>"></div>
         </div>
         <div class="product-filter-btn">
-            <button onclick="loadproductFilterMain()" class="shinehover custom-button">
+            <button onclick="submitSearch()" class="shinehover custom-button">
                 <div class="search-icon bgrsize100"></div>
                 <div>Tìm kiếm</div>
             </button>
         </div>
+        <input type="hidden" id="product-page" value="<?php echo get_page_link(11); ?>">
     </div>
 </div>

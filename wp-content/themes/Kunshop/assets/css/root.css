@@ -13,6 +13,7 @@
     --sblue-color2: #E9F2FF;
     --blue-color: #0C107E;
     --orange-color: #F73719;
+    --logo-color: #4CAF50;
     --padding: 16rem;
     --padding-top: 7.5rem;
 }
@@ -144,6 +145,16 @@ section {
     to { transform: rotate(360deg); }
 }
 
+@keyframes scaleInfinite {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+.scale-infinite {
+    animation: scaleInfinite 2s ease-in-out infinite;
+}
+
 .loading-spinner {
     position: absolute;
     z-index: -1;
@@ -225,6 +236,10 @@ a {
     color: var(--yellow-color);
 }
 
+.color-price {
+    color: #f0325e;
+}
+
 .bgcolor-primary {
     background: var(--primary-color);
 }
@@ -242,11 +257,10 @@ a {
 }
 
 .title-not-found {
-    font-size: 3rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    text-align: center;
-    margin-top: 10rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--black-color);
+    margin: 10rem 0 0 1rem;
 }
 
 select {

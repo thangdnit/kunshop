@@ -33,7 +33,16 @@ function load_products(WP_REST_Request $request) {
     if ($products->have_posts()) {
         while ($products->have_posts()) {
             $products->the_post();
-            $price = get_field('price');
+            
+            $price_setting = get_field('price_setting');
+            $price = $price_setting['final_price'];
+            $old_price = $price_setting['regular_price'];
+            $promotion = false;
+
+            if ($price_setting['promotion'] == true) {
+                $promotion = true;
+            }
+
             $image = get_field('image');
             $description = get_field('description');
             $link = get_permalink();
@@ -85,7 +94,7 @@ function load_products_filter(WP_REST_Request $request) {
             if ($key === 'product-filter__keyword') {
                 $keyword = sanitize_text_field($value);
 
-                $data['keyword_search'] = $keyword;
+                $data['s'] = $keyword;
                 continue;
             }
             $taxonomy = str_replace('product-filter__', '', $key);
@@ -107,12 +116,19 @@ function load_products_filter(WP_REST_Request $request) {
     if ($products->have_posts()) {
         while ($products->have_posts()) {
             $products->the_post();
-            $price = get_field('price');
+
+            $price_setting = get_field('price_setting');
+            $price = $price_setting['final_price'];
+            $old_price = $price_setting['regular_price'];
+            $promotion = false;
+            if ($price_setting['promotion'] == true) {
+                $promotion = true;
+            }
+
             $image = get_field('image');
             $description = get_field('description');
             $link = get_permalink();
             $title = get_the_title();
-            $product_tag = get_the_terms(get_the_ID(), 'product_tag');
             
             ob_start();
             include locate_template("template-parts/components/boxs/product-box.php");
@@ -142,35 +158,22 @@ add_action('rest_api_init', function () {
     ]);
 });
 
-/* Custom Query Search */
-function custom_keyword_search($where, $query) {
-    global $wpdb;
-
-    $search_keyword = $query->get('keyword_search');
-
-    if (!empty($search_keyword)) {
-        $where .= $wpdb->prepare(
-            " AND ({$wpdb->posts}.post_title LIKE %s 
-                OR {$wpdb->posts}.ID IN (
-                    SELECT object_id
-                    FROM {$wpdb->term_relationships} AS tr
-                    INNER JOIN {$wpdb->term_taxonomy} AS tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
-                    INNER JOIN {$wpdb->terms} AS t ON tt.term_id = t.term_id
-                    WHERE t.name LIKE %s
-                )
-                OR {$wpdb->posts}.ID IN (
-                    SELECT post_id
-                    FROM {$wpdb->postmeta}
-                    WHERE meta_value LIKE %s
-                      AND meta_key IN ('description', 'infomation')
-                )
-            )",
-            "%{$search_keyword}%",
-            "%{$search_keyword}%",
-            "%{$search_keyword}%",
-        );
+/* Get Promotion Discount */
+function get_promotion_discount(WP_REST_Request $request) {
+    $term_id = intval($request->get_param('term_id'));
+    if (!$term_id) {
+        return null;
     }
 
-    return $where;
+    $data['discount'] = get_term_meta($term_id, 'discount', true);
+
+    return rest_ensure_response($data);
 }
-add_filter('posts_where', 'custom_keyword_search', 10, 2);
+
+add_action('rest_api_init', function () {
+    register_rest_route('kunshop83xcc3/v1', '/get-promotion-discount', [
+        'methods' => 'GET',
+        'callback' => 'get_promotion_discount',
+        'permission_callback' => '__return_true',
+    ]);
+});

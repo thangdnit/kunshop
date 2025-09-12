@@ -1,11 +1,11 @@
 <?php
 
 require get_template_directory() . '/inc/setup.php';
+require get_template_directory() . '/inc/enqueue-scripts.php';
 require get_template_directory() . '/inc/support.php';
 require get_template_directory() . '/inc/custom-post-types.php';
 require get_template_directory() . '/inc/api.php';
 require get_template_directory() . '/inc/data-form.php';
-require get_template_directory() . '/inc/enqueue-scripts.php';
 
 // Place Holder Text
 function register_global_texts() {

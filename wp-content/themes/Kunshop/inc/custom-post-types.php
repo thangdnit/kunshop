@@ -28,6 +28,7 @@ if (!function_exists('my_custom_post_type')) {
         $taxonomies = [
             'product_category' => 'Product Category',
             'product_brand' => 'Product Brand',
+            'promotion' => 'Promotion',
         ];
 
         foreach ($taxonomies as $taxonomy_slug => $taxonomy_name) {

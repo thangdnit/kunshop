@@ -18,12 +18,30 @@
         $code = get_field('code');
         $description = get_field('description');
         $gallery = get_field('gallery');
-        $price = get_field('price');
 
-        $product_tag = get_field('product_tag');
+        $price_setting = get_field('price_setting');
+        $price = $price_setting['final_price'];
+        $old_price = $price_setting['regular_price'];
+        $promotion = false;
+        $discount = 0;
+        $end_date = '';
+
+
+        if ($price_setting['promotion'] == true) {
+            $promotion = true;
+            $promotion = get_field('promotion');
+            if ($promotion['promotion_type'] == true) {
+                $choose_promotion = $promotion['choose_promotion'];
+                $discount = $choose_promotion->discount;
+                $end_date = $choose_promotion->end_date;
+            } else {
+                $discount = $promotion['discount'];
+                $end_date = $promotion['end_date'];
+            }
+        }
+
         $product_brand = get_field('product_brand');
         $product_category = get_field('product_category');
-
 
         set_query_var('product_title_single', $title);
         set_query_var('product_link', get_the_permalink());
@@ -55,9 +73,21 @@
                 <?php endfor; ?>
             </div>
             <div class="product-single-quote">
-                <div class="product-single-price color-primary text-ultra">
-                    <div class="money-icon bgrsize100"></div>
-                    <div><?php echo format_price($price) ?><span> - 100.000 đ</span></div>
+                <div class="product-single-price <?php echo $promotion ? 'flash-sale' : ''; ?>">
+                    <?php if ($promotion): ?>
+                        <div class="flashsale-icon bgrsize100 scale-infinite"></div>
+                    <?php else: ?>
+                        <div class="money-icon bgrsize100"></div>
+                    <?php endif; ?>
+                    <div class="new-price">
+                        <?php echo format_price($price) ?>
+                        <?php if ($promotion): ?>
+                            <div class="old-price"><?php echo format_price($old_price); ?></div>
+                        <?php endif; ?>
+                    </div>
+                    <?php if ($promotion): ?>
+                        <div class="time-flashsale"><?php echo "Khuyến mãi đến hết ngày " . $end_date; ?></div>
+                    <?php endif; ?>
                 </div>
                 <div class="product-excerpt"><?php echo $description; ?></div>
                 
@@ -108,12 +138,7 @@
             $posts_per_page = 8;
             $post__not_in = get_the_ID();
 
-            $product_tag_ids = [];
-            foreach ($product_tag as $tag) {
-                $product_tag_ids[] = $tag->term_id;
-            }
-
-            $product_brand_ids = $product_brand ? [$product_brand->term_id] : [];
+            $product_brand_id = $product_brand->term_id ? $product_brand->term_id : '';
 
             $product_category_ids = [];
             foreach ($product_category as $category) {
@@ -127,14 +152,9 @@
                 'tax_query' => [
                     'relation' => 'OR',
                     [
-                        'taxonomy' => 'product_tag',
-                        'field' => 'term_id',
-                        'terms' => $product_tag_ids,
-                    ],
-                    [
                         'taxonomy' => 'product_brand',
                         'field' => 'term_id',
-                        'terms' => $product_brand_ids,
+                        'terms' => $product_brand_id,
                     ],
                     [
                         'taxonomy' => 'product_category',
@@ -155,12 +175,20 @@
                         <?php while($products->have_posts()): ?>
                             <?php 
                                 $products->the_post();
-                                $price = get_field('price');
+
+                                $price_setting = get_field('price_setting');
+                                $price = $price_setting['final_price'];
+                                $old_price = $price_setting['regular_price'];
+                                $promotion = false;
+
+                                if ($price_setting['promotion'] == true) {
+                                    $promotion = true;
+                                }
+
                                 $image = get_field('image');
                                 $description = get_field('description');
                                 $link = get_permalink();
                                 $title = get_the_title();
-                                $product_tag = get_the_terms(get_the_ID(), 'product_tag');
                             ?>
                             <div class="swiper-slide">
                                 <div class="product-box-item">

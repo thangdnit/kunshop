@@ -119,8 +119,16 @@ if (have_posts()):
                                                 <?php while($products->have_posts()): ?> 
                                                     <?php 
                                                         $products->the_post();
-                                                        $price = get_field('price');
-                                                        $promotional_price = get_field('promotional_price');
+                                                        
+                                                        $price_setting = get_field('price_setting');
+                                                        $price = $price_setting['final_price'];
+                                                        $old_price = $price_setting['regular_price'];
+                                                        $promotion = false;
+
+                                                        if ($price_setting['promotion'] == true) {
+                                                            $promotion = true;
+                                                        }
+
                                                         $image = get_field('image');
                                                         $description = get_field('description');
                                                         $link = get_permalink();

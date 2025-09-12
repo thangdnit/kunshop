@@ -1,5 +1,5 @@
 .phone-icon {
-    background-image: url(../images/phone-icon.svg);
+    background-image: url(../images/phoneHome-icon.svg);
     width: 1.8rem; height: 1.8rem; margin-right: 1.8rem;
 }
 .phoneWhite-icon {
@@ -86,6 +86,11 @@
     display: block;
     background-image: url(../images/shopeeWhite-icon.png);
     width: 3.3rem; height: 3.3rem;
+}
+.flashsale-icon {
+    display: none;
+    background-image: url(../images/flashsale-icon.png);
+    width: 7.5rem; height: 6rem;
 }
 
 @media screen and (max-width: 800px){
