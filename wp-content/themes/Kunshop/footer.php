@@ -62,7 +62,7 @@ $messenger = get_field("messenger", "option");
                 </div>
             </div>
             <div class="footer-row">
-                <div>Copyright © 2025 KunkunShop</div>
+                <div>Copyright © 2025 KunKunShop</div>
                 <a class="shinehover" href="<?php echo get_page_link(20); ?>" target="_blank">Chính sách bảo mật</a>
             </div>
         </div>

@@ -21,7 +21,6 @@ function theme_enqueue_scripts() {
     wp_enqueue_script('swiper-js', $url . '/assets/js/swiper-bundle.min.js', [], '11.1.15', true);
     wp_enqueue_script('swiper-material-js', $url . '/assets/js/effect-material.min.js', [], '11.1.15', true);
     wp_enqueue_script('custom-js', $url . '/assets/js/custom.js', [], '1.0.0', true);
-    wp_enqueue_script('submit-form-js', $url . '/assets/js/submit-form.js', [], '1.0.0', true);
 
     wp_localize_script('custom-js', 'protected_data', [
         'products' => [

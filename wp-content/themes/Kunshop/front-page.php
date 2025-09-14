@@ -47,7 +47,7 @@ if (have_posts()):
                 <div class="tab-pane fade show active" id="nav-buy-product"
                 role="tabpanel" aria-labelledby="nav-buy-tab">
                     <div>
-                        <?php include locate_template("template-parts/components/filters/filter-product-column.php"); ?>
+                        
                     </div>
                 </div>
 
@@ -91,7 +91,7 @@ if (have_posts()):
                             id="product-highlights-<?php echo $category->term_id; ?>" 
                             role="tabpanel" aria-labelledby="product-highlights-tab-<?php echo $category->term_id; ?>">
                             <?php
-                                $posts_per_page = 8;
+                                $posts_per_page = 4;
 
                                 $data = [
                                     'posts_per_page' => $posts_per_page,
@@ -113,38 +113,36 @@ if (have_posts()):
                                 $category_id = $category->term_id; 
                             ?>     
                                 <div class="slider-product-highlight swiper-tab slider-ajax">
+                                    <?php include locate_template("template-parts/components/paginations/pagination-ajax.php")?>
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <?php if($products->have_posts()): ?> 
-                                                <?php while($products->have_posts()): ?> 
-                                                    <?php 
-                                                        $products->the_post();
-                                                        
-                                                        $price_setting = get_field('price_setting');
-                                                        $price = $price_setting['final_price'];
-                                                        $old_price = $price_setting['regular_price'];
-                                                        $promotion = false;
+                                        <?php if($products->have_posts()): ?>
+                                            <?php while($products->have_posts()): ?> 
+                                                <?php 
+                                                    $products->the_post();
+                                                    
+                                                    $price_setting = get_field('price_setting');
+                                                    $price = $price_setting['final_price'];
+                                                    $old_price = $price_setting['regular_price'];
+                                                    $promotion = false;
 
-                                                        if ($price_setting['promotion'] == true) {
-                                                            $promotion = true;
-                                                        }
+                                                    if ($price_setting['promotion'] == true) {
+                                                        $promotion = true;
+                                                    }
 
-                                                        $image = get_field('image');
-                                                        $description = get_field('description');
-                                                        $link = get_permalink();
-                                                        $title = get_the_title();
-                                                    ?>
+                                                    $image = get_field('image');
+                                                    $description = get_field('description');
+                                                    $link = get_permalink();
+                                                    $title = get_the_title();
+                                                ?>
+                                                <div class="swiper-slide">
                                                     <div class="product-box-item">
                                                         <?php include locate_template('template-parts/components/boxs/product-box.php'); ?>
                                                     </div>
-                                                <?php endwhile; ?>
-                                            <?php else: ?>
-                                                <div class="title-not-found">Không tìm thấy kết quả nào</div>
-                                            <?php endif; ?>
-                                        </div> 
+                                                </div>
+                                            <?php endwhile; ?>
+                                        <?php endif; ?>
+                                        <?php wp_reset_postdata(); ?>
                                     </div>
-                                    <?php include locate_template("template-parts/components/paginations/pagination-ajax.php")?>
-                                    <?php wp_reset_postdata(); ?>
                                 </div>
                             </div>
                         <?php endforeach; ?>
@@ -208,4 +206,5 @@ if (have_posts()):
 </section>
 
 <?php endif; ?>
+<?php wp_reset_postdata(); ?>
 <?php get_footer(); ?>

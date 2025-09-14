@@ -31,6 +31,6 @@
                 <div>Tìm kiếm</div>
             </button>
         </div>
-        <input type="hidden" id="product-page" value="<?php echo get_page_link(11); ?>">
+        
     </div>
 </div>

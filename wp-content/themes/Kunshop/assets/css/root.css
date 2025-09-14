@@ -15,7 +15,8 @@
     --orange-color: #F73719;
     --logo-color: #4CAF50;
     --padding: 16rem;
-    --padding-top: 7.5rem;
+    --padding-top: 6rem;
+    --padding-bottom: 7rem;
 }
 
 @font-face {

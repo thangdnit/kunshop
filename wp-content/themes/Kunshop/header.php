@@ -7,7 +7,7 @@
     <meta name="viewport"
         content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <?php wp_head(); ?>
-    <meta name="author" content="Kunkun Shop" />
+    <meta name="author" content="KunKunShop" />
 </head>
 
 <body class="<?php echo implode(" ", get_body_class()); ?>">
@@ -15,6 +15,7 @@
 <main id="swup" class="transition-main" body-class="<?php echo implode(" ", get_body_class()); ?>">
 <?php
     $phone = get_field("phone", "option");
+    global $placeholder_texts;
 ?>
 <section id="header">
     <div class="wrapper">
@@ -23,6 +24,16 @@
                 <div class="logo top-logo bgrsize100"></div>
             </a>
 
+            <div class="header-search">
+                <form onsubmit="event.preventDefault(); searchProduct();">
+                    <div class="input-search">
+                        <div onclick="searchProduct()" class="search-icon bgrsize100"></div>
+                        <input class="custom-input" id="product-filter__keyword" type="text" placeholder="<?php echo $placeholder_texts['form_holder_search'] ?>">
+                        <input type="hidden" id="product-page" value="<?php echo get_page_link(11); ?>">
+                    </div>
+                </form>
+            </div>
+        
             <div class="top-menu">
                 <?php
                     wp_nav_menu(array(

@@ -4,7 +4,6 @@ var allowajaxA = [];
 var allowajaxB = true;
 var allowajaxC = true;
 var allowajaxD = true;
-var swiper_single_product;
 var swiper_home = [];
 isShrunk = false;
 var modalSuccess;
@@ -43,7 +42,7 @@ function load_init() {
     initSwiper();
     initAnimation();
     resetContactPopup();
-    resetFormSignup();
+    clearFormSignup();
 
     // Load
     loadPriceSlider();
@@ -51,10 +50,10 @@ function load_init() {
     loadproductFilterMain();
     loadModal();
     load_form();
-    toggleCategoryExpand();
-    CategoryCheckboxEvent('product-filter__product_brand');
-    CategoryCheckboxEvent('product-filter__product_category');
-    pressEnterInput('product-filter__keyword');
+    
+    //CategoryCheckboxEvent('product-filter__product_brand');
+    //CategoryCheckboxEvent('product-filter__product_category');
+    //toggleCategoryExpand();
 
     // Scroll Event
     loadscrollEvent();
@@ -63,38 +62,49 @@ function load_init() {
 function scrollHeaderFixed() {
     const logo = document.querySelector('#header .top-logo');
     const header_top = document.querySelector('#header .header-top');
-
-    const tl = anime.timeline({
+    if (window.innerWidth < 801) {
+        if (!isShrunk && window.scrollY > 15) {
+            isShrunk = true;
+            header_top.classList.add('scrolling');
+            document.querySelector('.header-mobile__menu').classList.add('scrolling');
+        }else if (isShrunk && window.scrollY <= 15) {
+            isShrunk = false;
+            header_top.classList.remove('scrolling');
+            document.querySelector('.header-mobile__menu').classList.remove('scrolling');
+        }
+    }else {
+        const tl = anime.timeline({
         easing: 'easeOutQuad',
         duration: 500
-    });
+        });
 
-    if (window.scrollY > 20 && !isShrunk) {
-        isShrunk = true;
-        const newWidthLogo = changeRemtoPx(6.52);
-        const newHeightLogo = changeRemtoPx(5);
+        if (window.scrollY > 15 && !isShrunk) {
+            isShrunk = true;
+            const newWidthLogo = changeRemtoPx(7.1);
+            const newHeightLogo = changeRemtoPx(5);
 
-        tl.add({
-            targets: logo,
-            width: newWidthLogo,
-            height: newHeightLogo,
-            begin: () => {
-                header_top.classList.add('scrolling');
-            }
-        }, 100);
-    } else if (window.scrollY <= 10 && isShrunk) {
-        isShrunk = false;
-        const newWidthLogo = changeRemtoPx(13.7);
-        const newHeightLogo = changeRemtoPx(10.5);
+            tl.add({
+                targets: logo,
+                width: newWidthLogo,
+                height: newHeightLogo,
+                begin: () => {
+                    header_top.classList.add('scrolling');
+                }
+            }, 100);
+        } else if (window.scrollY <= 15 && isShrunk) {
+            isShrunk = false;
+            const newWidthLogo = changeRemtoPx(21.2);
+            const newHeightLogo = changeRemtoPx(15);
 
-        tl.add({
-            targets: logo,
-            width: newWidthLogo,
-            height: newHeightLogo,
-            begin: () => {
-                header_top.classList.remove('scrolling');
-            }
-        }, 100);
+            tl.add({
+                targets: logo,
+                width: newWidthLogo,
+                height: newHeightLogo,
+                begin: () => {
+                    header_top.classList.remove('scrolling');
+                }
+            }, 100);
+        }
     }
 }
 /* Open Menu Mobile */
@@ -113,6 +123,7 @@ function toggleMenuMobile() {
         body.classList.toggle('overflow-hidden');
     }
 }
+/* Handle Scroll Popup */
 function handleScrollPopup() {
     const contactPopup = document.getElementById('contact-popup');
     if (!contactPopup) return;
@@ -219,7 +230,6 @@ function initSwiper() {
     if (bodyClass.contains('home')) {
         if (document.querySelector('.swiper-material')) {
             const swiper_slide = new Swiper('.swiper-material', {
-                slidePerView: 1,
                 loop: true,
                 modules: [EffectMaterial],
                 effect: 'material',
@@ -240,6 +250,7 @@ function initSwiper() {
 
         if (document.querySelector('.swiper-tab')) {
             const alltabs = document.querySelectorAll('.swiper-tab');
+            const spaceBetween = changeRemtoPx(2);
             alltabs.forEach((tab, index) => {
                 setTimeout(() => {
                     const tab_id = tab.parentElement.id;
@@ -248,7 +259,9 @@ function initSwiper() {
                         loop: false,
                         grabCursor: false,
                         allowTouchMove: false,
-                        slidesPerView: 1,
+                        slidesPerView: 4,
+                        slidesPerGroup: 4,
+                        spaceBetween: spaceBetween,
                         speed: 800,
                         autoplay: false,
                         navigation: {
@@ -312,7 +325,7 @@ function initSwiper() {
         }
         if (document.querySelector('.swiper-multi')) {
             const spaceBetween = changeRemtoPx(2);
-            swiper_single_product = new Swiper('.swiper-multi', {
+            const swiper_single_product = new Swiper('.swiper-multi', {
                 loop: false,
                 grabCursor: true,
                 freeMode: true,
@@ -405,17 +418,23 @@ function resetContactPopup() {
         element.querySelector('svg').style.fill = 'white';
     });
 }
-/* Press Enter function */
-function pressEnterInput(idInput) {
-    const input = document.getElementById(idInput);
-    
-    if (input) {
-        input.addEventListener('keydown', function(event) {
-            if (event.key === 'Enter') {
-                event.preventDefault();
-                submitSearch();
-            }
-        });
+/* Search Event */
+function searchProduct() {
+    const keywordInput = document.getElementById('product-filter__keyword');
+    if (keywordInput.value.trim() === '') {
+        return;
+    }
+    resetLocalStorage();
+    let filter = JSON.parse(window.localStorage.getItem(mainLocalStorage)) || {};
+    filter['product-filter__keyword'] = sanitizeInput(keywordInput.value.trim());
+    window.localStorage.setItem(mainLocalStorage, JSON.stringify(filter));
+
+    const bodyClass = document.body.classList;
+    if (bodyClass.contains('page-id-11')) {
+        loadproductFilterMain();
+    } else {
+        const pageLink = new URL(document.getElementById('product-page').value);
+        swup_main.navigate(pageLink.pathname);
     }
 }
 /* Fetch Data */
@@ -461,7 +480,7 @@ function fetchDataFilter() {
     }
 }
 /* Category Checkbox LocalStorage */
-function CategoryCheckboxEvent(classElement) {
+/* function CategoryCheckboxEvent(classElement) {
     const checkboxes = document.querySelectorAll('.' + classElement);
 
     checkboxes.forEach((checkbox) => {
@@ -481,7 +500,7 @@ function CategoryCheckboxEvent(classElement) {
             window.localStorage.setItem(mainLocalStorage, JSON.stringify(filter));
         });
     });
-}
+} */
 /* Reset Local Storage */
 function resetLocalStorage() {
     let storedData = window.localStorage.getItem(mainLocalStorage);
@@ -514,31 +533,9 @@ function resetLocalStorage() {
 function clearAllfilter() {
     resetLocalStorage();
     fetchDataFilter();
-
-    const filter = JSON.parse(window.localStorage.getItem(mainLocalStorage));
-    if (filter) {
-        window.localStorage.removeItem(mainLocalStorage);
-        
-        if(document.querySelector('.price-filter.show-on')){
-            document.querySelector('.price-filter.show-on').classList.remove('show-on');
-        }
-        document.getElementById('product-filter__keyword').value = '';
-        loadproductFilterMain();
-    } 
+    loadproductFilterMain();
 }
-/* Function show Error */
-function showError($error) {
-    document.getElementById('errorModal').querySelector('.error-title').innerHTML = $error
-
-    modalError.show();
-}
-/* Function show Success */
-function showSuccess($success) {
-    document.getElementById('successModal').querySelector('.success-title').innerHTML = $success;
-
-    modalSuccess.show();
-}
-function resetFormSignup (){
+function clearFormSignup (){
     document.getElementById('form-signup').reset();
 }
 /* Ajax */
@@ -605,27 +602,14 @@ function appendproductSlides(data, idtab) {
         ? document.querySelector(`#${idtab} .slider-ajax .swiper-wrapper`)
         : document.querySelector('.slider-ajax .swiper-wrapper');
 
-    const divproducts = document.createElement('div');
-    divproducts.classList.add('swiper-slide', 'justify-content-start');
-
-    if (idtab !== '') {
-        divproducts.classList.add('flex-wrap');
-    }
-
     data.forEach((product) => {
         const divproduct = document.createElement('div');
+        divproduct.classList.add('swiper-slide');
         divproduct.classList.add('product-box-item');
         divproduct.innerHTML = product.html;
-        divproducts.appendChild(divproduct);
+        divproductsWrapper.appendChild(divproduct);
     });
-
-    divproductsWrapper.appendChild(divproducts);
-
-    if (idtab !== '') {
-        swiper_home[idtab].update();
-    } else {
-        swiper_single_product.update();
-    }
+    swiper_home[idtab].update();
 }
 function updateStatusPage(idtab, oldNextPage, first_load) {
     if (first_load != 0) {
@@ -644,12 +628,7 @@ function updateButtonStatus(idtab, next_page, total_pages, first_load) {
     }
 }
 function updateSlideAjax(idtab) {
-    if (idtab != '') {
-        swiper_home[idtab].update();
-    }
-    else {
-        swiper_single_product.update();
-    }
+    swiper_home[idtab].update();
 }
 function showLoadingSpinner(idtab, show) {
     const spinner = idtab
@@ -671,7 +650,7 @@ function buildQueryStr(idtab) {
     params.append('idtab', idtab);
     return params;
 }
-/* Load Preview Page Ajax */
+/* Load Prev Page Ajax */
 function load_prev_products(idtab) {
     const next_page = parseInt(document.getElementById('next_page' + idtab).value);
     if (next_page == 2) {
@@ -690,7 +669,6 @@ function loadproductFilterMain($paged = 1) {
     const bodyClass = document.body.classList;
     if (bodyClass.contains('page-id-11')) {
         const filter_data = JSON.parse(window.localStorage.getItem(mainLocalStorage));
-        
         let params = new URLSearchParams();
 
         if (filter_data) {
@@ -766,25 +744,8 @@ function loadproductFilterMain($paged = 1) {
         }
     }
 }
-/* Search Action */
-function submitSearch() {
-    const keywordInput = document.getElementById('product-filter__keyword');
-    let filter = JSON.parse(window.localStorage.getItem(mainLocalStorage)) || {};
-
-    if (keywordInput) {
-        filter['product-filter__keyword'] = keywordInput.value.trim();
-        window.localStorage.setItem(mainLocalStorage, JSON.stringify(filter));
-    }
-    const bodyClass = document.body.classList;
-    if (bodyClass.contains('page-id-11')) {
-        loadproductFilterMain();
-    } else {
-        const pageLink = new URL(document.getElementById('product-page').value);
-        swup_main.navigate(pageLink.pathname);
-    }
-}
 /* Expand/Collapse Category */
-function toggleCategoryExpand() {
+/* function toggleCategoryExpand() {
     if (!document.querySelector(".toggle-btn")) return;
     document.querySelectorAll(".toggle-btn").forEach(function (btn) {
         btn.addEventListener("click", function () {
@@ -800,4 +761,219 @@ function toggleCategoryExpand() {
             }
         });
     });
+} */
+/* Submit Form */
+function load_form() {
+    if (document.getElementById('form-signup')) {
+        document.getElementById('form-signup').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            const emaildiv = document.getElementById('email-signup');
+            const emailvalue = sanitizeInput(emaildiv.value);
+            
+            let hasError = false;
+            if (!validateEmail(emailvalue)) {
+                hasError = true;
+                addError('Email không hợp lệ', emaildiv);
+            }else {
+                removeError(emaildiv);
+            }
+            
+            if (hasError) {
+                return;
+            }
+        
+            document.getElementById('form-signup').querySelector('.loading-spinner').classList.add('show');
+            fetch(`${protected_data.signupEmail.api_url}`, { 
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: emailvalue,
+                    nonce: protected_data.signupEmail.nonce
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showSuccess(data.message);
+                    document.getElementById('form-signup').reset(); 
+                } else {
+                    showError(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                document.getElementById('form-signup').querySelector('.loading-spinner').classList.remove('show');
+            });
+        });
+    }
+    if (document.getElementById('form-contact')) {
+        document.getElementById('form-contact').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const contact_name_div = document.getElementById('form-contact__name');
+            const contact_email_div = document.getElementById('form-contact__email');
+            const contact_phone_div = document.getElementById('form-contact__phone');
+            const contact_title_div = document.getElementById('form-contact__title');
+            const contact_content_div = document.getElementById('form-contact__content');
+
+            const namevalue = sanitizeInput(contact_name_div.value);
+            const emailvalue = sanitizeInput(contact_email_div.value);
+            const phonevalue = sanitizeInput(contact_phone_div.value);
+            const titlevalue = sanitizeInput(contact_title_div.value);
+            const contentvalue = sanitizeInput(contact_content_div.value);
+
+            let hasError = false;
+            if (!validateEmail(emailvalue)) {
+                addError('Email không hợp lệ', contact_email_div);
+                hasError = true;
+            } else {
+                removeError(contact_email_div);
+            }
+            if (!validatePhone(phonevalue)) {
+                addError('Số điện thoại không hợp lệ', contact_phone_div);
+                hasError = true;
+            } else {
+                removeError(contact_phone_div);
+            }
+
+            if (hasError) {
+                return;
+            }
+
+            document.getElementById('form-contact').querySelector('.loading-spinner').classList.add('show');
+
+            fetch(`${protected_data.contact.api_url}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    contact_name: namevalue,
+                    contact_email: emailvalue,
+                    contact_phone: phonevalue,
+                    contact_title: titlevalue,
+                    contact_content: contentvalue,
+                    nonce: protected_data.contact.nonce
+                })
+            })
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    showSuccess(data.message);
+                    document.getElementById('form-contact').reset();
+                } else {
+                    showError(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                document.getElementById('form-contact').querySelector('.loading-spinner').classList.remove('show');
+            });
+        });
+    }
+}
+function validateEmail(email) {
+    const pEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    
+    if (!pEmail.test(email)) {
+        return false;
+    }
+
+    return true;
+}
+function validatePhone(phone) {
+    const pPhone = /^[0-9]{10,11}$/;
+
+    if (!pPhone.test(phone)) {
+        return false;
+    }
+
+    return true;
+}
+function validateYear(year) {
+    const pYear = /^[0-9]{4}$/;
+
+    if (!pYear.test(year)) {
+        return false;
+    }
+
+    return true;
+}
+function validateText(text) {
+    const pText = /^[\p{L}0-9\s]+$/u;
+
+    if (!pText.test(text)) {
+        return false;
+    }
+
+    return true;
+}
+function validateNumber(number) {
+    const pNumber = /^[0-9]{1,}$/;
+
+    if (!pNumber.test(number)) {
+        return false;
+    }
+
+    return true;
+}
+function sanitizeInput(str) {
+    if (!str) return "";
+
+    str = str.trim();
+
+    str = str.replace(/<script.*?>.*?<\/script>/gi, "")
+             .replace(/<.*?on\w+=.*?>/gi, "")
+             .replace(/<iframe.*?>.*?<\/iframe>/gi, "")
+             .replace(/<img.*?>/gi, "");
+
+    str = str.replace(/&/g, "&amp;")
+             .replace(/</g, "&lt;")
+             .replace(/>/g, "&gt;")
+             .replace(/"/g, "&quot;")
+             .replace(/'/g, "&#039;");
+
+    return str;
+}
+function addError(message, element) {
+    if (element.classList.contains('error-input')) {
+        return;
+    }
+    element.classList.add('error-input');
+    const divError = document.createElement('div');
+    divError.innerHTML = message;
+    divError.classList.add('error-message');
+    element.parentNode.appendChild(divError);
+
+    setTimeout(() => {
+        removeError(element);
+    }, 5000);
+}
+function removeError(element) {
+    if (element.classList.contains('error-input')){
+        element.classList.remove('error-input');
+        const errorElement = element.parentNode.querySelector('.error-message');
+        if (errorElement) {
+            errorElement.remove();
+        }
+    }
+}
+function showError($error) {
+    document.getElementById('errorModal').querySelector('.error-title').innerHTML = $error
+
+    modalError.show();
+}
+function showSuccess($success) {
+    document.getElementById('successModal').querySelector('.success-title').innerHTML = $success;
+
+    modalSuccess.show();
 }

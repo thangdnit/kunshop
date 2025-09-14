@@ -5,7 +5,7 @@ define ('theme_url' , get_template_directory_uri() . "/");
 function custom_login_logo() {
     echo '<style type="text/css">
         #login h1 a {
-            background-image: url(' . theme_url . 'login-logo.png) !important;
+            background-image: url(' . theme_url . 'logo-login.png) !important;
             background-size: contain !important;
             width: 15rem !important;
             height: 15rem !important;

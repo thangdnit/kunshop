@@ -12,7 +12,7 @@
     $working_hours = get_field("work_hours", "option");
 ?>
 <div>
-    <div class="title-page">Hãy liên hệ với KunkunShop</div>
+    <div class="title-page">Hãy liên hệ với KunKunShop</div>
     <div class="boxs-contact">
         <div>
             <div class="box-contact">
@@ -57,19 +57,19 @@
                     <div class="follow-box">
                         <a class="shinehover image-hover-effect" href="<?php echo $tiktok; ?>" target="_blank">
                             <div class="tiktokColor-icon bgrsize100"></div>
-                            <div class="text-bold color-black">KunkunShop</div>
+                            <div class="text-bold color-black">KunKunShop</div>
                         </a>
                         <a class="shinehover image-hover-effect" href="<?php echo $facebook; ?>" target="_blank">
                             <div class="fbColor-icon bgrsize100"></div>
-                            <div class="color-primary text-bold">KunkunShop</div>
+                            <div class="color-primary text-bold">KunKunShop</div>
                         </a>
                         <a class="shinehover image-hover-effect" href="<?php echo $lazada; ?>" target="_blank">
                             <div class="lazadaColor-icon bgrsize100"></div>
-                            <div class="color-blue text-bold">KunkunShop</div>
+                            <div class="color-blue text-bold">KunKunShop</div>
                         </a>
                         <a class="shinehover image-hover-effect" href="<?php echo $shopee; ?>" target="_blank">
                             <div class="shopeeColor-icon bgrsize100"></div>
-                            <div class="color-orange text-bold">KunkunShop</div>
+                            <div class="color-orange text-bold">KunKunShop</div>
                         </a>
                     </div>
                 </div>
