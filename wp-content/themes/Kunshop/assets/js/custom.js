@@ -257,28 +257,30 @@ function initSwiper() {
                     allowajaxA[tab_id] = true;
                     swiper_home[tab_id] = new Swiper(tab, {
                         loop: false,
-                        grabCursor: false,
-                        allowTouchMove: false,
-                        slidesPerView: 4,
-                        slidesPerGroup: 4,
+                        grabCursor: true,
+                        allowTouchMove: true,
+                        freeMode: true,
                         spaceBetween: spaceBetween,
+                        slidesPerView: 1,
                         speed: 800,
                         autoplay: false,
                         navigation: {
-                            nextEl: '#btn-next' + tab_id,
-                            prevEl: '#btn-prev' + tab_id,
+                            nextEl: '.swiper-tab.' + tab_id + ' .swiper-button-next-custom',
+                            prevEl: '.swiper-tab.' + tab_id + ' .swiper-button-prev-custom',
                         },
                         on: {
                             init: function () {
                                 load_more_products(tab_id);
                             },
-                            slidePrevTransitionStart: function () {
-                                load_prev_products(tab_id);
-                            },
                             slideNextTransitionStart: function () {
                                 load_more_products(tab_id);
                             }
-                        }
+                        },
+                        breakpoints: {
+                            801: {
+                                slidesPerView: 4,
+                            },
+                        },
                     });
                 }, 10);
             });
@@ -542,29 +544,15 @@ function clearFormSignup (){
 /* Load Next Page Ajax */
 function load_more_products(idtab) {
     const total_pages = parseInt(document.getElementById('total_pages' + idtab).value);
-    const next_page = parseInt(document.getElementById('next_page' + idtab).value);
     const page_loaded = parseInt(document.getElementById('page_loaded' + idtab).value);
-    const first_load = parseInt(document.getElementById('first_load' + idtab).value);
-    document.getElementById('first_load' + idtab).value = 1;
 
     if (total_pages == 1) {
         return;
     }
 
-    if ((next_page <= total_pages && first_load != 0 && next_page < page_loaded) || (next_page <= total_pages && first_load != 0 && page_loaded == total_pages)) {
-        updateStatusPage(idtab, next_page, first_load);
-        updateButtonStatus(idtab, next_page, total_pages, first_load);
-        return;
-    }
     if ((allowajaxA[idtab]) && page_loaded <= total_pages) {
         allowajaxA[idtab] = false;
 
-        if (page_loaded == total_pages) {
-            updateStatusPage(idtab, next_page, first_load);
-            updateButtonStatus(idtab, next_page, total_pages, first_load);
-            return;
-        }
-        
         const params = buildQueryStr(idtab);
         
         showLoadingSpinner(idtab, true);
@@ -591,9 +579,7 @@ function load_more_products(idtab) {
         .finally(() => {
             allowajaxA[idtab] = true;
             showLoadingSpinner(idtab, false);
-            updateStatusPage(idtab, next_page, first_load);
-            updatePageLoaded(idtab, page_loaded);
-            updateButtonStatus(idtab, next_page, total_pages, first_load);
+            document.getElementById('page_loaded' + idtab).value = page_loaded + 1;
         });
     }
 }
@@ -610,22 +596,6 @@ function appendproductSlides(data, idtab) {
         divproductsWrapper.appendChild(divproduct);
     });
     swiper_home[idtab].update();
-}
-function updateStatusPage(idtab, oldNextPage, first_load) {
-    if (first_load != 0) {
-        document.getElementById('next_page' + idtab).value = oldNextPage + 1;
-    }
-}
-function updatePageLoaded(idtab, oldPageLoaded) {
-    document.getElementById('page_loaded' + idtab).value = oldPageLoaded + 1;
-}
-function updateButtonStatus(idtab, next_page, total_pages, first_load) {
-    if (first_load != 0) {
-        document.getElementById('btn-prev' + idtab).classList.remove('disabled-custom');
-        if (next_page + 1 > total_pages) {
-            document.getElementById('btn-next' + idtab).classList.add('disabled-custom');
-        }
-    }
 }
 function updateSlideAjax(idtab) {
     swiper_home[idtab].update();
@@ -649,20 +619,6 @@ function buildQueryStr(idtab) {
     }
     params.append('idtab', idtab);
     return params;
-}
-/* Load Prev Page Ajax */
-function load_prev_products(idtab) {
-    const next_page = parseInt(document.getElementById('next_page' + idtab).value);
-    if (next_page == 2) {
-        return;
-    }
-    
-    document.getElementById('btn-next' + idtab).classList.remove('disabled-custom');
-
-    document.getElementById('next_page' + idtab).value = next_page - 1;
-    if (next_page - 1 == 2) {
-        document.getElementById('btn-prev' + idtab).classList.add('disabled-custom');
-    }
 }
 /* Main Filter */
 function loadproductFilterMain($paged = 1) {

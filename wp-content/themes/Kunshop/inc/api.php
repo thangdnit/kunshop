@@ -11,7 +11,6 @@ function load_products(WP_REST_Request $request) {
 
     $idtab = sanitize_text_field( $params['idtab'] ?? '' );
     $posts_per_page = intval($params['posts_per_page' . $idtab] ?? -1);
-    $post__not_in = intval($params['post__not_in' . $idtab] ?? 0);
     $page_loaded = intval($params['page_loaded' . $idtab] ?? 1) + 1;
 
     $data = [

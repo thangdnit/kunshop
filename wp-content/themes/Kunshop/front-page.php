@@ -31,7 +31,7 @@ if (have_posts()):
             </div>
         </div>
 
-        <div class="product-tab-section">
+        <div class="home-tab-section">
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link shinehover active" id="nav-buy-tab" 
@@ -71,7 +71,7 @@ if (have_posts()):
         ?>
         <?php if (count($categories_hl) > 0): ?>
             <div class="product-highligh-tab-section">
-                <h2 class="text-ultra color-primary highlight-title">Khám Phá Sản Phẩm Nổi Bật</h2>
+                <h2 class="text-ultra color-primary highlight-title">Sản Phẩm Nổi Bật</h2>
                 <div class="product-tab-highlight highligh-tabs">
                     <nav>
                         <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
@@ -112,7 +112,7 @@ if (have_posts()):
                                 $idtab = 'product-highlights-' . $category->term_id;
                                 $category_id = $category->term_id; 
                             ?>     
-                                <div class="slider-product-highlight swiper-tab slider-ajax">
+                                <div class="slider-product-highlight swiper-tab slider-ajax <?php echo $idtab; ?>">
                                     <?php include locate_template("template-parts/components/paginations/pagination-ajax.php")?>
                                     <div class="swiper-wrapper">
                                         <?php if($products->have_posts()): ?>
