@@ -36,7 +36,7 @@ if (have_posts()):
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link shinehover active" id="nav-buy-tab" 
                     data-bs-toggle="tab" data-bs-target="#nav-buy-product" type="button" 
-                    role="tab" aria-controls="nav-buy-product" aria-selected="true">Tìm kiếm</button>
+                    role="tab" aria-controls="nav-buy-product" aria-selected="true">Khuyến mãi</button>
 
                     <button class="nav-link shinehover" id="nav-sell-tab"
                     data-bs-toggle="tab" data-bs-target="#nav-sell-product" type="button" 
@@ -47,7 +47,7 @@ if (have_posts()):
                 <div class="tab-pane fade show active" id="nav-buy-product"
                 role="tabpanel" aria-labelledby="nav-buy-tab">
                     <div>
-                        
+                        <?php include locate_template("template-parts/components/product-promotion.php"); ?>
                     </div>
                 </div>
 
@@ -74,7 +74,7 @@ if (have_posts()):
                 <h2 class="text-ultra color-primary highlight-title">Sản Phẩm Nổi Bật</h2>
                 <div class="product-tab-highlight highligh-tabs">
                     <nav>
-                        <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+                        <div class="nav nav-tabs justify-content-center <?php if (count($categories_hl) > 2) echo 'overflow-auto'; ?>" id="nav-tab" role="tablist">
                             <?php foreach ($categories_hl as $index => $category): ?>
                                 <button 
                                 class="nav-link shinehover <?php echo $index == 0 ? 'active' : ''; ?>" id="product-highlights-tab-<?php echo $category->term_id; ?>" 
@@ -157,8 +157,14 @@ if (have_posts()):
                 <nav>
                     <?php
                         $checkActive = false;
+                        $countShow = 0;
+                        foreach ($highlights as $highlight) {
+                            if ($highlight['show_on_page'] == true && $highlight['name'] != '') {
+                                $countShow++;
+                            }
+                        }
                     ?>
-                    <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+                    <div class="nav nav-tabs justify-content-center <?php if ($countShow > 2) echo 'overflow-auto'; ?>" id="nav-tab" role="tablist">
                         <?php foreach ($highlights as $index => $highlight): ?>
                             <?php if ($highlight['show_on_page'] == true): ?>
                                 <?php if( $highlight['name'] != '' ): ?>

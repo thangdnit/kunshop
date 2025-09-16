@@ -22,7 +22,7 @@ if (!function_exists('my_custom_post_type')) {
             'supports' => ['title'],
             'show_in_rest' => true,
             'has_archive' => true,
-            'rewrite' => ['slug' => 'san-pham-archive']
+            'rewrite' => ['slug' => 'san-pham']
         ]);
 
         $taxonomies = [

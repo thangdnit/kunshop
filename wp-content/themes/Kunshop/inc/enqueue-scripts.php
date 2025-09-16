@@ -23,6 +23,7 @@ function theme_enqueue_scripts() {
     wp_enqueue_script('custom-js', $url . '/assets/js/custom.js', [], '1.0.0', true);
 
     wp_localize_script('custom-js', 'protected_data', [
+        'site_url' => get_site_url(),
         'products' => [
             'api_url' => home_url('/wp-json/kunshop83xcc3/v1/products')
         ],

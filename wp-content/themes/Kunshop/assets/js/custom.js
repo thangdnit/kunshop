@@ -23,7 +23,6 @@ function init(){
         }
     })
 }
-
 function loadscrollEvent() {
     window.addEventListener('scroll', () => {
         changeColorContactPopup();
@@ -50,10 +49,6 @@ function load_init() {
     loadproductFilterMain();
     loadModal();
     load_form();
-    
-    //CategoryCheckboxEvent('product-filter__product_brand');
-    //CategoryCheckboxEvent('product-filter__product_category');
-    //toggleCategoryExpand();
 
     // Scroll Event
     loadscrollEvent();
@@ -201,10 +196,9 @@ function loadPriceSlider() {
             const min = parseFloat(values[0]);
             const max = parseFloat(values[1]);
             
-            const filterKey = 'product-filter__price-range';
             let filter = JSON.parse(window.localStorage.getItem(mainLocalStorage)) || {};
 
-            filter[filterKey] = [min, max];
+            filter['product-filter__price-range'] = [min, max];
             window.localStorage.setItem(mainLocalStorage, JSON.stringify(filter));
         });
     }
@@ -229,7 +223,7 @@ function initSwiper() {
 
     if (bodyClass.contains('home')) {
         if (document.querySelector('.swiper-material')) {
-            const swiper_slide = new Swiper('.swiper-material', {
+            swiper_product_promotion = new Swiper('.swiper-material', {
                 loop: true,
                 modules: [EffectMaterial],
                 effect: 'material',
@@ -244,6 +238,29 @@ function initSwiper() {
                 },
                 autoplay: {
                     delay: 10000,
+                },
+            });
+        }
+
+        if (document.querySelector('.swiper-promotion')) {
+            const spaceBetween = changeRemtoPx(2);
+            const swiper_promotion = new Swiper('.swiper-promotion', {
+                loop: false,
+                grabCursor: true,
+                allowTouchMove: true,
+                freeMode: true,
+                spaceBetween: spaceBetween,
+                slidesPerView: 1,
+                speed: 800,
+                autoplay: false,
+                navigation: {
+                    nextEl: '.swiper-promotion .swiper-button-next-custom',
+                    prevEl: '.swiper-promotion .swiper-button-prev-custom',
+                },
+                breakpoints: {
+                    801: {
+                        slidesPerView: 3,
+                    },
                 },
             });
         }
@@ -272,7 +289,7 @@ function initSwiper() {
                             init: function () {
                                 load_more_products(tab_id);
                             },
-                            slideNextTransitionStart: function () {
+                            slideNextTransitionEnd: function () {
                                 load_more_products(tab_id);
                             }
                         },
@@ -290,10 +307,7 @@ function initSwiper() {
         const spaceBetween = changeRemtoPx(1);
         if (document.querySelector('.swiper-thumbnail-1')) {
             const swiper_thumbnail_1 = new Swiper(".swiper-thumbnail-1", {
-                slidesPerView: 2,
-                grid: {
-                    rows: 2,
-                },
+                slidesPerView: 4,
                 spaceBetween: spaceBetween,
                 watchSlidesProgress: true,
                 freeMode: true,
@@ -302,9 +316,6 @@ function initSwiper() {
                 breakpoints: {
                     801: {
                         slidesPerView: 4,
-                        grid: {
-                            rows: 1,
-                        },
                         spaceBetween: spaceBetween,
                     },
                 },
@@ -423,16 +434,13 @@ function resetContactPopup() {
 /* Search Event */
 function searchProduct() {
     const keywordInput = document.getElementById('product-filter__keyword');
-    if (keywordInput.value.trim() === '') {
-        return;
-    }
     resetLocalStorage();
     let filter = JSON.parse(window.localStorage.getItem(mainLocalStorage)) || {};
     filter['product-filter__keyword'] = sanitizeInput(keywordInput.value.trim());
     window.localStorage.setItem(mainLocalStorage, JSON.stringify(filter));
 
     const bodyClass = document.body.classList;
-    if (bodyClass.contains('page-id-11')) {
+    if (bodyClass.contains('post-type-archive-product')) {
         loadproductFilterMain();
     } else {
         const pageLink = new URL(document.getElementById('product-page').value);
@@ -481,28 +489,6 @@ function fetchDataFilter() {
         }
     }
 }
-/* Category Checkbox LocalStorage */
-/* function CategoryCheckboxEvent(classElement) {
-    const checkboxes = document.querySelectorAll('.' + classElement);
-
-    checkboxes.forEach((checkbox) => {
-        checkbox.addEventListener('change', function() {
-            let filter = JSON.parse(window.localStorage.getItem(mainLocalStorage)) || {};
-            if (!Array.isArray(filter[classElement])) {
-                filter[classElement] = [];
-            }
-
-            if (checkbox.checked) {
-                if (!filter[classElement].includes(checkbox.value)) {
-                    filter[classElement].push(checkbox.value);
-                }
-            } else {
-                filter[classElement] = filter[classElement].filter(value => value !== checkbox.value);
-            }
-            window.localStorage.setItem(mainLocalStorage, JSON.stringify(filter));
-        });
-    });
-} */
 /* Reset Local Storage */
 function resetLocalStorage() {
     let storedData = window.localStorage.getItem(mainLocalStorage);
@@ -522,6 +508,8 @@ function resetLocalStorage() {
                         } else{
                             filters[key] = [];
                         }
+                    }else {
+                        filters[key] = '';
                     }
                 });
                 localStorage.setItem(mainLocalStorage, JSON.stringify(filters));
@@ -584,9 +572,12 @@ function load_more_products(idtab) {
     }
 }
 function appendproductSlides(data, idtab) {
-    const divproductsWrapper = idtab
-        ? document.querySelector(`#${idtab} .slider-ajax .swiper-wrapper`)
-        : document.querySelector('.slider-ajax .swiper-wrapper');
+    let divproductsWrapper;
+    if (idtab == 'promotion') {
+        divproductsWrapper = document.querySelector(`.slider-product-promotion .swiper-wrapper`);
+    }else {
+        divproductsWrapper = document.querySelector(`#${idtab} .slider-ajax .swiper-wrapper`);
+    }
 
     data.forEach((product) => {
         const divproduct = document.createElement('div');
@@ -598,7 +589,11 @@ function appendproductSlides(data, idtab) {
     swiper_home[idtab].update();
 }
 function updateSlideAjax(idtab) {
-    swiper_home[idtab].update();
+    if (idtab == 'promotion') {
+        swiper_product_promotion.update();
+    } else {
+        swiper_home[idtab].update();
+    }   
 }
 function showLoadingSpinner(idtab, show) {
     const spinner = idtab
@@ -623,7 +618,7 @@ function buildQueryStr(idtab) {
 /* Main Filter */
 function loadproductFilterMain($paged = 1) {
     const bodyClass = document.body.classList;
-    if (bodyClass.contains('page-id-11')) {
+    if (bodyClass.contains('post-type-archive-product')) {
         const filter_data = JSON.parse(window.localStorage.getItem(mainLocalStorage));
         let params = new URLSearchParams();
 
@@ -700,24 +695,6 @@ function loadproductFilterMain($paged = 1) {
         }
     }
 }
-/* Expand/Collapse Category */
-/* function toggleCategoryExpand() {
-    if (!document.querySelector(".toggle-btn")) return;
-    document.querySelectorAll(".toggle-btn").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-            let children = this.parentElement.querySelector(".children");
-            if (children) {
-                if (children.classList.contains("open")) {
-                    children.classList.remove("open");
-                    this.classList.remove("open");
-                } else {
-                    children.classList.add("open");
-                    this.classList.add("open");
-                }
-            }
-        });
-    });
-} */
 /* Submit Form */
 function load_form() {
     if (document.getElementById('form-signup')) {
@@ -837,6 +814,7 @@ function load_form() {
         });
     }
 }
+/* Validate & Sanitize */
 function validateEmail(email) {
     const pEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     
@@ -900,6 +878,7 @@ function sanitizeInput(str) {
 
     return str;
 }
+/* Show Error & Success */
 function addError(message, element) {
     if (element.classList.contains('error-input')) {
         return;
@@ -932,4 +911,8 @@ function showSuccess($success) {
     document.getElementById('successModal').querySelector('.success-title').innerHTML = $success;
 
     modalSuccess.show();
+}
+/* Go Home */
+function goHome() {
+    swup_main.navigate(protected_data.site_url);
 }

@@ -82,7 +82,7 @@ function load_products_filter(WP_REST_Request $request) {
     foreach ($params as $key => $value) {
         if ($key === 'price_min' || $key === 'price_max') {
             $data['meta_query'][] = [
-                'key' => 'price',
+                'key' => 'price_setting_final_price',
                 'value' => [intval($params['price_min']), intval($params['price_max'])],
                 'compare' => 'BETWEEN',
                 'type' => 'NUMERIC',

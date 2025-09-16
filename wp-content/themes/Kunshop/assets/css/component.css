@@ -14,7 +14,7 @@ button.custom-button {
     border: none;
     background: var(--primary-color);
     color: var(--white-color);
-    padding: 0 6.2rem 0 2.8rem;
+    padding: 0 3rem;
     display: flex; justify-content: center; align-items: center;
 }
 /* Breadcrumbs */
@@ -32,7 +32,6 @@ button.custom-button {
 #breadcrumbs > span:last-child {
     color: var(--primary-color); margin-right: 0;
 }
-
 /* Pagination */
 .custom-pagination {
     display: flex; justify-content: center; align-items: center; 
@@ -55,7 +54,6 @@ button.custom-button {
     background-color: var(--primary-color);
     color: var(--white-color); 
 }
-
 /*Highlight Box */
 .highlightboxs {
     display: flex; justify-content: center; align-items: stretch;
@@ -165,7 +163,6 @@ button.custom-button {
 .follow-box a > div:last-child {
     margin-top: 0.5rem;
 }
-
 /* Post Box */
 .postbox {
     width: 32%; margin-bottom: 6.5rem; margin-right: 1.5%;
@@ -188,78 +185,6 @@ button.custom-button {
 }
 .postbox-title {
     font-size: 2.4rem; line-height: 1.3;
-}
-
-/* Filter Product */
-.product-filter-column {
-    width: 100%;
-}
-.product-filter-column-content {
-    padding: 4rem 3rem 6rem;
-    border: solid 1px var(--gray-color);
-    border-radius: 1.8rem;
-    background: var(--white-color);
-    box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.15);
-}
-.category-list {
-    list-style: none; color: var(--black-color); padding-left: 0; margin-left: 0;
-}
-.product-taxonomy-title {
-    font-size: 2.4rem; font-weight: 700;
-    margin-bottom: 1rem; color: var(--primary-color);
-}
-.line-separate {
-    height: 1px; width: 100%;
-    background: var(--gray-color);
-    margin: 2rem 0;
-}
-.toggle-btn {
-    cursor: pointer;
-    display: inline-block;
-    width: 1.6rem; height: 1.6rem;
-    line-height: 1;
-    background: url(../images/dropdown-icon.svg) no-repeat;
-    background-size: contain;
-    background-position: bottom;
-    transform: rotate(0deg);
-    transition: transform 0.5s ease;
-    margin-left: 1rem;
-}
-.toggle-btn.open {
-    transform: rotate(-90deg);
-    transition: transform 0.5s ease;
-}
-.category-list .children {
-    margin-left: 2rem;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 0.5s ease;
-}
-.category-list .children.open {
-    opacity: 1;
-    max-height: 100rem;
-}
-.clear-filter-btn, .product-filter-btn {
-    height: 5rem;
-    border-radius: 4rem;
-    font-size: 1.8rem;
-}
-.clear-filter-btn {
-    margin-bottom: 2rem;
-}
-.clear-filter-btn button.custom-button {
-    padding: 0 2rem;
-    background: var(--sblue-color);
-    color: black;
-}
-.product-filter-btn button.custom-button {
-    background: var(--yellow-color);
-    color: var(--primary-color);
-    display: flex; justify-content: center; align-items: center; width: 100%;
-}
-.product-filter__price-range {
-    position: relative; color: var(--black-color); margin-top: 3rem; margin-bottom: 6rem;
 }
 /* Product Box */
 .product-box {
@@ -383,7 +308,7 @@ button.custom-button {
     position: relative;
 }
 .form-general_header {
-    margin-bottom: 5.2rem;
+    margin-bottom: 5.2rem; position: relative;
 }
 .form-contact_content > div {
     display: flex;
@@ -415,7 +340,6 @@ button.custom-button {
     border-radius: 3rem;
     overflow: hidden;
 }
-
 /* Form Register */
 .input-signup {
     height: 7rem; padding: 1rem 1.2rem;
@@ -428,14 +352,77 @@ button.custom-button {
     width: auto;
     background: var(--yellow-color);
     color: var(--white-color);
-    width: auto; padding: 0 3rem;
+    width: auto;
 }
 .input-signup input.custom-input {
     width: 70%;
     padding: 0 3rem;
     border: none;
 }
-
+/* Product Promotion */
+.product-promotion .form-general_header a.absoblute {
+    position: absolute; top: 50%; right: 0; transform: translateY(-50%);
+}
+.slider-product-promotion {
+    position: relative;
+}
+.slider-product-promotion .custom-pagination {
+    position: absolute; top: -5rem; right: 0;
+}
+.slider-product-promotion .custom-pagination .swiper-button-next-custom {
+    position: relative; top: 0; right: 0; transform: none;
+}
+.slider-product-promotion .custom-pagination .swiper-button-prev-custom {
+    position: relative; top: 0; left: 0; transform: none;
+}
+/* Option Product */
+.options-div {
+    display: inline-flex; gap: 2rem; align-items: center; height: 7rem;
+    background: var(--sblue-color); border-radius: 4rem; padding: 1rem 2rem;
+}
+.select-custom {
+    display: inline-flex; align-items: center; gap: 0.5rem; white-space: nowrap; height: 100%;
+}
+.select-custom select {
+    font-size: 1.8rem; line-height: 1.05; padding: 1rem 3rem 1rem 2rem; border-radius: 8rem; height: 100%;
+}
+/* Filter Product */
+.product-filter {
+    width: 100%; display: flex; justify-content: start; align-items: center;
+    margin-bottom: 4rem; height: 7rem; gap: 1rem; padding: 1rem 2rem;
+    background: var(--sblue-color); border-radius: 4rem; position: sticky; top: 8rem; z-index: 10;
+}
+.range-custom {
+    width: 20%; margin-bottom: 2rem;
+    margin: 0 1rem;
+}
+.filter-choosen {
+    width: 30%;
+}
+.filter-choosen-list {
+    width: auto; display: flex; justify-content: start; align-items: center; gap: 1rem;
+    flex-wrap: wrap;
+}
+.filter-choosen-list > span {
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 0.8rem 1.6rem;
+    border-radius: 4rem;
+    font-size: 1.4rem; font-weight: 600;
+    display: inline-flex; justify-content: center; align-items: center;
+    gap: 0.5rem;
+}
+#product-filter__price-range {
+    height: 0.5rem;
+    border: none;
+}
+#product-filter__price-range .noUi-handle {
+    height: 1.8rem;
+    width: 1.8rem;
+    top: -0.5rem;
+    right: -0.9rem;
+    border-radius: 0.9rem;
+}
 @media screen and (max-width: 800px) {
     /* Input and Button */
     input.custom-input {
@@ -470,6 +457,9 @@ button.custom-button {
     .highlightbox {
         width: 100%; margin-bottom: 2rem;
     }
+    .highlightbox:last-child {
+        margin-bottom: 0;
+    }
     .highlightbox__title {
         min-height: auto;
     }
@@ -497,11 +487,11 @@ button.custom-button {
     .form-contact_content > div > div:last-child {
         width: 100%;
     }
-
-    /* Filter product */
-    .clear-filter-btn {
-        position: unset;
-        margin-top: 4rem;
-        width: 50%; top: auto; right: auto;
+    /* Product Promotion */
+    .product-promotion .form-general_header a.absoblute {
+        right: auto; left: 0; top: 100%; transform: translateY(55%);
     }
+    .product-promotion .form-general_header {
+        margin-bottom: 6rem;
+    }   
 }
