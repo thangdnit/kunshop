@@ -40,7 +40,7 @@ function render_category_checkboxes($parent_id = 0, $taxonomy = 'product_categor
             echo '<li>';
 
             echo '<label>';
-            echo '<input type="checkbox"' . 'name="'. esc_attr($category->slug) .'" value="' . esc_attr($category->term_id) . '" class="product-filter__' . esc_attr($taxonomy) . '" > ';
+            echo '<input type="checkbox"' . 'data-name="' . esc_html($category->name) . '" name="'. esc_attr($category->slug) .'" value="' . esc_attr($category->term_id) . '" class="product-filter__' . esc_attr($taxonomy) . '" > ';
             echo esc_html($category->name);
             echo '</label>';
 

@@ -83,7 +83,6 @@ if (have_posts()):
                                 aria-selected="<?php echo $index == 0 ? 'true' : 'false'; ?>"><?php echo $category->name; ?></button>
                             <?php endforeach; ?>
                         </div>
-                        <a class="absoblute d-inline-flex align-items-center shinehover text-semibold color-black" href="<?php echo get_page_link(11); ?>">Xem thêm &nbsp;<div class="arrow-icon bgrsize100"></div></a>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
                         <?php foreach ($categories_hl as $index => $category): ?>
@@ -113,6 +112,7 @@ if (have_posts()):
                                 $category_id = $category->term_id; 
                             ?>     
                                 <div class="slider-product-highlight swiper-tab slider-ajax <?php echo $idtab; ?>">
+                                    <a class="absoblute d-inline-flex align-items-center shinehover text-semibold color-black" href="<?php echo get_page_link(11); ?>">Xem thêm &nbsp;<div class="arrow-icon bgrsize100"></div></a>
                                     <?php include locate_template("template-parts/components/paginations/pagination-ajax.php")?>
                                     <div class="swiper-wrapper">
                                         <?php if($products->have_posts()): ?>

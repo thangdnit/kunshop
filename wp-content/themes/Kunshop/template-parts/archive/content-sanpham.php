@@ -1,11 +1,18 @@
+<?php 
+    $page = new WP_Query([ 'post_type' => 'page', 'page_id' => 11]);
+    if($page->have_posts()): while($page->have_posts()): $page->the_post();
+?>
 <section id="buying-page" class="page-layout">
     <div class="wrapper">
         <?php include locate_template('template-parts/components/breadcrumb.php'); ?>
         <div class="product-list-header">
-            <h1 class="title-page mobile color-primary text-ultra position-relative"><?php the_title(); ?><div class="loading-spinner"></div></h1>
-            <?php include locate_template('template-parts/components/filters/option-product.php'); ?>
+            <h1 class="title-page mobile color-primary text-ultra position-relative"><?php the_title(); ?>
+                <div class="loading-spinner"></div>
+            </h1>
+            <?php include locate_template('template-parts/components/filters/category-highlight.php'); ?>
         </div>
         <?php include locate_template('template-parts/components/filters/filter-product.php'); ?>
+        <?php include locate_template('template-parts/components/filters/filter-choosen.php'); ?>
         <div class="product-list-column-div">
             <div class="product-list-section">
                 <div>
@@ -20,3 +27,6 @@
         </div>
     </div>
 </section>
+<?php 
+    endwhile; wp_reset_postdata(); endif;
+?>

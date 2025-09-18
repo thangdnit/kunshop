@@ -92,6 +92,18 @@
     background-image: url(../images/flashsale-icon.png);
     width: 7.5rem; height: 6rem;
 }
+.arrowdown-icon {
+    display: inline-block;
+    background-image: url(../images/arrowdown-icon.svg);
+    width: 1.2rem; height: 1.2rem;
+    cursor: pointer;
+}
+.arrowdownColor-icon {
+    display: inline-block;
+    background-image: url(../images/arrowdownColor-icon.svg);
+    width: 1.2rem; height: 1.2rem;
+    cursor: pointer;
+}
 
 @media screen and (max-width: 800px){
 }
