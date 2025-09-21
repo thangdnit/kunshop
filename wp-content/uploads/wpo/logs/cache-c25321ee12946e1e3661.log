@@ -1443,3 +1443,650 @@
 [2025-09-12 13:31:05 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
 [2025-09-12 13:31:05 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-15/ has been purged, triggered by action: save_post 
 [2025-09-12 13:31:05 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-13 13:40:44 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2025-09-13 13:41:38 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2025-09-14 09:17:12 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:12 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:12 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:12 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:12 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:12 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:12 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:12 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:12 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:12 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:12 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:12 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:12 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:12 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:12 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:13 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:13 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:13 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:13 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:13 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:13 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:13 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:13 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:13 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:13 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:13 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:13 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:30 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:30 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:30 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-18/ has been purged, triggered by action: save_post 
+[2025-09-14 09:17:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-19/ has been purged, triggered by action: save_post 
+[2025-09-14 09:17:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-20/ has been purged, triggered by action: save_post 
+[2025-09-14 09:17:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-21/ has been purged, triggered by action: save_post 
+[2025-09-14 09:17:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-22/ has been purged, triggered by action: save_post 
+[2025-09-14 09:17:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-23/ has been purged, triggered by action: save_post 
+[2025-09-14 09:17:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-24/ has been purged, triggered by action: save_post 
+[2025-09-14 09:17:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:17:39 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-25/ has been purged, triggered by action: save_post 
+[2025-09-14 09:17:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-20/ has been purged, triggered by action: save_post 
+[2025-09-14 09:19:42 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-21/ has been purged, triggered by action: save_post 
+[2025-09-14 09:19:42 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-22/ has been purged, triggered by action: save_post 
+[2025-09-14 09:19:42 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-23/ has been purged, triggered by action: save_post 
+[2025-09-14 09:19:42 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-24/ has been purged, triggered by action: save_post 
+[2025-09-14 09:19:42 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-25/ has been purged, triggered by action: save_post 
+[2025-09-14 09:19:42 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:19:42 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-18/ has been purged, triggered by action: save_post 
+[2025-09-14 09:19:42 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-14 09:25:37 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:25:37 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:25:37 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:25:37 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:25:37 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-14 09:25:37 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-26/ has been purged, triggered by action: save_post 
+[2025-09-14 09:25:37 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-16 08:24:20 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:20 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:20 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:20 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:20 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:20 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:20 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:20 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:20 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:20 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:20 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:20 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:21 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:21 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:21 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:21 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:21 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:24:21 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-27/ has been purged, triggered by action: save_post 
+[2025-09-16 08:25:22 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-28/ has been purged, triggered by action: save_post 
+[2025-09-16 08:25:22 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-29/ has been purged, triggered by action: save_post 
+[2025-09-16 08:25:22 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-30/ has been purged, triggered by action: save_post 
+[2025-09-16 08:25:22 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-31/ has been purged, triggered by action: save_post 
+[2025-09-16 08:25:22 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-16 08:25:22 : INFO] - Cache for URL: https://kunshop.local/san-pham-archive/dau-goi-dau-32/ has been purged, triggered by action: save_post 
+[2025-09-16 08:25:22 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-18 14:35:33 : INFO] - Cache for URL: https://kunshop.local/gioi-thieu/ has been purged, triggered by action: save_post 
+[2025-09-18 14:35:33 : INFO] - Cache for author page URL: https://kunshop.local/author/kunshopadmin/ associated with post_type: page and Title: "Giới thiệu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:17 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:17 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:17 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:23 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:23 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:23 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-33/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:23 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:26 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:26 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:26 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:26 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:26 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:26 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:27 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:27 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:27 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:27 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:27 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:27 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:27 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:27 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:27 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:27 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:27 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:27 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:27 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:27 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-34/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-35/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-36/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-37/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-38/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-39/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-40/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-41/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-42/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-43/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-33/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-32/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-31/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-30/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-29/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-28/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-27/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-26/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-19/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-18/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-25/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-24/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-23/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:56 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-22/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:56 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-21/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-20/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-5/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-6/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-4/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-3/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-2/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-13/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-12/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-11/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-10/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-9/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-8/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-7/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-17/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-16/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-15/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-14/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:11:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/307/ has been purged, triggered by action: save_post 
+[2025-09-19 07:11:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 07:12:06 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:12:06 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:12:06 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:12:06 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 07:12:06 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-33/ has been purged, triggered by action: save_post 
+[2025-09-19 07:12:06 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu" has been purged, triggered by action: save_post 
+[2025-09-19 12:41:00 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 12:41:00 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 12:41:00 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 12:41:00 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 12:41:00 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 12:41:00 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-43/ has been purged, triggered by action: save_post 
+[2025-09-19 12:41:00 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương trị gàu" has been purged, triggered by action: save_post 
+[2025-09-19 12:41:16 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 12:41:16 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 12:41:16 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 12:41:16 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 12:41:16 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 12:41:16 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-43/ has been purged, triggered by action: save_post 
+[2025-09-19 12:41:16 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương trị gàu dfdsfsdf" has been purged, triggered by action: save_post 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:07 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:08 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:08 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:08 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:08 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:08 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:08 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-tri-gau-dfdsfsdf/ has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương trị gàu dfdsfsdf" has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-tri-gau-dfdsfsdf-2/ has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương trị gàu dfdsfsdf" has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-tri-gau-dfdsfsdf-3/ has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương trị gàu dfdsfsdf" has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-tri-gau-dfdsfsdf-4/ has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương trị gàu dfdsfsdf" has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-tri-gau-dfdsfsdf-5/ has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương trị gàu dfdsfsdf" has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-tri-gau-dfdsfsdf-6/ has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương trị gàu dfdsfsdf" has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-tri-gau-dfdsfsdf-7/ has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương trị gàu dfdsfsdf" has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-tri-gau-dfdsfsdf-8/ has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương trị gàu dfdsfsdf" has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:39 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-tri-gau-dfdsfsdf-9/ has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương trị gàu dfdsfsdf" has been purged, triggered by action: save_post 
+[2025-09-19 13:09:39 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:40 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:40 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 13:09:40 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-tri-gau-dfdsfsdf-10/ has been purged, triggered by action: save_post 
+[2025-09-19 13:09:40 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương trị gàu dfdsfsdf" has been purged, triggered by action: save_post 
+[2025-09-19 15:47:24 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 15:47:24 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 15:47:24 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 15:47:24 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 15:47:24 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 15:47:24 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-tri-gau-dfdsfsdf-8/ has been purged, triggered by action: save_post 
+[2025-09-19 15:47:24 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương trị gàu dfdsfsdf" has been purged, triggered by action: save_post 
+[2025-09-19 16:32:58 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:32:58 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:32:58 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:33:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:33:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:33:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:33:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:33:09 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:33:09 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-tri-gau-dfdsfsdf-11/ has been purged, triggered by action: save_post 
+[2025-09-19 16:33:09 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương trị gàu dfdsfsdf" has been purged, triggered by action: save_post 
+[2025-09-19 16:33:17 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:33:17 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:33:17 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:33:17 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:33:17 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:33:17 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-tri-gau-dfdsfsdf-11/ has been purged, triggered by action: save_post 
+[2025-09-19 16:33:17 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương trị gàu dfdsfsdf" has been purged, triggered by action: save_post 
+[2025-09-19 16:33:40 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:33:40 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:33:40 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:33:40 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:33:40 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:33:40 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-km/ has been purged, triggered by action: save_post 
+[2025-09-19 16:33:40 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương KM" has been purged, triggered by action: save_post 
+[2025-09-19 16:57:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:57:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:57:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:57:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:57:22 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:57:22 : INFO] - Cache for URL: https://kunshop.local/san-pham/307/ has been purged, triggered by action: save_post 
+[2025-09-19 16:57:22 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu OLD" has been purged, triggered by action: save_post 
+[2025-09-19 16:57:59 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:57:59 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:57:59 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:58:25 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:58:25 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:58:25 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:58:25 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:58:25 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:58:25 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-thap/ has been purged, triggered by action: save_post 
+[2025-09-19 16:58:25 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương Thấp" has been purged, triggered by action: save_post 
+[2025-09-19 16:58:29 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:58:29 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:58:29 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:58:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:58:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:58:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:58:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:58:41 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 16:58:41 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-cao/ has been purged, triggered by action: save_post 
+[2025-09-19 16:58:41 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương Cao" has been purged, triggered by action: save_post 
+[2025-09-19 17:02:28 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:02:28 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:02:28 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:02:28 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:02:28 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:02:28 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-thap/ has been purged, triggered by action: save_post 
+[2025-09-19 17:02:28 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương Thấp" has been purged, triggered by action: save_post 
+[2025-09-19 17:03:38 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:03:38 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:03:38 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:03:38 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:03:38 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:03:38 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-thap/ has been purged, triggered by action: save_post 
+[2025-09-19 17:03:38 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương Thấp adsasdasdsa" has been purged, triggered by action: save_post 
+[2025-09-19 17:03:47 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:03:47 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:03:47 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:03:47 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:03:47 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:03:47 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-thap/ has been purged, triggered by action: save_post 
+[2025-09-19 17:03:47 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương Thấp adsasdasdsa" has been purged, triggered by action: save_post 
+[2025-09-19 17:03:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:03:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:03:56 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:03:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:03:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
+[2025-09-19 17:03:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-thap/ has been purged, triggered by action: save_post 
+[2025-09-19 17:03:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương Thấp adsasdasdsa" has been purged, triggered by action: save_post 
