@@ -9,5 +9,6 @@
         <input type="hidden" id="posts_per_page<?php echo $idtab ?>" name="posts_per_page<?php echo $idtab ?>" value="<?php echo $posts_per_page; ?>">
         <input type="hidden" id="total_pages<?php echo $idtab ?>" name="total_pages<?php echo $idtab ?>" value="<?php echo $total_pages; ?>">
         <input type="hidden" id="category_id<?php echo $idtab ?>" name="category_id<?php echo $idtab ?>" value="<?php echo $category_id; ?>">
+        <input type="hidden" id="category_name<?php echo $idtab ?>" name="category_name<?php echo $idtab ?>" value="<?php echo $category_name; ?>">
     </form>
 <?php endif; ?>

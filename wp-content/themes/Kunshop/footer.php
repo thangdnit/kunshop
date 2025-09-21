@@ -35,7 +35,7 @@ $messenger = get_field("messenger", "option");
                             <div class="text-regular">Điện thoại.</div>
                             <div class="text-bold"><a class="shinehover" href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></div>
                         </div>
-                        <div class="selling-page-contact__phone mobile">
+                        <div class="footer-contact_phone mobile">
                             <a class="shinehover menu-contact__item" href="tel:<?php echo $phone; ?>" target="_blank">
                                 <div class="phone-icon bgrsize100"> </div>
                                 <div><?php echo $phone; ?></div>

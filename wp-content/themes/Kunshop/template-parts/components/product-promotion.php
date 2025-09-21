@@ -1,7 +1,7 @@
 <div class="product-promotion">
-    <div class="form-general_header">
-        <span>Sản Phẩm Khuyến Mãi</span>
-        <a class="absoblute d-inline-flex align-items-center shinehover text-semibold color-black" href="<?php echo get_page_link(11); ?>">Xem thêm &nbsp;<div class="arrow-icon bgrsize100"></div></a>
+    <div class="product-highlight-title">
+        <h2 class="text-ultra color-red highlight-title">Sản phẩm khuyến mãi</h2>
+        <a class="go-product-page shinehover text-semibold color-black" href="<?php echo get_page_link(11); ?>">Xem thêm &nbsp;<div class="arrow-icon bgrsize100"></div></a>
     </div>
     <div class="slider-product-promotion swiper-promotion">
         <?php
@@ -11,13 +11,15 @@
                 'meta_query' => array(
                     array(
                         'key' => 'price_setting_promotion',
-                        'value' => true,
-                        'compare' => '==',
-                        'type' => 'BOOLEAN',
-                        'orderby' => 'date',
-                        'order' => 'DESC'
-                    )
-                )
+                        'value' => 1,
+                        'compare' => '=',
+                        'type' => 'NUMERIC',
+                    ),
+                ),
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'suppress_filters' => true,
+                'ignore_custom_sort' => true,
             );
             $promo_query = new WP_Query($args);
             $idtab = 'promotion';
@@ -31,7 +33,11 @@
                             $price_setting = get_field('price_setting');
                             $price = $price_setting['final_price'];
                             $old_price = $price_setting['regular_price'];
-                            $promotion = true;
+                            $promotion = false;
+
+                            if ($price_setting['promotion'] == true) {
+                                $promotion = true;
+                            }
 
                             $image = get_field('image');
                             $description = get_field('description');

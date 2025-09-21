@@ -12,6 +12,9 @@ if (have_posts()):
             <iframe src="<?php echo $google_map; ?>" width="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`
         </div>
         <?php include locate_template("template-parts/components/boxs/contact-boxs.php"); ?>
+        <div class="form-contact-section">
+            <?php include locate_template("template-parts/components/forms/form-contact.php"); ?>
+        </div>
     </div>
 </section>
 <?php endif; ?>

@@ -12,16 +12,21 @@ function load_products(WP_REST_Request $request) {
     $idtab = sanitize_text_field( $params['idtab'] ?? '' );
     $posts_per_page = intval($params['posts_per_page' . $idtab] ?? -1);
     $page_loaded = intval($params['page_loaded' . $idtab] ?? 1) + 1;
+    $category_name = sanitize_text_field( $params['category_name' . $idtab] ?? 'product_category' );
 
     $data = [
         'posts_per_page' => $posts_per_page,
         'paged' => $page_loaded,
-        'post_type' => 'product'
+        'post_type' => 'product',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'suppress_filters' => true,
+        'ignore_custom_sort' => true,
     ];
 
     $data['tax_query'] = [
         [
-            'taxonomy' => 'product_category',
+            'taxonomy' => $category_name,
             'field' => 'term_id',
             'terms' => intval($params['category_id' . $idtab]),
         ],
@@ -71,13 +76,36 @@ add_action('rest_api_init', function () {
 function load_products_filter(WP_REST_Request $request) { 
     $params = $request->get_params();
 
-    $posts_per_page = 8;
+    $posts_per_page = intval($params['products-per-page'] ?? 8);
+    $sort_by = sanitize_text_field($params['sort-by'] ?? 'date-DESC' );
+    $promotion = $params['promotion'] ?? false;
+    list($orderby, $order) = explode('-', $sort_by);
     
     $data = [
         'posts_per_page' => $posts_per_page,
         'paged' => intval($params['paged'] ?? 1),
         'post_type' => 'product',
+        'suppress_filters' => true,
+        'ignore_custom_sort' => true,
     ];
+
+    if ($promotion) {
+        $data['meta_query'][] = [
+            'key' => 'price_setting_promotion',
+            'value' => 1,
+            'compare' => '=',
+            'type' => 'NUMERIC',
+        ];
+    }
+
+    if ($orderby == 'price') {
+        $data['meta_key'] = 'price_setting_final_price';
+        $data['orderby'] = 'meta_value_num';
+        $data['order'] = $order;
+    } else if ($orderby == 'date') {
+        $data['orderby'] = $orderby;
+        $data['order'] = $order;
+    }
 
     foreach ($params as $key => $value) {
         if ($key === 'price_min' || $key === 'price_max') {
@@ -98,6 +126,7 @@ function load_products_filter(WP_REST_Request $request) {
             }
             $taxonomy = str_replace('product-filter__', '', $key);
             $array_value = array_filter(array_map('intval', explode(',', $value)));
+            
             if (empty($array_value)) {
                 continue;
             }
@@ -176,3 +205,13 @@ add_action('rest_api_init', function () {
         'permission_callback' => '__return_true',
     ]);
 });
+
+function promotion_true($array) {
+    if (!is_array($array)) {
+        return false;
+    }
+    if (in_array('promotion', $array)) {
+        return true;
+    }
+    return false;
+}

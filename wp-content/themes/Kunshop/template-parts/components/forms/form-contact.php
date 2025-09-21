@@ -2,7 +2,7 @@
 <form action="" id="form-contact" class="form-contact" method="POST" novalidate>
     <div class="loading-spinner"></div>
     <div class="form-contact_header form-general_header">
-        <span>Gửi tin nhắn đến chúng tôi</span>
+        <span>Gửi tin nhắn</span>
     </div>
     <div class="form-contact_content form-general_content">
         <div>

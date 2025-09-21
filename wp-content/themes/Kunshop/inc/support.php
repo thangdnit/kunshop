@@ -23,7 +23,7 @@ function render_category_checkboxes($parent_id = 0, $taxonomy = 'product_categor
     $args = [
         'taxonomy'   => $taxonomy,
         'parent'     => $parent_id,
-        'hide_empty' => false,
+        'hide_empty' => true,
     ];
 
     $categories = get_terms($args);
@@ -34,15 +34,14 @@ function render_category_checkboxes($parent_id = 0, $taxonomy = 'product_categor
             $children = get_terms([
                 'taxonomy'   => $taxonomy,
                 'parent'     => $category->term_id,
-                'hide_empty' => false,
+                'hide_empty' => true,
             ]);
-
             echo '<li>';
-
-            echo '<label>';
-            echo '<input type="checkbox"' . 'data-name="' . esc_html($category->name) . '" name="'. esc_attr($category->slug) .'" value="' . esc_attr($category->term_id) . '" class="product-filter__' . esc_attr($taxonomy) . '" > ';
+            echo '<button data-name="' . esc_html($category->name) . 
+            '" name-class="'. esc_attr($category->slug) .'" data-value="' . esc_attr($category->term_id) . 
+            '" class="custom-button-2 product-filter__' . esc_attr($taxonomy) . '" > ';
             echo esc_html($category->name);
-            echo '</label>';
+            echo '</button>';
 
             if (!empty($children)) {
                 echo '<span class="toggle-btn"></span> ';

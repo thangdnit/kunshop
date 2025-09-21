@@ -217,6 +217,9 @@ a {
 .page-layout {
     background: var(--secondary-color);
 }
+.color-logo {
+    color: var(--logo-color);
+}
 .title-not-found {
     font-size: 2.5rem;
     font-weight: 600;
@@ -324,12 +327,12 @@ html.is-rendering .transition-overlay {
 .custom-tooltip-left {
     font-size: 1.8rem;
     position: absolute;
-    top: 200%; left: 0;
+    top: 200%; left: 0.5rem;
 }
 .custom-tooltip-right {
     font-size: 1.8rem; 
     position: absolute;
-    top: 200%; right: 0;
+    top: 200%; right: 0.5rem;
 }
 .noUi-handle:after, .noUi-handle:before {
     display: none;
