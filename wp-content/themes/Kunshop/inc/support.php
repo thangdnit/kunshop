@@ -1,14 +1,4 @@
 <?php
-// Change star rating to percentage
-function star_rating_to_percentage( $rating ) {
-    return 100 - ($rating * 20);
-}
-
-// Calculate slides
-function calculateSlides($totalItems, $itemsPerSlide) {
-    return ceil($totalItems / $itemsPerSlide);
-}
-
 // Get Size Image and URL
 function get_image ($id, $size = 'medium') {
     return wp_get_attachment_image($id, $size);
@@ -132,4 +122,3 @@ add_action('acf/input/admin_footer', function() {
 </script>
 <?php
 });
-

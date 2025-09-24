@@ -1,6 +1,7 @@
 <?php
 define ('theme_url' , get_template_directory_uri() . "/");
-
+/* Remove Version Wordpress */
+remove_action('wp_head', 'wp_generator');
 /* Custom Logo Login CMS */
 function custom_login_logo() {
     echo '<style type="text/css">
@@ -13,19 +14,16 @@ function custom_login_logo() {
     </style>';
 }
 add_action('login_head', 'custom_login_logo');
-
 /* Custom Link Logo CMS */
 function loginpage_custom_link(){
     return get_home_url();
 }
 add_filter('login_headerurl', 'loginpage_custom_link');
-
 /* Remove menu function on CMS */
 function remove_menus(){
     remove_menu_page('edit-comments.php'); /*Comments*/
 }
 add_action('admin_menu', 'remove_menus');
-
 // Add menu function on CMS
 add_theme_support( 'menus' );
 register_nav_menus(
@@ -34,7 +32,6 @@ register_nav_menus(
         'footer_menu' => 'Footer Menu',
     ]
 );
-
 /* Remove emoji from loading on the frontend */
 function disable_emoji_feature() {
     remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -52,7 +49,6 @@ function disable_emoji_feature() {
     }
     add_filter( 'option_use_smilies', '__return_false' );
 }
-
 function disable_emojis_tinymce( $plugins ) {
     if( is_array($plugins) ) {
         $plugins = array_diff( $plugins, array( 'wpemoji' ) );
@@ -60,14 +56,12 @@ function disable_emojis_tinymce( $plugins ) {
     return $plugins;
 }
 add_action('init', 'disable_emoji_feature');
-
 function smartwp_remove_wp_block_library_css(){
     wp_dequeue_style( 'wp-block-library' );
     wp_dequeue_style( 'wp-block-library-theme' );
     wp_dequeue_style( 'wc-block-style' ); 
 } 
 add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
-
 /* Remove editor on CMS Page */
 function hide_content_field_for_pages() {
     $policy_page_id = 20;
@@ -85,11 +79,9 @@ function hide_content_field_for_pages() {
     }
 }
 add_action('admin_head', 'hide_content_field_for_pages');
-
 /* Theme Support */
 add_theme_support('title-tag');
 add_theme_support('post-thumbnails', ['post', 'san-pham']);
-
 /* Create Table (Run once when setup themes)*/
 function create_newsletter_table() {
     global $wpdb;
@@ -112,7 +104,6 @@ function create_newsletter_table() {
     }
 }
 add_action('after_setup_theme', 'create_newsletter_table');
-
 function create_contact_messages_table() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'contact_messages';
@@ -135,7 +126,6 @@ function create_contact_messages_table() {
     }
 }
 add_action('after_setup_theme', 'create_contact_messages_table');
-
 /* Show Entries */
 /* --Newsletter */
 function my_newsletter_menu() {
@@ -150,7 +140,6 @@ function my_newsletter_menu() {
     );
 }
 add_action('admin_menu', 'my_newsletter_menu');
-
 function display_newsletter_page() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'kunshop_newsletter';
@@ -260,7 +249,6 @@ function display_newsletter_page() {
     </style>
 <?php
 }
-
 /* --Contact */
 function my_contact_menu() {
     add_menu_page(
@@ -273,7 +261,6 @@ function my_contact_menu() {
     );
 }
 add_action('admin_menu', 'my_contact_menu');
-
 function display_contact_page() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'contact_messages';

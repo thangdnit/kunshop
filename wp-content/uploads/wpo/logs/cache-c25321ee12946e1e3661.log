@@ -2090,3 +2090,4 @@
 [2025-09-19 17:03:57 : INFO] - Cache for multiple term taxonomy have been purged due to post terms update, triggered by action: set_object_terms 
 [2025-09-19 17:03:57 : INFO] - Cache for URL: https://kunshop.local/san-pham/dau-goi-dau-thai-duong-thap/ has been purged, triggered by action: save_post 
 [2025-09-19 17:03:57 : INFO] - Cache for archive page associated with post_type: product and Title: "Dầu gội đầu Thái Dương Thấp adsasdasdsa" has been purged, triggered by action: save_post 
+[2025-09-24 09:30:51 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
